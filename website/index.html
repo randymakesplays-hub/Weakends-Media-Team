@@ -140,12 +140,11 @@
   .logos{justify-content:center;gap:26px 54px}
   .logos a{
     flex:0 1 auto;display:grid;place-items:center;padding:6px 10px;
-    opacity:.72;filter:saturate(.9);
-    transition:opacity .25s ease,filter .25s ease,transform .25s ease;
+    transition:transform .25s ease;
   }
-  .logos a:hover{opacity:1;filter:none;transform:translateY(-3px)}
-  .logos img{height:52px;width:auto;display:block}
-  @media(max-width:560px){.logos img{height:42px}}
+  .logos a:hover{transform:translateY(-4px) scale(1.03)}
+  .logos img{height:58px;width:auto;display:block}
+  @media(max-width:560px){.logos img{height:46px}}
   .clientlead{
     margin:64px 0 26px;text-align:center;font-size:12.5px;font-weight:600;
     letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
