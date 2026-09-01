@@ -1,0 +1,252 @@
+<title>Weakends Site Plan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF6; --surface:#F3F1E9; --ink:#1C1B17; --muted:#6E6A5F;
+    --line:#E2DFD3; --accent:#2743C7; --accent-soft:#E8EBFA;
+    --site:#FF4D12; --site-soft:#FFE9E1;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+      --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E;
+      --site:#FF8557; --site-soft:#3A241B;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+    --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E;
+    --site:#FF8557; --site-soft:#3A241B;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--ground);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.65;margin:0}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px 96px}
+  a{color:var(--accent);text-underline-offset:3px}
+  header.mast{padding:64px 0 36px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px}
+  h1{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:clamp(36px,6.5vw,54px);line-height:1.03;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+  .standfirst{font-size:19px;color:var(--muted);max-width:640px;margin:0}
+  .standfirst strong{color:var(--ink);font-weight:600}
+  section{padding-top:52px}
+  h2{font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(23px,4vw,30px);letter-spacing:-.015em;line-height:1.12;margin:6px 0 16px;text-wrap:balance}
+  h3{font-family:Archivo,sans-serif;font-weight:700;font-size:17.5px;margin:30px 0 10px;letter-spacing:-.01em}
+  p{margin:0 0 15px;max-width:690px}
+  .note{color:var(--muted);font-size:15px}
+  ul{padding-left:22px;margin:0 0 16px}
+  li{margin-bottom:7px}
+  li::marker{color:var(--accent)}
+
+  /* option cards */
+  .opt{border:1px solid var(--line);border-radius:10px;margin:18px 0;overflow:hidden}
+  .opt.pick{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+  .opt .tag{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);background:var(--surface);padding:9px 16px;border-bottom:1px solid var(--line);
+  }
+  .opt.pick .tag b{color:var(--accent);font-weight:500}
+  .opt .body{padding:20px 22px}
+  .opt .h{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(21px,3.4vw,28px);line-height:1.08;letter-spacing:-.02em;margin:0 0 10px}
+  .opt .h em{font-style:normal;color:var(--site);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px}
+  .opt .s{color:var(--muted);font-size:15.5px;margin:0 0 10px}
+  .opt .why{font-size:14px;margin:0;padding-top:10px;border-top:1px dashed var(--line)}
+  .opt .why b{font-family:Archivo,sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+
+  /* wireframe */
+  .wire{border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:22px;margin:22px 0}
+  .wf{
+    border:1.5px solid var(--line);border-radius:8px;background:var(--ground);
+    padding:12px 16px;margin:0 0 10px;display:flex;gap:14px;align-items:baseline;justify-content:space-between;flex-wrap:wrap;
+  }
+  .wf.hot{border-color:var(--site);background:var(--site-soft)}
+  .wf .nm{font-family:Archivo,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.01em}
+  .wf .nm i{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--accent);margin-right:8px}
+  .wf .job{font-size:13.5px;color:var(--muted);flex:1 1 260px;text-align:right}
+  @media(max-width:560px){.wf .job{text-align:left}}
+
+  /* copy blocks */
+  .copyblock{background:var(--surface);border-left:3px solid var(--accent);padding:16px 20px;margin:14px 0 20px}
+  .copyblock p{margin:0 0 8px;font-size:16px}
+  .copyblock p:last-child{margin:0}
+  .copyblock .lbl{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:8px}
+  .copyblock .big{font-family:Archivo,sans-serif;font-weight:800;font-size:19px;letter-spacing:-.01em}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);margin:18px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:540px}
+  th{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);font-weight:500;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:13px}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:3px}
+  footer.colo{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);line-height:1.8}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Weakends Agency · site blueprint v2 · Sept 2026</p>
+  <h1>The plan: top copy first, everything else follows</h1>
+  <p class="standfirst">Updated with your intel: <strong>Weakends Agency</strong>, the "we fix weak ends" hook, the Clay-style 5-tab layout, <strong>"Book a performance trial"</strong> as the one CTA, light theme, no faces — all logos, reels, and links stay placeholders for now. This round is about two things: <strong>the words at the top</strong> and <strong>the order of the page</strong>.</p>
+</header>
+
+<section>
+  <p class="eyebrow">01 · The brand in one line</p>
+  <h2>Weakends fixes the weak ends</h2>
+  <p>Your name carries the entire pitch — that's rare, and the site should ride it hard. The positioning line every page hangs off:</p>
+  <div class="copyblock">
+    <span class="lbl">Positioning statement</span>
+    <p class="big">Weakends is a media &amp; AI agency for day-to-day business owners. We find the weakest end of your operation — content, ads, or automation — and make it your strongest.</p>
+  </div>
+  <p class="note">Rule for all copy on the site: every section either names a weak end or proves we fix them. If a sentence does neither, cut it.</p>
+</section>
+
+<section>
+  <p class="eyebrow">02 · The top of the page</p>
+  <h2>The money zone: nav → hero → proof strip</h2>
+  <p>Visitors decide in the first screen. Clay's lesson: sentence one says what you are, sentence two names the dream, and proof appears before any selling paragraph. Here are three hero options — <strong>A is what's live in the prototype and my recommendation.</strong></p>
+
+  <div class="opt pick">
+    <div class="tag"><span>Option A — the diagnosis</span><b>★ Recommended · currently live</b></div>
+    <div class="body">
+      <p class="h">Every business has <em>weak ends.</em> We fix them.</p>
+      <p class="s">Weakends is a media &amp; AI agency for day-to-day business owners. We take the operations you don't have time for — content, ads, automation — and turn them into your strongest end.</p>
+      <p class="why"><b>Why it works</b> — Lands the name's wordplay in 3 seconds, makes the visitor self-diagnose ("what's MY weak end?"), and the orange scribble under "weak ends" gives the motion moment. Clear beats clever, and this is both.</p>
+    </div>
+  </div>
+
+  <div class="opt">
+    <div class="tag"><span>Option B — the challenge</span></div>
+    <div class="body">
+      <p class="h">What's the <em>weakest end</em> of your business?</p>
+      <p class="s">Content, ads, or the hours you lose to busywork? Weakends finds it and fixes it — and you don't pay a retainer until the numbers prove we did.</p>
+      <p class="why"><b>Why it works</b> — Opens with a question the visitor answers in their head, then plugs the performance trial in the very first breath. Strongest if the trial is THE differentiator you want to lead with.</p>
+    </div>
+  </div>
+
+  <div class="opt">
+    <div class="tag"><span>Option C — the promise</span></div>
+    <div class="body">
+      <p class="h">Strong all week. Even the <em>weak ends.</em></p>
+      <p class="s">Weakends runs the content, ads, and automation your business needs daily — so your operation never takes a day off, even when you do.</p>
+      <p class="why"><b>Why it works</b> — Doubles the pun (weekends / weak ends) and sells the outcome: a business that runs while you rest. Softest sell of the three; best if you want charm over punch.</p>
+    </div>
+  </div>
+
+  <h3>The rest of the top zone, exactly placed</h3>
+  <div class="tablewrap"><table>
+    <tr><th>Element</th><th>Copy</th><th>Placement logic</th></tr>
+    <tr><td><b>Nav</b></td><td class="mono">WEAKENDS. &nbsp;|&nbsp; Services · Work · Trial · [Book a performance trial]</td><td>CTA pill top-right, sticky — visible on every scroll, Clay-style.</td></tr>
+    <tr><td><b>Eyebrow</b></td><td class="mono">MEDIA · ADS · AI · GROWTH</td><td>Your four sectors in 4 words, above the H1 — sets category before the hook lands.</td></tr>
+    <tr><td><b>Primary CTA</b></td><td class="mono">Book a performance trial</td><td>Under the sub-headline. Add microcopy beneath: <code>15 min · no retainer · real numbers</code> — three objections dead before the click.</td></tr>
+    <tr><td><b>Secondary CTA</b></td><td class="mono">See the work ↓</td><td>For visitors not ready to book — keeps them scrolling instead of leaving.</td></tr>
+    <tr><td><b>Proof strip</b></td><td class="mono">CONTENT THAT COMPOUNDS ✦ ADS THAT PAY FOR THEMSELVES ✦ OPS THAT RUN WHILE YOU REST ✦ NO RETAINER UNTIL THE NUMBERS SAY SO</td><td>Scrolling marquee directly under the hero — attitude now, swaps for real client logos later without moving anything.</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">03 · Full page placement</p>
+  <h2>Nine blocks, one funnel</h2>
+  <p>The order follows the pattern that makes Clay work: <strong>claim → vouch → explain → prove → de-risk → close.</strong> Orange blocks are the two conversion moments.</p>
+  <div class="wire">
+    <div class="wf hot"><span class="nm"><i>01</i>Sticky nav</span><span class="job">CTA never leaves the screen</span></div>
+    <div class="wf hot"><span class="nm"><i>02</i>Hero — jumping text + scribble</span><span class="job">The claim: name the weak ends, promise the fix</span></div>
+    <div class="wf"><span class="nm"><i>03</i>Marquee proof strip</span><span class="job">Attitude + future logo home</span></div>
+    <div class="wf"><span class="nm"><i>04</i>Services split — text left, 5 tabs right</span><span class="job">The explain: your Clay screenshot section</span></div>
+    <div class="wf"><span class="nm"><i>05</i>Client logo strip (placeholders ×5)</span><span class="job">The vouch: borrowed trust, clickable later</span></div>
+    <div class="wf"><span class="nm"><i>06</i>Work grid — reel drop-zones ×4</span><span class="job">The prove: your reels autoplay muted here</span></div>
+    <div class="wf"><span class="nm"><i>07</i>Performance trial — 3 steps</span><span class="job">The de-risk: kill the "agencies are a gamble" fear</span></div>
+    <div class="wf hot"><span class="nm"><i>08</i>Final CTA — "Ready to fix your weak ends?"</span><span class="job">The close: one button, nothing else</span></div>
+    <div class="wf"><span class="nm"><i>09</i>Footer</span><span class="job">Socials (placeholders) + the tagline</span></div>
+  </div>
+  <p class="note">One deliberate deviation from Clay: they put the logo wall directly under the hero because their logos are Meta and Google. Yours are placeholders for now, so the marquee holds that slot and the logo strip sits after services — when your real logos land, we can promote them up to slot 03 in one move.</p>
+</section>
+
+<section>
+  <p class="eyebrow">04 · Section copy, ready to review</p>
+  <h2>The words for every block</h2>
+
+  <h3>04 · Services split (your screenshot section)</h3>
+  <div class="copyblock">
+    <span class="lbl">Left column — lead</span>
+    <p class="big">We plug into your business exactly where it's weakest — and only there.</p>
+    <p>Five ways in. Every engagement starts with a performance trial, so you see results before you ever commit to a retainer.</p>
+  </div>
+  <div class="tablewrap"><table>
+    <tr><th>Tab (right column)</th><th>One-liner when expanded</th></tr>
+    <tr><td><b>Content &amp; Media</b></td><td>Attention is the only currency online. We produce short-form content and motion graphics that earn it daily — without you touching a camera.</td></tr>
+    <tr><td><b>Paid Ads</b></td><td>Ads shouldn't feel like a slot machine. We make the creative and manage the spend so every dollar reports back to you.</td></tr>
+    <tr><td><b>AI &amp; Automation</b></td><td>The busywork eating your week — follow-ups, posting, admin — we automate it with AI so your operations run while you rest.</td></tr>
+    <tr><td><b>Growth &amp; Scaling</b></td><td>More content, more channels, more customers — without more headcount. We build the system, then scale what the numbers prove.</td></tr>
+    <tr><td><b>Brand &amp; Web</b></td><td>Your website is your hardest-working salesperson. We make it look the part — and close like one.</td></tr>
+  </table></div>
+  <p class="note">Each one-liner sells the problem before the service — Clay's move. Tab names are still mine to swap whenever you give me your real five.</p>
+
+  <h3>06 · Work grid</h3>
+  <div class="copyblock">
+    <span class="lbl">Heading + intro</span>
+    <p class="big">The work speaks first.</p>
+    <p>Four tiles, muted autoplay loops of your best reels. Until then: labeled drop-zones so the layout is honest about what's coming.</p>
+  </div>
+
+  <h3>07 · Performance trial</h3>
+  <div class="copyblock">
+    <span class="lbl">Heading: How the performance trial works</span>
+    <p><b>Step 01 — Book a call.</b> Fifteen minutes. We find your weakest end — the one thing costing you the most attention, leads, or hours.</p>
+    <p><b>Step 02 — Trial sprint.</b> We run a short, focused sprint on exactly that. Real deliverables, real numbers — not a pitch deck.</p>
+    <p><b>Step 03 — Scale what works.</b> You keep us only if the numbers say so. No lock-in, no retainer-first contracts.</p>
+  </div>
+
+  <h3>08 · Final CTA + 09 · Footer</h3>
+  <div class="copyblock">
+    <span class="lbl">Close</span>
+    <p class="big">Ready to fix your weak ends?</p>
+    <p>One call. Fifteen minutes. We'll tell you exactly what we'd fix first — even if you don't hire us.</p>
+    <p class="mono">[ Book a performance trial ] → Calendly (placeholder)</p>
+  </div>
+  <div class="copyblock">
+    <span class="lbl">Footer tagline</span>
+    <p class="big">Weakends Agency — the weekend crew for your weekdays.</p>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">05 · Motion plan</p>
+  <h2>Where the page moves (and where it doesn't)</h2>
+  <ul>
+    <li><b>Hero:</b> words bounce in one-by-one on load; orange scribble draws itself under "weak ends" — the one orchestrated moment.</li>
+    <li><b>Marquee:</b> infinite scroll, pauses on hover.</li>
+    <li><b>Service tabs:</b> smooth accordion, first tab open by default so the pattern reads instantly.</li>
+    <li><b>Sections:</b> fade-and-rise on scroll (IntersectionObserver — same technique as Clay, no libraries).</li>
+    <li><b>Hovers:</b> cards lift, wordmark letters jump, CTA nudges up.</li>
+    <li><b>Restraint rule:</b> nothing else moves. When your reels land in the work grid, they become the main motion and everything around them stays calm.</li>
+  </ul>
+</section>
+
+<section>
+  <p class="eyebrow">06 · Placeholder ledger</p>
+  <h2>What's fake right now, on purpose</h2>
+  <div class="tablewrap"><table>
+    <tr><th>Placeholder</th><th>Count</th><th>Swaps in when</th></tr>
+    <tr><td>Client logo slots (dashed boxes, clickable)</td><td class="mono">×5</td><td>You tag the companies + their site links</td></tr>
+    <tr><td>Reel drop-zone tiles</td><td class="mono">×4</td><td>You send 3–4 reel files/links</td></tr>
+    <tr><td>"Book a performance trial" button target</td><td class="mono">×3</td><td>You send the Calendly link</td></tr>
+    <tr><td>Footer social links</td><td class="mono">×4</td><td>You send handles</td></tr>
+    <tr><td>Service tab names</td><td class="mono">×5</td><td>You confirm or rename my five</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <p class="eyebrow">07 · Next moves</p>
+  <h2>Decide these two things, I do the rest</h2>
+  <ul>
+    <li><b>Pick the hero: A, B, or C</b> (or mix — e.g. A's headline with B's sub). The prototype updates same-day.</li>
+    <li><b>Bless or fix the copy above</b> — tab names, trial steps, footer tagline. Mark up anything that doesn't sound like you.</li>
+  </ul>
+  <p class="note">After that: assets round (logos, reels, Calendly) → then the real build on your chosen platform. The prototype at the current link keeps evolving in place — same URL every round.</p>
+</section>
+
+<footer class="colo">
+  Blueprint v2 · supersedes the "steal this" playbook in the Clay teardown · prototype live at the Weakends Agency artifact · all files pushed to the repo branch claude/agency-websites-research-hq0zzw.
+</footer>
+
+</div>
