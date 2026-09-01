@@ -167,6 +167,21 @@
   .tile:nth-child(3){background:linear-gradient(160deg,#E7ECDB,#D4DEC2)}
   .tile:nth-child(4){background:linear-gradient(160deg,#EDEAE0,#E0D8C6)}
 
+  /* ---------- stats band ---------- */
+  .statsec{padding:72px 0}
+  .statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:36px}
+  .stattile{
+    border:1px solid var(--line);border-radius:14px;padding:30px 26px;background:var(--ground);
+    transition:transform .25s ease,border-color .25s;
+  }
+  .stattile:hover{transform:translateY(-5px);border-color:var(--accent)}
+  .stattile b{
+    display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(34px,5vw,52px);letter-spacing:-.02em;line-height:1;margin-bottom:12px;
+    font-variant-numeric:tabular-nums;
+  }
+  .stattile span{font-size:12.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+
   /* ---------- trial steps ---------- */
   .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px}
   .step{
@@ -309,6 +324,16 @@
     <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 02</span></div>
     <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 03</span></div>
     <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 04</span></div>
+  </div>
+</div></section>
+
+<section class="statsec" id="numbers"><div class="wrap">
+  <p class="kicker reveal">The numbers</p>
+  <h2 class="reveal">Your business never clocks out. Neither do we.</h2>
+  <div class="statrow reveal">
+    <div class="stattile"><b>8 FIGURES</b><span>In client sales generated</span></div>
+    <div class="stattile"><b>20,000+ HRS</b><span>Bought back for clients</span></div>
+    <div class="stattile"><b>24/7</b><span>Automated systems running</span></div>
   </div>
 </div></section>
 
