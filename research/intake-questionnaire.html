@@ -1,0 +1,336 @@
+<title>Weakends Site Intake</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style id="wk-style">
+  :root{
+    --ground:#FBFAF6; --surface:#F3F1E9; --ink:#1C1B17; --muted:#6E6A5F;
+    --line:#E2DFD3; --accent:#2743C7; --accent-soft:#E8EBFA; --ok:#1E7A46;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+      --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E; --ok:#5FBF8A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+    --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E; --ok:#5FBF8A;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--ground);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:16.5px;line-height:1.6;margin:0}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px 120px}
+  header.mast{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 14px}
+  h1{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:clamp(32px,6vw,46px);line-height:1.05;letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+  .standfirst{color:var(--muted);font-size:17px;margin:0;max-width:560px}
+  .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-top:16px}
+  .meta b{color:var(--ok);font-weight:500}
+  section{padding-top:44px}
+  h2{font-family:Archivo,sans-serif;font-weight:700;font-size:22px;letter-spacing:-.015em;margin:6px 0 6px}
+  .sechint{color:var(--muted);font-size:14.5px;margin:0 0 22px}
+  .q{margin:0 0 26px}
+  .q label,.q .qlabel{display:block;font-family:Archivo,sans-serif;font-weight:700;font-size:15.5px;letter-spacing:-.01em;margin-bottom:4px}
+  .q .hint{display:block;color:var(--muted);font-size:13.5px;font-weight:400;font-family:"Source Serif 4",Georgia,serif;margin-bottom:8px}
+  input[type=text],textarea{
+    width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--line);
+    border-radius:6px;padding:11px 13px;font-family:"Source Serif 4",Georgia,serif;font-size:15.5px;line-height:1.5;
+  }
+  textarea{min-height:88px;resize:vertical}
+  input:focus-visible,textarea:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  ::placeholder{color:var(--muted);opacity:.7}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips button{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.02em;
+    background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:99px;
+    padding:8px 15px;cursor:pointer;
+  }
+  .chips button.on{background:var(--accent-soft);border-color:var(--accent);color:var(--accent);font-weight:500}
+  .bar{
+    position:fixed;left:0;right:0;bottom:0;background:var(--ground);border-top:1px solid var(--line);
+    padding:12px 20px;display:flex;justify-content:center;gap:10px;flex-wrap:wrap;align-items:center;
+  }
+  .bar .count{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);margin-right:6px}
+  .btn{
+    font-family:Archivo,sans-serif;font-weight:700;font-size:15px;border-radius:6px;cursor:pointer;
+    padding:11px 22px;border:1px solid var(--line);background:var(--surface);color:var(--ink);
+  }
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+  :root[data-theme="dark"] .btn.primary{color:#12121A}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#12121A}}
+  .btn[disabled]{opacity:.55;cursor:default}
+  #toast{
+    position:fixed;left:50%;transform:translateX(-50%);bottom:76px;background:var(--ink);color:var(--ground);
+    font-family:"IBM Plex Mono",monospace;font-size:13px;padding:10px 18px;border-radius:6px;max-width:90vw;text-align:center;
+  }
+  hr.sep{border:none;border-top:1px solid var(--line);margin:44px 0 0}
+</style>
+<script id="wk-data" type="application/json">{"savedAt":null,"answers":{}}</script>
+<div id="app"></div>
+<script id="wk-main">
+const SELF = document.getElementById('wk-main').textContent;
+const FONTS = '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">';
+
+const TPL = `
+<div class="wrap">
+  <header class="mast">
+    <p class="eyebrow">Weakends Media Team &middot; website intake</p>
+    <h1>Tell me about your agency</h1>
+    <p class="standfirst">Answer what you know, skip what you don't &mdash; rough notes beat perfect sentences. Hit <b>Save answers</b> at the bottom when you're done, then tell Claude "done" in the chat.</p>
+    <p class="meta" id="savedline"></p>
+  </header>
+
+  <section>
+    <h2>1 &middot; The basics</h2>
+    <p class="sechint">Names, links, and whatever brand pieces already exist.</p>
+    <div class="q"><label for="q_name">Official agency name as it should appear on the site</label>
+      <input type="text" id="q_name" data-q="q_name" placeholder="e.g. Weakends Media Team, WEAKENDS, Weakends Media&hellip;"></div>
+    <div class="q"><label for="q_domain">Do you have a domain?</label>
+      <input type="text" id="q_domain" data-q="q_domain" placeholder="e.g. weakends.media &mdash; or &quot;not yet, need one&quot;"></div>
+    <div class="q"><span class="qlabel">What brand assets exist already?</span>
+      <div class="chips" data-q="q_brand">
+        <button type="button" data-v="Full brand kit (logo, colors, fonts)">Full brand kit</button>
+        <button type="button" data-v="Just a logo">Just a logo</button>
+        <button type="button" data-v="Colors only">Colors only</button>
+        <button type="button" data-v="Nothing yet - build it for me">Nothing yet</button>
+      </div></div>
+    <div class="q"><label for="q_brand_links">Drop anything you have <span class="hint">Logo file links, hex color codes, font names &mdash; whatever exists.</span></label>
+      <textarea id="q_brand_links" data-q="q_brand_links" placeholder="Links / hex codes / font names&hellip;"></textarea></div>
+    <div class="q"><label for="q_socials">Social accounts to link on the site</label>
+      <textarea id="q_socials" data-q="q_socials" placeholder="Instagram, TikTok, YouTube, X handles&hellip;"></textarea></div>
+  </section>
+
+  <section>
+    <h2>2 &middot; Positioning</h2>
+    <p class="sechint">This becomes the hero headline and the "why us" copy &mdash; the most important section here.</p>
+    <div class="q"><label for="q_pitch">Explain what you do like you're telling a friend <span class="hint">One or two sentences. Don't polish it &mdash; I'll do that.</span></label>
+      <textarea id="q_pitch" data-q="q_pitch" placeholder="We make&hellip; for&hellip; so they can&hellip;"></textarea></div>
+    <div class="q"><span class="qlabel">Which is the CORE offer &mdash; the thing you want to be known for?</span>
+      <div class="chips" data-q="q_core">
+        <button type="button" data-v="AI content">AI content</button>
+        <button type="button" data-v="Paid ads">Paid ads</button>
+        <button type="button" data-v="Short-form media production">Short-form media</button>
+        <button type="button" data-v="Growth and scaling">Growth &amp; scaling</button>
+        <button type="button" data-v="All four equally">All four equally</button>
+      </div></div>
+    <div class="q"><label for="q_client">Describe your dream client <span class="hint">Industry, size, example brands. Who should feel "this site is talking to me"?</span></label>
+      <textarea id="q_client" data-q="q_client" placeholder="e.g. trading/finance brands, ecom stores doing $50k+/mo, personal brands&hellip;"></textarea></div>
+    <div class="q"><label for="q_why">Why do clients pick you over another agency? <span class="hint">Be honest: speed? price? taste? results? AI workflow? Weekend turnarounds?</span></label>
+      <textarea id="q_why" data-q="q_why"></textarea></div>
+    <div class="q"><span class="qlabel">Tone of the site</span>
+      <div class="chips" data-q="q_tone">
+        <button type="button" data-v="Bold and edgy">Bold &amp; edgy</button>
+        <button type="button" data-v="Premium and minimal">Premium &amp; minimal</button>
+        <button type="button" data-v="Friendly and personal">Friendly &amp; personal</button>
+        <button type="button" data-v="Corporate and polished">Corporate &amp; polished</button>
+      </div></div>
+  </section>
+
+  <section>
+    <h2>3 &middot; The offer</h2>
+    <p class="sechint">What people can actually buy from you.</p>
+    <div class="q"><label for="q_services">List everything you sell <span class="hint">Services, packages, retainers &mdash; rough list is fine.</span></label>
+      <textarea id="q_services" data-q="q_services" placeholder="e.g. 30 reels/month retainer, ad creative packs, full channel management&hellip;"></textarea></div>
+    <div class="q"><span class="qlabel">Pricing on the site?</span>
+      <div class="chips" data-q="q_pricing">
+        <button type="button" data-v="Show real prices">Show real prices</button>
+        <button type="button" data-v="Show 'from $X'">"From $X"</button>
+        <button type="button" data-v="No prices - book a call">No prices &mdash; book a call</button>
+      </div></div>
+    <div class="q"><span class="qlabel">How do you sell?</span>
+      <div class="chips" data-q="q_model">
+        <button type="button" data-v="Fixed packages">Fixed packages</button>
+        <button type="button" data-v="Custom per client">Custom per client</button>
+        <button type="button" data-v="Both">Both</button>
+      </div></div>
+  </section>
+
+  <section>
+    <h2>4 &middot; Proof</h2>
+    <p class="sechint">Clay sells with 21 logos before a single paragraph. This is your version of that wall.</p>
+    <div class="q"><label for="q_logos">Client names you're allowed to show</label>
+      <textarea id="q_logos" data-q="q_logos" placeholder="Names/brands &mdash; or &quot;none public yet&quot;"></textarea></div>
+    <div class="q"><label for="q_numbers">Your best numbers <span class="hint">Total views, followers gained, videos shipped, revenue driven &mdash; anything countable.</span></label>
+      <textarea id="q_numbers" data-q="q_numbers" placeholder="e.g. 12M views generated, 400+ reels shipped, 48h turnaround&hellip;"></textarea></div>
+    <div class="q"><label for="q_testimonials">Testimonials <span class="hint">Paste quotes with names, or "none yet".</span></label>
+      <textarea id="q_testimonials" data-q="q_testimonials"></textarea></div>
+    <div class="q"><label for="q_work">Links to your 3&ndash;5 best pieces of work <span class="hint">Reels, campaigns, anything &mdash; these become the homepage video loops.</span></label>
+      <textarea id="q_work" data-q="q_work" placeholder="Paste links&hellip;"></textarea></div>
+  </section>
+
+  <section>
+    <h2>5 &middot; Getting clients to reach out</h2>
+    <p class="sechint">The one action every page funnels toward.</p>
+    <div class="q"><span class="qlabel">What should a visitor do?</span>
+      <div class="chips" data-q="q_cta">
+        <button type="button" data-v="Book a call (calendar link)">Book a call</button>
+        <button type="button" data-v="Fill a short form">Short form</button>
+        <button type="button" data-v="Email me">Email</button>
+        <button type="button" data-v="DM on socials">DM on socials</button>
+      </div></div>
+    <div class="q"><label for="q_cta_detail">The link/address behind that button</label>
+      <input type="text" id="q_cta_detail" data-q="q_cta_detail" placeholder="Calendly link / email / handle&hellip;"></div>
+    <div class="q"><label for="q_process">What happens after someone reaches out? <span class="hint">Your steps from first contact to first delivery &mdash; becomes the "how it works" section.</span></label>
+      <textarea id="q_process" data-q="q_process" placeholder="e.g. 1) intro call 2) strategy 3) first batch in 7 days&hellip;"></textarea></div>
+  </section>
+
+  <section>
+    <h2>6 &middot; Look &amp; build</h2>
+    <p class="sechint">Last stretch &mdash; how it should feel and where it should live.</p>
+    <div class="q"><span class="qlabel">Overall vibe</span>
+      <div class="chips" data-q="q_vibe">
+        <button type="button" data-v="Dark and cinematic">Dark &amp; cinematic</button>
+        <button type="button" data-v="Light and clean">Light &amp; clean</button>
+        <button type="button" data-v="Loud and colorful">Loud &amp; colorful</button>
+        <button type="button" data-v="Claude decides">Claude decides</button>
+      </div></div>
+    <div class="q"><label for="q_inspo">2&ndash;3 sites whose vibe you love <span class="hint">Clay counts. What specifically do you like about each?</span></label>
+      <textarea id="q_inspo" data-q="q_inspo"></textarea></div>
+    <div class="q"><span class="qlabel">Show the team?</span>
+      <div class="chips" data-q="q_team">
+        <button type="button" data-v="Faces and names">Faces &amp; names</button>
+        <button type="button" data-v="Brand only - faceless">Brand only &mdash; faceless</button>
+      </div></div>
+    <div class="q"><span class="qlabel">Where should the site be built?</span>
+      <div class="chips" data-q="q_platform">
+        <button type="button" data-v="Code it (Next.js in this repo)">Code it in this repo</button>
+        <button type="button" data-v="Framer">Framer</button>
+        <button type="button" data-v="Webflow">Webflow</button>
+        <button type="button" data-v="Claude decides">Claude decides</button>
+      </div></div>
+    <div class="q"><label for="q_deadline">When do you want v1 live?</label>
+      <input type="text" id="q_deadline" data-q="q_deadline" placeholder="e.g. two weeks / ASAP / no rush"></div>
+    <div class="q"><label for="q_extra">Anything else I should know?</label>
+      <textarea id="q_extra" data-q="q_extra"></textarea></div>
+  </section>
+
+  <hr class="sep">
+</div>
+<div class="bar">
+  <span class="count" id="count"></span>
+  <button class="btn" id="copybtn" type="button">Copy answers</button>
+  <button class="btn primary" id="savebtn" type="button">Save answers</button>
+</div>
+<div id="toast" hidden></div>`;
+
+const LABELS = {
+  q_name:'Agency name', q_domain:'Domain', q_brand:'Brand assets', q_brand_links:'Brand links/colors',
+  q_socials:'Socials', q_pitch:'What we do (pitch)', q_core:'Core offer', q_client:'Dream client',
+  q_why:'Why clients pick us', q_tone:'Tone', q_services:'Services sold', q_pricing:'Pricing on site',
+  q_model:'Sales model', q_logos:'Showable clients', q_numbers:'Best numbers', q_testimonials:'Testimonials',
+  q_work:'Best work links', q_cta:'Main call to action', q_cta_detail:'CTA link/address', q_process:'Process after contact',
+  q_vibe:'Vibe', q_inspo:'Inspiration sites', q_team:'Show team?', q_platform:'Build platform',
+  q_deadline:'Deadline', q_extra:'Anything else'
+};
+
+let state = {savedAt:null, answers:{}};
+try{ state = JSON.parse(document.getElementById('wk-data').textContent) || state; }catch(e){}
+
+const app = document.getElementById('app');
+app.innerHTML = TPL;
+const $ = s => document.querySelector(s);
+const $$ = s => Array.from(document.querySelectorAll(s));
+
+function applyAnswers(a){
+  $$('#app input[data-q], #app textarea[data-q]').forEach(el=>{ el.value = a[el.dataset.q] || ''; });
+  $$('#app .chips').forEach(g=>{
+    const v = a[g.dataset.q] || '';
+    g.querySelectorAll('button').forEach(b=> b.classList.toggle('on', b.dataset.v === v));
+  });
+  updateCount();
+}
+function collect(){
+  const a = {};
+  $$('#app input[data-q], #app textarea[data-q]').forEach(el=>{ const v = el.value.trim(); if(v) a[el.dataset.q] = v; });
+  $$('#app .chips').forEach(g=>{ const on = g.querySelector('button.on'); if(on) a[g.dataset.q] = on.dataset.v; });
+  return a;
+}
+function updateCount(){
+  const total = $$('#app [data-q]').length;
+  const done = Object.keys(collect()).length;
+  $('#count').textContent = done + ' / ' + total + ' answered';
+}
+let toastTimer;
+function toast(msg, ms){
+  const t = $('#toast'); t.textContent = msg; t.hidden = false;
+  clearTimeout(toastTimer); toastTimer = setTimeout(()=>{ t.hidden = true; }, ms || 3500);
+}
+function saveDraft(){
+  try{ localStorage.setItem('wk-intake-draft', JSON.stringify({savedAt:null, answers: collect()})); }catch(e){}
+}
+
+applyAnswers(state.answers);
+if(state.savedAt){
+  const d = new Date(state.savedAt);
+  $('#savedline').innerHTML = '<b>&#10003; Saved ' + d.toLocaleString() + '</b> &mdash; edit and save again any time.';
+}else{
+  let draft = null;
+  try{ draft = JSON.parse(localStorage.getItem('wk-intake-draft')); }catch(e){}
+  if(draft && draft.answers && Object.keys(draft.answers).length){
+    applyAnswers(draft.answers);
+    toast('Restored your unsaved draft');
+  }
+}
+
+let draftTimer;
+app.addEventListener('input', ()=>{ updateCount(); clearTimeout(draftTimer); draftTimer = setTimeout(saveDraft, 800); });
+app.addEventListener('click', e=>{
+  const b = e.target.closest('.chips button'); if(!b) return;
+  const g = b.parentElement; const was = b.classList.contains('on');
+  g.querySelectorAll('button').forEach(x=>x.classList.remove('on'));
+  if(!was) b.classList.add('on');
+  updateCount(); saveDraft();
+});
+
+function buildDoc(jsonText){
+  const css = document.getElementById('wk-style').textContent;
+  return '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<title>Weakends Site Intake</title>\n'
+    + FONTS + '\n<style id="wk-style">' + css + '</style>\n</head>\n<body>\n'
+    + '<script id="wk-data" type="application/json">' + jsonText + '</scr' + 'ipt>\n'
+    + '<div id="app"></div>\n'
+    + '<script id="wk-main">' + SELF + '</scr' + 'ipt>\n</body>\n</html>';
+}
+
+$('#savebtn').addEventListener('click', async ()=>{
+  const btn = $('#savebtn');
+  btn.disabled = true; btn.textContent = 'Saving…';
+  saveDraft();
+  let ns = null;
+  if(window.claude && typeof window.claude.use === 'function'){
+    try{ ns = await window.claude.use('artifact'); }catch(e){ ns = null; }
+  }
+  if(!ns){
+    btn.disabled = false; btn.textContent = 'Save answers';
+    toast('Saving isn’t available in this view — use “Copy answers” and paste them in the chat.', 6000);
+    return;
+  }
+  const newState = {savedAt: new Date().toISOString(), answers: collect()};
+  const jsonText = JSON.stringify(newState).replace(/</g, '\\u003c');
+  try{
+    await ns.publish(buildDoc(jsonText));
+    // success: the shell reloads this view to the saved version
+  }catch(err){
+    const code = err && err.code;
+    if(code === 'conflict'){ return; } // view reloads to the winning version; draft is in localStorage
+    btn.disabled = false; btn.textContent = 'Save answers';
+    toast('Couldn’t save (' + (code || 'error') + '). Your answers are kept here — try again, or use “Copy answers”.', 6000);
+  }
+});
+
+$('#copybtn').addEventListener('click', ()=>{
+  const a = collect();
+  const lines = Object.keys(LABELS).filter(k=>a[k]).map(k=> LABELS[k] + ':\n' + a[k]);
+  if(!lines.length){ toast('Nothing to copy yet — answer a few questions first.'); return; }
+  const text = 'WEAKENDS SITE INTAKE — my answers\n\n' + lines.join('\n\n');
+  const done = ()=> toast('Copied — paste it in the chat with Claude.');
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done, ()=> fallbackCopy(text, done));
+  }else{ fallbackCopy(text, done); }
+});
+function fallbackCopy(text, done){
+  const ta = document.createElement('textarea');
+  ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try{ document.execCommand('copy'); done(); }catch(e){ toast('Copy failed — select and copy your answers manually.'); }
+  ta.remove();
+}
+</script>

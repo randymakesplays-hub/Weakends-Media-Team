@@ -1,0 +1,271 @@
+<title>Clay Teardown</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF6;
+    --surface:#F3F1E9;
+    --ink:#1C1B17;
+    --muted:#6E6A5F;
+    --line:#E2DFD3;
+    --accent:#2743C7;
+    --accent-ink:#2743C7;
+    --quote-bg:#F3F1E9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#171613;
+      --surface:#201F1A;
+      --ink:#EAE7DE;
+      --muted:#A39E90;
+      --line:#302E27;
+      --accent:#8FA2F2;
+      --accent-ink:#A9B8F6;
+      --quote-bg:#201F1A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#171613;
+    --surface:#201F1A;
+    --ink:#EAE7DE;
+    --muted:#A39E90;
+    --line:#302E27;
+    --accent:#8FA2F2;
+    --accent-ink:#A9B8F6;
+    --quote-bg:#201F1A;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:"Source Serif 4",Georgia,serif;
+    font-size:17px;
+    line-height:1.65;
+    margin:0;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px 96px}
+  a{color:var(--accent-ink);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+  header.masthead{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--accent-ink);font-weight:500;margin:0 0 18px;
+  }
+  h1{
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    font-weight:800;font-size:clamp(38px,7vw,60px);line-height:1.02;
+    letter-spacing:-.02em;margin:0 0 20px;text-wrap:balance;
+  }
+  .standfirst{font-size:20px;line-height:1.55;color:var(--muted);max-width:640px;margin:0}
+  .standfirst strong{color:var(--ink);font-weight:600}
+
+  section{padding-top:56px}
+  h2{
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    font-weight:700;font-size:clamp(24px,4vw,32px);line-height:1.15;
+    letter-spacing:-.015em;margin:8px 0 18px;text-wrap:balance;
+  }
+  h3{
+    font-family:Archivo,"Helvetica Neue",Arial,sans-serif;
+    font-weight:700;font-size:18px;margin:32px 0 10px;letter-spacing:-.01em;
+  }
+  p{margin:0 0 16px;max-width:680px}
+  .note{color:var(--muted);font-size:15px}
+
+  /* stat row */
+  .stats{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 8px}
+  .stat{
+    flex:1 1 140px;border:1px solid var(--line);padding:16px 18px;
+    background:var(--surface);
+  }
+  .stat b{
+    display:block;font-family:Archivo,sans-serif;font-weight:800;
+    font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+  }
+  .stat span{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* tables */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);margin:20px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+  th{
+    font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.1em;
+    text-transform:uppercase;text-align:left;color:var(--muted);font-weight:500;
+    padding:10px 14px;border-bottom:1px solid var(--line);background:var(--surface);
+  }
+  td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.mono, .mono{font-family:"IBM Plex Mono",monospace;font-size:13px}
+  td .cnt{color:var(--accent-ink);font-family:"IBM Plex Mono",monospace;font-size:12.5px;white-space:nowrap}
+
+  /* quote cards */
+  blockquote{
+    margin:20px 0;padding:20px 24px;background:var(--quote-bg);
+    border-left:3px solid var(--accent);
+  }
+  blockquote p{font-size:17px;margin:0 0 8px;font-style:italic}
+  blockquote footer{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);font-style:normal;letter-spacing:.05em}
+  .why{margin:6px 0 26px;padding-left:2px}
+  .why b{font-family:Archivo,sans-serif;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
+
+  ul{padding-left:22px;margin:0 0 16px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--accent-ink)}
+
+  .steal{counter-reset:steal;list-style:none;padding:0;margin:24px 0 0}
+  .steal li{
+    counter-increment:steal;border-top:1px solid var(--line);
+    padding:18px 0 18px 58px;position:relative;margin:0;max-width:none;
+  }
+  .steal li::before{
+    content:counter(steal,decimal-leading-zero);
+    position:absolute;left:0;top:20px;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--accent-ink);
+  }
+  .steal li b{font-family:Archivo,sans-serif;font-weight:700;display:block;margin-bottom:4px;letter-spacing:-.01em}
+  .steal li p{margin:0;font-size:15.5px;color:var(--muted)}
+  .steal li p strong{color:var(--ink)}
+
+  .divider{border:none;border-top:1px solid var(--line);margin:56px 0 0}
+  footer.colophon{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);line-height:1.8}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:3px}
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <p class="eyebrow">Site teardown · clay.global · Sept 2026</p>
+  <h1>How Clay's website sells $100k projects</h1>
+  <p class="standfirst">You're right that it's way more than a landing page. Clay runs a <strong>five-part site system</strong> where the homepage is theater, the service pages catch search traffic, and the copy quietly kills every objection a buyer has. Here's the whole machine, taken apart — pulled from their live pages, page data, and JavaScript bundles.</p>
+</header>
+
+<section>
+  <p class="eyebrow">01 · The system</p>
+  <h2>It's not a landing page — it's five page types doing five jobs</h2>
+  <p>Every page on <a href="https://clay.global">clay.global</a> belongs to one of five types, and each has exactly one job. Nothing tries to do everything at once — that's the first thing to copy.</p>
+  <div class="tablewrap"><table>
+    <tr><th>Page type</th><th>Example</th><th>Its one job</th></tr>
+    <tr><td><b>Homepage</b></td><td class="mono"><a href="https://clay.global">clay.global</a></td><td>Make you feel the quality in 5 seconds. Almost no selling — motion, logos, and work do it.</td></tr>
+    <tr><td><b>Service landing pages</b></td><td class="mono"><a href="https://clay.global/landing-websites">/landing-websites</a></td><td>Catch Google searches ("web design agency", "UX agency") and convert them. This is where the persuasion copy lives.</td></tr>
+    <tr><td><b>Case studies</b></td><td class="mono"><a href="https://clay.global/work/slack">/work/slack</a></td><td>Proof. Challenge → solution → one killer result sentence → next case study (never a dead end).</td></tr>
+    <tr><td><b>About</b></td><td class="mono"><a href="https://clay.global/about">/about</a></td><td>De-risk the purchase with numbers and "why us" arguments.</td></tr>
+    <tr><td><b>Industry pages + blog</b></td><td class="mono"><a href="https://clay.global/fintech">/fintech</a>, <a href="https://clay.global/blog">/blog</a></td><td>SEO surface area. They even run Ahrefs analytics — they treat search as a growth channel, not an afterthought.</td></tr>
+  </table></div>
+  <p class="note">Every page funnels to the same two words — "Let's Talk" — and every case study ends by handing you the next one. You can never scroll off the end of the pitch.</p>
+</section>
+
+<section>
+  <p class="eyebrow">02 · Under the hood</p>
+  <h2>The components that make it come alive</h2>
+  <p>I pulled their homepage HTML and JavaScript bundles. The "alive" feeling is four specific techniques stacked — none of them is a plugin you just switch on, but all of them are copyable.</p>
+
+  <div class="tablewrap"><table>
+    <tr><th>Layer</th><th>What they use</th><th>What it does for the feel</th></tr>
+    <tr><td><b>Framework</b></td><td class="mono">Next.js (React), server-rendered</td><td>Pages arrive pre-built, so the site is instant despite all the media. Speed reads as quality.</td></tr>
+    <tr><td><b>CMS</b></td><td class="mono">Sanity (headless)</td><td>The whole site is assembled from reusable content blocks — see the component list below.</td></tr>
+    <tr><td><b>Motion #1 — video</b></td><td class="mono">11 <code>&lt;video&gt;</code> tags, 24 MP4 refs on the homepage alone</td><td>Muted, autoplaying, looping MP4s self-hosted on their CDN. This is the single biggest "alive" trick: nearly every image you'd expect is actually a silent video loop. No YouTube embeds anywhere.</td></tr>
+    <tr><td><b>Motion #2 — WebGL</b></td><td class="mono">Three.js + custom shaders <span class="cnt">(44 shader refs)</span></td><td>3D and distortion effects written in-house — not an off-the-shelf animation library.</td></tr>
+    <tr><td><b>Motion #3 — easing</b></td><td class="mono">lerp smoothing <span class="cnt">(21 refs)</span> + mouse/scroll handlers</td><td>Elements ease toward the cursor and scroll position instead of snapping. That "buttery" feel is literally this one math function.</td></tr>
+    <tr><td><b>Motion #4 — reveals</b></td><td class="mono">IntersectionObserver + requestAnimationFrame</td><td>Sections fade/slide in as you scroll to them. No GSAP, no Framer Motion — hand-rolled and lightweight.</td></tr>
+    <tr><td><b>Carousels</b></td><td class="mono">Swiper</td><td>The one off-the-shelf UI library they allow themselves.</td></tr>
+  </table></div>
+
+  <h3>Their actual component library</h3>
+  <p>The homepage's page data names every building block. This is Clay's homepage, in order, as their CMS sees it:</p>
+  <div class="tablewrap"><table>
+    <tr><th>Component</th><th>What you see on screen</th></tr>
+    <tr><td class="mono">heroHome</td><td>Full-screen hero: one-line category claim + looping showreel video</td></tr>
+    <tr><td class="mono">componentLogoWall</td><td>21 client logos — Meta, Google, Stripe, Coca-Cola, Coinbase, Uber, Sony, Slack, Amazon…</td></tr>
+    <tr><td class="mono">componentWorkHome</td><td>14 case study cards, each with its own hover video loop</td></tr>
+    <tr><td class="mono">componentIndustryPreview</td><td>Industry teaser ("The Future of Finance is Intelligent" → fintech page)</td></tr>
+    <tr><td class="mono">componentAboutTop</td><td>Positioning statement + team montage</td></tr>
+    <tr><td class="mono">componentGalleryFullWidth</td><td>Full-bleed media gallery — pure atmosphere</td></tr>
+    <tr><td class="mono">componentTextVertical</td><td>Big vertical text moment ("We're creating standout brands…")</td></tr>
+    <tr><td class="mono">componentFeaturedArticles</td><td>Three blog posts — feeds the SEO engine</td></tr>
+    <tr><td class="mono">componentFaq</td><td>Six objection-killing FAQs (the real sales copy — next section)</td></tr>
+    <tr><td class="mono">partVideoResponsive</td><td>The reusable video-loop part that powers all of the above</td></tr>
+  </table></div>
+  <p class="note">Notice what's absent: no pricing tables, no feature grids, no pop-ups, no chat widget. Restraint is part of the design.</p>
+</section>
+
+<section>
+  <p class="eyebrow">03 · The copy</p>
+  <h2>The copywriting that makes customers buy in</h2>
+  <p>Clay's copy runs on a simple hierarchy: <strong>the homepage claims, the logos vouch, the case studies prove, the FAQs close.</strong> Verbatim examples of each move:</p>
+
+  <h3>Move 1 — Claim the category, then name the buyer's dream</h3>
+  <blockquote>
+    <p>"Clay is a global branding and UX design agency. We build transformative digital experiences for the world's leading brands by blending AI, design, and technology."</p>
+    <footer>— homepage hero</footer>
+  </blockquote>
+  <p class="why"><b>Why it works</b> — Sentence one says exactly what they are (no "we craft digital magic" vagueness). Sentence two contains the dream ("transformative"), the flattery ("world's leading brands"), and the 2026 keyword ("AI"). The formula: <em>[Name] is a [category]. We [outcome] for [who] by [how].</em></p>
+
+  <h3>Move 2 — Sell services in plain English, one line each</h3>
+  <blockquote>
+    <p>"A brand is more than just a logo or some colors. It's how people recognize and connect with your business."</p>
+    <p>"We combine smart design with behavioral science to make digital products that feel human."</p>
+    <p>"Your digital presence starts with your website. That's where your brand comes to life."</p>
+    <footer>— homepage service sections (Branding, Digital Products, Websites)</footer>
+  </blockquote>
+  <p class="why"><b>Why it works</b> — Zero jargon. Each line tells the client why the <em>category matters to them</em>, not what Clay does. They sell the problem before the service.</p>
+
+  <h3>Move 3 — Let borrowed trust do the heavy lifting</h3>
+  <p>The logo wall (Meta, Google, Stripe, Coca-Cola, Slack, Amazon, Uber, Sony…) sits directly under the hero. By the time you read a single paragraph of selling, 21 famous companies have already vouched for them. The site barely uses testimonials — logos and work replace them.</p>
+
+  <h3>Move 4 — Case studies framed as revenue, not decoration</h3>
+  <blockquote>
+    <p>"The demo is Slack's primary sales tool to connect with new users."</p>
+    <footer>— /work/slack</footer>
+  </blockquote>
+  <p class="why"><b>Why it works</b> — One sentence turns a design project into business infrastructure. Not "we made beautiful animations" but "the thing we built is how Slack sells." Every case study follows challenge → solution → one sentence like this → next case study.</p>
+
+  <h3>Move 5 — Numbers that de-risk the deal</h3>
+  <div class="stats">
+    <div class="stat"><b>78</b><span>global team members</span></div>
+    <div class="stat"><b>16</b><span>years in business</span></div>
+    <div class="stat"><b>529</b><span>projects completed</span></div>
+  </div>
+  <p class="why"><b>Why it works</b> — On the About page, three numbers answer the unspoken question "will these people still exist next year?" before it's asked.</p>
+
+  <h3>Move 6 — FAQs that are really objection killers</h3>
+  <p>The six homepage FAQs map one-to-one onto the reasons deals die. Each answer is a mini sales letter:</p>
+  <ul>
+    <li><strong>"Will juniors do my work?"</strong> → "Our cofounders oversee every project, while a design director leads the way." And on About: "We differentiate ourselves from large agencies where junior talent typically handles most of the work."</li>
+    <li><strong>"Can I afford you?"</strong> → "We offer three engagement models: time &amp; materials, fixed fee, and retainer" — flexibility without ever printing a price.</li>
+    <li><strong>"You're not in my timezone."</strong> → "Over the past 12 years, we have perfected our remote collaboration model" with clients in Saudi Arabia, China, Australia, Germany, the UK.</li>
+    <li><strong>"Are we too small for you?"</strong> → "Yes, we work with clients of all sizes… One of our most common scenarios involves preparing SaaS startups to cater to enterprise clients."</li>
+    <li><strong>"Will it last?"</strong> → "We create designs that can easily scale and sustain your business goals for years to come," with work "untouched for 5+ years."</li>
+  </ul>
+
+  <h3>Move 7 — A deliberately high-friction CTA</h3>
+  <blockquote>
+    <p>"Let's Talk. We'd love to learn more about you and what we can design and build together."</p>
+    <footer>— /contact · CTA: "Become a Client" · hey@clay.global · no form</footer>
+  </blockquote>
+  <p class="why"><b>Why it works (for them)</b> — There is no contact form. You email them. That friction is a positioning move: it says "we have enough demand to make you come to us." Steal the warm two-word tone; think twice before stealing the friction — it only works once your logo wall does the selling.</p>
+</section>
+
+<section>
+  <p class="eyebrow">04 · Steal this</p>
+  <h2>The Weakends playbook</h2>
+  <p>Adapted for a short-form media / AI content agency. You have one unfair advantage over Clay: <strong>they have to fake motion with shaders — your actual product is video.</strong></p>
+  <ol class="steal">
+    <li><b>Make your reels the homepage texture</b><p>Muted, autoplaying, looping MP4s everywhere Clay would use one — hero, work cards, section backgrounds. Self-host or use a CDN (Clay serves from Sanity's), compress hard, <strong>never embed YouTube/Instagram players</strong>.</p></li>
+    <li><b>Write the hero with Clay's formula</b><p><em>"Weakends is a short-form media agency. We turn [brands/traders/products] into daily attention machines with AI-powered content."</em> — category first, dream second, one "AI" allowed.</p></li>
+    <li><b>Put proof directly under the hero</b><p>Client logos if you have them; if not, swap borrowed trust for raw numbers — total views generated, reels shipped, follower growth. A wall of view-counts is a media agency's logo wall.</p></li>
+    <li><b>Case studies: challenge → solution → one killer sentence</b><p>End each with your version of the Slack line: <strong>"These reels are now [client]'s primary customer acquisition channel."</strong> Then auto-link to the next case study — no dead ends.</p></li>
+    <li><b>Sell the problem, not the service</b><p>One plain-English line per service: "Attention is the only currency online. We make content that earns it daily." No jargon, no "synergy".</p></li>
+    <li><b>Add the objection-killer FAQ</b><p>Who actually makes my content? How fast do you deliver? What does it cost (name your models, not your prices)? Do you work with small accounts? What if a video flops?</p></li>
+    <li><b>Stats trio on your About page</b><p>Reels produced / total views / avg. turnaround hours. Three numbers, huge type. Update monthly.</p></li>
+    <li><b>Build one page per sector for SEO</b><p>Clay's <code>/landing-*</code> pages each hunt one keyword. Yours: /ai-content-agency, /short-form-ads, /media-production, /growth-content — each with its own hero, proof, and FAQ.</p></li>
+    <li><b>Build in components, not pages</b><p>Whatever tool you use (Framer, Webflow, Next.js), make Hero, LogoWall/StatsWall, WorkGrid, ServiceBlock, FAQ, and VideoLoop reusable blocks. That's how Clay ships new pages fast and stays consistent.</p></li>
+    <li><b>Low-friction CTA — for now</b><p>Steal "Let's Talk", but pair it with a calendar link or 3-field form. Clay's email-only gate is a flex you earn later.</p></li>
+  </ol>
+</section>
+
+<hr class="divider">
+<footer class="colophon">
+  Sources: live fetches of clay.global (home, /landing-websites, /about, /work/slack, /contact), the homepage's Next.js page data (component names verbatim), and its JavaScript bundles (library detection: Three.js ×157, Swiper ×114, shader refs ×44, lerp ×21, requestAnimationFrame ×22, IntersectionObserver ×4). Stack: Next.js + Sanity CMS + Ahrefs analytics. Compiled for Weakends Media Team, September 2026.
+</footer>
+
+</div>

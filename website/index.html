@@ -1,0 +1,371 @@
+<title>Weakends Agency</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+  :root{
+    --ground:#FDFDFB;
+    --ink:#111310;
+    --muted:#5C6058;
+    --line:#E7E8E2;
+    --accent:#FF4D12;
+    --accent-dark:#D63C08;
+    --wash:#F4F5F0;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ground);color:var(--ink);margin:0;
+    font-family:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:17px;line-height:1.6;
+  }
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;background:rgba(253,253,251,.88);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .navin{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .wordmark{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;text-decoration:none;display:flex}
+  .wordmark span{display:inline-block}
+  .wordmark:hover span{animation:jump .5s ease both}
+  .wordmark span:nth-child(2){animation-delay:.04s}.wordmark span:nth-child(3){animation-delay:.08s}
+  .wordmark span:nth-child(4){animation-delay:.12s}.wordmark span:nth-child(5){animation-delay:.16s}
+  .wordmark span:nth-child(6){animation-delay:.2s}.wordmark span:nth-child(7){animation-delay:.24s}
+  .wordmark span:nth-child(8){animation-delay:.28s}
+  .wordmark .dot{color:var(--accent)}
+  .navlinks{display:flex;gap:26px;align-items:center}
+  .navlinks a{font-size:15px;font-weight:500;text-decoration:none;color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:640px){.navlinks a.hideS{display:none}}
+  .cta{
+    display:inline-block;background:var(--accent);color:#fff;border:none;cursor:pointer;
+    font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:15px;
+    padding:11px 22px;border-radius:99px;text-decoration:none;
+    transition:transform .15s ease,background .15s ease;
+  }
+  .cta:hover{background:var(--accent-dark);transform:translateY(-2px)}
+  .cta.big{font-size:17px;padding:15px 32px}
+
+  /* ---------- hero ---------- */
+  .hero{padding:96px 0 64px;position:relative;overflow:hidden}
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+    margin:0 0 22px;
+  }
+  h1{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(44px,8.5vw,92px);line-height:.98;letter-spacing:-.03em;
+    margin:0 0 28px;max-width:900px;text-wrap:balance;
+  }
+  h1 .jump{display:inline-block;animation:jump .7s cubic-bezier(.2,.9,.3,1.4) both}
+  .weakends-mark{position:relative;white-space:nowrap}
+  .weakends-mark svg{
+    position:absolute;left:-2%;bottom:-.12em;width:104%;height:.32em;overflow:visible;
+  }
+  .weakends-mark path{
+    fill:none;stroke:var(--accent);stroke-width:7;stroke-linecap:round;
+    stroke-dasharray:620;stroke-dashoffset:620;animation:draw 1s ease .9s forwards;
+  }
+  .hero .sub{font-size:clamp(17px,2.2vw,21px);color:var(--muted);max-width:620px;margin:0 0 36px}
+  .hero .sub strong{color:var(--ink);font-weight:600}
+  .heroctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .ghost{
+    font-weight:600;font-size:15px;text-decoration:none;color:var(--ink);
+    padding:11px 6px;border-bottom:2px solid var(--ink);
+  }
+  .ghost:hover{color:var(--accent);border-color:var(--accent)}
+  .blob{
+    position:absolute;border-radius:50%;filter:blur(2px);opacity:.55;pointer-events:none;
+    animation:float 9s ease-in-out infinite;
+  }
+  .b1{width:130px;height:130px;background:#FFE1D6;right:8%;top:16%}
+  .b2{width:70px;height:70px;background:#EAEFDF;right:22%;top:52%;animation-delay:-3s}
+  .b3{width:44px;height:44px;background:var(--accent);opacity:.14;right:14%;top:74%;animation-delay:-6s}
+
+  /* ---------- marquee ---------- */
+  .marquee{border-block:1px solid var(--line);padding:18px 0;overflow:hidden;background:var(--wash)}
+  .track{display:flex;gap:56px;width:max-content;animation:scroll 26s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  .track span{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;letter-spacing:.02em;
+    color:var(--muted);white-space:nowrap;
+  }
+  .track span b{color:var(--accent);font-weight:700}
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:96px 0}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 16px}
+  h2{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+    font-size:clamp(30px,4.6vw,48px);line-height:1.04;letter-spacing:-.025em;margin:0 0 18px;text-wrap:balance;
+  }
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- services split (Clay-style) ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:64px;align-items:start}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:40px}}
+  .split .lead{font-size:clamp(19px,2.4vw,24px);line-height:1.5;color:var(--ink);margin:0 0 18px;font-weight:500}
+  .split .leadnote{color:var(--muted);font-size:16px;margin:0}
+  .acc{border-top:1px solid var(--line)}
+  .accitem{border-bottom:1px solid var(--line)}
+  .acchead{
+    width:100%;background:none;border:none;cursor:pointer;text-align:left;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+    padding:22px 4px;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+    font-size:clamp(20px,2.6vw,27px);letter-spacing:-.02em;color:var(--ink);
+  }
+  .acchead .chev{
+    flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line);
+    display:grid;place-items:center;font-size:13px;color:var(--muted);
+    transition:transform .3s ease,background .3s,color .3s,border-color .3s;
+  }
+  .accitem.open .chev{transform:rotate(180deg);background:var(--accent);border-color:var(--accent);color:#fff}
+  .accbody{
+    max-height:0;overflow:hidden;transition:max-height .45s ease;
+  }
+  .accbody .inner{padding:0 4px 26px;color:var(--muted);font-size:16px;max-width:520px}
+  .accbody .inner p{margin:0 0 10px}
+  .accbody .inner .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .accbody .inner .tags i{
+    font-style:normal;font-size:12.5px;font-weight:600;letter-spacing:.04em;
+    background:var(--wash);border:1px solid var(--line);color:var(--muted);border-radius:99px;padding:5px 12px;
+  }
+
+  /* ---------- logo strip ---------- */
+  .logos{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;margin-top:72px}
+  .logos a{
+    flex:1 1 150px;min-height:64px;display:grid;place-items:center;text-decoration:none;
+    border:1.5px dashed var(--line);border-radius:10px;padding:12px;
+    color:#B9BCB3;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15px;
+    letter-spacing:.02em;transition:border-color .2s,color .2s,transform .2s;
+  }
+  .logos a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+  .logonote{margin-top:14px;font-size:13.5px;color:var(--muted)}
+
+  /* ---------- work ---------- */
+  .worksec{background:var(--wash);border-block:1px solid var(--line)}
+  .workgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:44px}
+  .tile{
+    aspect-ratio:4/5;border-radius:14px;position:relative;overflow:hidden;cursor:pointer;
+    background:linear-gradient(160deg,#ECEDE6,#DDDFD4);
+    display:grid;place-items:center;transition:transform .25s ease;
+  }
+  .tile:hover{transform:translateY(-6px) rotate(-.5deg)}
+  .tile .play{
+    width:54px;height:54px;border-radius:50%;background:var(--ground);border:1px solid var(--line);
+    display:grid;place-items:center;font-size:18px;color:var(--accent);
+  }
+  .tile .lbl{
+    position:absolute;left:14px;bottom:12px;right:14px;font-size:12.5px;font-weight:600;
+    letter-spacing:.05em;text-transform:uppercase;color:var(--muted);
+  }
+  .tile:nth-child(2){background:linear-gradient(160deg,#FFE6DC,#FBD2C0)}
+  .tile:nth-child(3){background:linear-gradient(160deg,#E7ECDB,#D4DEC2)}
+  .tile:nth-child(4){background:linear-gradient(160deg,#EDEAE0,#E0D8C6)}
+
+  /* ---------- trial steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px}
+  .step{
+    border:1px solid var(--line);border-radius:14px;padding:26px 24px;background:var(--ground);
+    transition:transform .25s ease,border-color .25s;
+  }
+  .step:hover{transform:translateY(-5px);border-color:var(--accent)}
+  .step .n{
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:15px;color:var(--accent);
+    letter-spacing:.06em;margin-bottom:12px;
+  }
+  .step h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:20px;letter-spacing:-.015em;margin:0 0 8px}
+  .step p{margin:0;color:var(--muted);font-size:15.5px}
+
+  /* ---------- final cta ---------- */
+  .fin{text-align:center;padding:120px 0}
+  .fin h2{font-size:clamp(36px,6vw,64px);margin-bottom:16px}
+  .fin p{color:var(--muted);max-width:480px;margin:0 auto 34px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
+  .footin{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+  .footin .socials{display:flex;gap:18px}
+  .footin a{text-decoration:none;font-weight:500}
+  .footin a:hover{color:var(--accent)}
+
+  @keyframes jump{
+    0%{transform:translateY(0)}30%{transform:translateY(-.34em)}
+    55%{transform:translateY(.06em)}75%{transform:translateY(-.1em)}100%{transform:translateY(0)}
+  }
+  @keyframes draw{to{stroke-dashoffset:0}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-22px)}}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+
+<nav><div class="wrap navin">
+  <a class="wordmark" href="#top" aria-label="Weakends Agency home">
+    <span>W</span><span>E</span><span>A</span><span>K</span><span>E</span><span>N</span><span>D</span><span>S</span><span class="dot">.</span>
+  </a>
+  <div class="navlinks">
+    <a href="#services" class="hideS">Services</a>
+    <a href="#work" class="hideS">Work</a>
+    <a href="#trial" class="hideS">Trial</a>
+    <a class="cta" href="#book">Book a performance trial</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <p class="eyebrow">Media · Ads · AI · Growth</p>
+  <h1>
+    <span class="jump" style="animation-delay:.05s">Every</span>
+    <span class="jump" style="animation-delay:.12s">business</span>
+    <span class="jump" style="animation-delay:.19s">has</span><br>
+    <span class="weakends-mark"><span class="jump" style="animation-delay:.30s">weak&nbsp;ends.</span><svg viewBox="0 0 600 40" aria-hidden="true"><path d="M8 28 C 120 12, 240 36, 360 20 S 560 24, 592 16"/></svg></span>
+    <span class="jump" style="animation-delay:.45s">We</span>
+    <span class="jump" style="animation-delay:.52s">fix</span>
+    <span class="jump" style="animation-delay:.59s">them.</span>
+  </h1>
+  <p class="sub"><strong>Weakends is a media &amp; AI agency for day-to-day business owners.</strong> We take the operations you don't have time for — content, ads, automation — and turn them into your strongest end.</p>
+  <div class="heroctas">
+    <a class="cta big" href="#book">Book a performance trial</a>
+    <a class="ghost" href="#work">See the work ↓</a>
+  </div>
+</div></header>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>CONTENT THAT COMPOUNDS <b>✦</b></span><span>ADS THAT PAY FOR THEMSELVES <b>✦</b></span>
+  <span>OPS THAT RUN WHILE YOU REST <b>✦</b></span><span>NO RETAINER UNTIL THE NUMBERS SAY SO <b>✦</b></span>
+  <span>CONTENT THAT COMPOUNDS <b>✦</b></span><span>ADS THAT PAY FOR THEMSELVES <b>✦</b></span>
+  <span>OPS THAT RUN WHILE YOU REST <b>✦</b></span><span>NO RETAINER UNTIL THE NUMBERS SAY SO <b>✦</b></span>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="split">
+    <div class="reveal">
+      <p class="kicker">What we fix</p>
+      <p class="lead">We plug into your business exactly where it's weakest — and only there.</p>
+      <p class="leadnote">Five ways in. Every engagement starts with a performance trial, so you see results before you ever commit to a retainer.</p>
+    </div>
+    <div class="acc reveal" id="acc">
+      <div class="accitem">
+        <button class="acchead" aria-expanded="false">Content &amp; Media <span class="chev">⌄</span></button>
+        <div class="accbody"><div class="inner">
+          <p>Attention is the only currency online. We produce short-form content and motion graphics that earn it daily — scripted, edited, and shipped without you touching a camera.</p>
+          <div class="tags"><i>Reels &amp; Shorts</i><i>Motion graphics</i><i>Editing</i><i>Content calendar</i></div>
+        </div></div>
+      </div>
+      <div class="accitem">
+        <button class="acchead" aria-expanded="false">Paid Ads <span class="chev">⌄</span></button>
+        <div class="accbody"><div class="inner">
+          <p>Ads shouldn't feel like a slot machine. We make the creative and manage the spend so every dollar reports back to you.</p>
+          <div class="tags"><i>Ad creative</i><i>Meta &amp; TikTok</i><i>Testing</i><i>Reporting</i></div>
+        </div></div>
+      </div>
+      <div class="accitem">
+        <button class="acchead" aria-expanded="false">AI &amp; Automation <span class="chev">⌄</span></button>
+        <div class="accbody"><div class="inner">
+          <p>The busywork eating your week — follow-ups, posting, admin — we automate it with AI so your operations run while you rest.</p>
+          <div class="tags"><i>Workflow automation</i><i>AI content systems</i><i>Chat &amp; follow-up bots</i></div>
+        </div></div>
+      </div>
+      <div class="accitem">
+        <button class="acchead" aria-expanded="false">Growth &amp; Scaling <span class="chev">⌄</span></button>
+        <div class="accbody"><div class="inner">
+          <p>More content, more channels, more customers — without more headcount. We build the system, then scale what the numbers prove.</p>
+          <div class="tags"><i>Channel strategy</i><i>Funnels</i><i>Analytics</i></div>
+        </div></div>
+      </div>
+      <div class="accitem">
+        <button class="acchead" aria-expanded="false">Brand &amp; Web <span class="chev">⌄</span></button>
+        <div class="accbody"><div class="inner">
+          <p>Your website is your hardest-working salesperson. We make it look the part — and close like one.</p>
+          <div class="tags"><i>Brand identity</i><i>Websites</i><i>Landing pages</i></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="logos reveal" id="clients">
+    <a href="#" title="Placeholder — swap with client logo + link">CLIENT ONE</a>
+    <a href="#" title="Placeholder — swap with client logo + link">CLIENT TWO</a>
+    <a href="#" title="Placeholder — swap with client logo + link">CLIENT THREE</a>
+    <a href="#" title="Placeholder — swap with client logo + link">CLIENT FOUR</a>
+    <a href="#" title="Placeholder — swap with client logo + link">CLIENT FIVE</a>
+  </div>
+  <p class="logonote reveal">↑ Placeholder slots — tag me the 4–5 companies you've worked with and each logo will click through to their site.</p>
+</div></section>
+
+<section class="worksec" id="work"><div class="wrap">
+  <p class="kicker reveal">The work</p>
+  <h2 class="reveal">The work speaks first.</h2>
+  <p class="reveal" style="color:var(--muted);max-width:560px">Clay fakes motion with 3D shaders. We don't have to — our product <em>is</em> motion. These tiles become muted, autoplaying loops of your best reels.</p>
+  <div class="workgrid reveal">
+    <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 01</span></div>
+    <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 02</span></div>
+    <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 03</span></div>
+    <div class="tile"><span class="play">▶</span><span class="lbl">Reel drop-zone 04</span></div>
+  </div>
+</div></section>
+
+<section id="trial"><div class="wrap">
+  <p class="kicker reveal">Zero-risk start</p>
+  <h2 class="reveal">How the performance trial works</h2>
+  <div class="steps reveal">
+    <div class="step"><div class="n">STEP 01</div><h3>Book a call</h3><p>Fifteen minutes. We find your weakest end — the one thing costing you the most attention, leads, or hours.</p></div>
+    <div class="step"><div class="n">STEP 02</div><h3>Trial sprint</h3><p>We run a short, focused sprint on exactly that. Real deliverables, real numbers — not a pitch deck.</p></div>
+    <div class="step"><div class="n">STEP 03</div><h3>Scale what works</h3><p>You keep us only if the numbers say so. No lock-in, no retainer-first contracts.</p></div>
+  </div>
+</div></section>
+
+<section class="fin" id="book"><div class="wrap">
+  <p class="kicker reveal">Let's talk</p>
+  <h2 class="reveal">Ready to fix your <span class="weakends-mark">weak ends<svg viewBox="0 0 600 40" aria-hidden="true"><path d="M8 28 C 120 12, 240 36, 360 20 S 560 24, 592 16" style="animation-delay:.2s"/></svg></span>?</h2>
+  <p class="reveal">One call. Fifteen minutes. We'll tell you exactly what we'd fix first — even if you don't hire us.</p>
+  <a class="cta big reveal" href="#" title="Placeholder — swap with your Calendly link">Book a performance trial</a>
+  <p class="logonote reveal" style="margin-top:16px">↑ Wire this to your Calendly link — send it to me and I'll plug it in.</p>
+</div></section>
+
+<footer><div class="wrap footin">
+  <div>© 2026 Weakends Agency — the weekend crew for your weekdays.</div>
+  <div class="socials">
+    <a href="#" title="Placeholder">Instagram</a>
+    <a href="#" title="Placeholder">TikTok</a>
+    <a href="#" title="Placeholder">YouTube</a>
+    <a href="#" title="Placeholder">X</a>
+  </div>
+</div></footer>
+
+<script>
+  // accordion: one open at a time, like the Clay reference
+  const items = Array.from(document.querySelectorAll('.accitem'));
+  items.forEach(item=>{
+    const head = item.querySelector('.acchead');
+    const body = item.querySelector('.accbody');
+    head.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      items.forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.accbody').style.maxHeight = '';
+        i.querySelector('.acchead').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        head.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  // open the first tab by default so the pattern reads instantly
+  if(items[0]) items[0].querySelector('.acchead').click();
+
+  // scroll reveals
+  const io = new IntersectionObserver(es=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
