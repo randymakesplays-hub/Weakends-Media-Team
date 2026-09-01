@@ -1,0 +1,179 @@
+<title>Weakends Motion Plan</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --ground:#FBFAF6; --surface:#F3F1E9; --ink:#1C1B17; --muted:#6E6A5F;
+    --line:#E2DFD3; --accent:#2743C7; --accent-soft:#E8EBFA;
+    --purple:#7A3FC0; --ember:#C05A28; --green:#1E7A46;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+      --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E;
+      --purple:#B58AE8; --ember:#E8926A; --green:#5FBF8A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#171613; --surface:#201F1A; --ink:#EAE7DE; --muted:#A39E90;
+    --line:#302E27; --accent:#8FA2F2; --accent-soft:#23283E;
+    --purple:#B58AE8; --ember:#E8926A; --green:#5FBF8A;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--ground);color:var(--ink);font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.65;margin:0}
+  .wrap{max-width:800px;margin:0 auto;padding:0 24px 96px}
+  a{color:var(--accent);text-underline-offset:3px}
+  header.mast{padding:64px 0 36px;border-bottom:1px solid var(--line)}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:500;margin:0 0 16px}
+  h1{font-family:Archivo,"Helvetica Neue",Arial,sans-serif;font-weight:800;font-size:clamp(36px,6.5vw,54px);line-height:1.03;letter-spacing:-.02em;margin:0 0 18px;text-wrap:balance}
+  .standfirst{font-size:19px;color:var(--muted);max-width:660px;margin:0}
+  .standfirst strong{color:var(--ink);font-weight:600}
+  section{padding-top:56px}
+  h2{font-family:Archivo,sans-serif;font-weight:700;font-size:clamp(24px,4vw,32px);letter-spacing:-.015em;line-height:1.1;margin:6px 0 8px;text-wrap:balance}
+  h3{font-family:Archivo,sans-serif;font-weight:700;font-size:17px;margin:30px 0 10px;letter-spacing:-.01em}
+  p{margin:0 0 15px;max-width:700px}
+  .note{color:var(--muted);font-size:15px}
+  ul{padding-left:22px;margin:0 0 16px}
+  li{margin-bottom:8px}
+  li::marker{color:var(--accent)}
+  .logline{font-size:19px;font-style:italic;color:var(--muted);border-left:3px solid var(--line);padding:4px 0 4px 18px;margin:14px 0 24px;max-width:660px}
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);margin:18px 0}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+  th{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-align:left;color:var(--muted);font-weight:500;padding:10px 13px;border-bottom:1px solid var(--line);background:var(--surface)}
+  td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.t{font-family:"IBM Plex Mono",monospace;font-size:12px;white-space:nowrap;color:var(--muted)}
+  td b{font-family:Archivo,sans-serif;letter-spacing:-.01em}
+  .mono{font-family:"IBM Plex Mono",monospace;font-size:13px}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.85em;background:var(--surface);border:1px solid var(--line);padding:1px 5px;border-radius:3px}
+  .anim{border:1px solid var(--line);border-radius:12px;padding:28px 28px 20px;margin:26px 0}
+  .anim .tag{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;display:inline-flex;align-items:center;gap:8px;margin-bottom:10px}
+  .anim .tag i{width:9px;height:9px;border-radius:50%;font-style:normal;display:inline-block}
+  .anim.web .tag{color:var(--purple)} .anim.web .tag i{background:var(--purple)}
+  .anim.media .tag{color:var(--ember)} .anim.media .tag i{background:var(--ember)}
+  .anim.lead .tag{color:var(--green)} .anim.lead .tag i{background:var(--green)}
+  .anim h2{margin-top:0}
+  .law{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
+  .law div{border:1px solid var(--line);border-radius:10px;background:var(--surface);padding:16px 18px}
+  .law b{display:block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;margin-bottom:8px}
+  .law p{font-size:14px;margin:0;color:var(--ink)}
+  .check{list-style:none;padding:0;margin:16px 0 0}
+  .check li{border-top:1px solid var(--line);padding:12px 0 12px 30px;position:relative;margin:0;max-width:none;font-size:15.5px}
+  .check li::before{content:"☐";position:absolute;left:4px;top:11px;color:var(--accent)}
+  footer.colo{margin-top:56px;padding-top:18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);line-height:1.8}
+</style>
+
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Weakends Agency · motion production plan · final</p>
+  <h1>Three loops, one machine</h1>
+  <p class="standfirst">The full story-mode plan for the three service animations — concepted from Randy's vision, torn apart by three critique lenses per concept (<strong>seven-figure credibility, 60fps performance, 4-second clarity</strong>), rebuilt against every finding, then unified into one motion language. 16 agents, 0 fabricated numbers, every loop seam verified mathematically. Ships as pure CSS/SVG inside the live design — no video files, nothing heavy.</p>
+</header>
+
+<section>
+  <p class="eyebrow">00 · The shared law</p>
+  <h2>One motion system, three stories</h2>
+  <p>Every panel obeys the same physics, so the site reads as one hand — while each animation opens with its own signature: <em>a single small lit point of its accent color</em> (purple caret · ember REC dot · green LIVE dot).</p>
+  <div class="law">
+    <div><b>The clock</b><p>One 12.000s master loop per panel. Chapters are percentage bands, never chained animations — the loop seam cannot drift by construction.</p></div>
+    <div><b>Easing</b><p>Two curves rule everything: the site's accordion curve <code>cubic-bezier(.2,.7,.2,1)</code> for decisive moves, a breath sinusoid <code>(.37,0,.63,1)</code> for all camera drift. One documented exemption max per animation.</p></div>
+    <div><b>Camera</b><p>Perspective 1100px (1300px mobile), elevated ~315° light from upper-left, rotation never past 22° composed, near-planar clamp on phones so 11px labels render crisp.</p></div>
+    <div><b>Depth ladder</b><p>Shared z-planes: back −120px, shadows −90…−40, story at 0, floaters +30…+70, payoff plane +90px — rationed to one element at a time.</p></div>
+    <div><b>Color</b><p>Identical neutrals everywhere. One accent per panel, no overlap: <span style="color:var(--purple)">web = purple</span>, <span style="color:var(--ember)">media = ember</span>, <span style="color:var(--green)">lead = green</span>. ≤6 accent marks per loop, never two at full strength at once.</p></div>
+    <div><b>Honesty</b><p>No fabricated metrics, no cloned platform UI. Data appears as "—", abstract bars, stylized marks. The machine is demonstrated, results are never invented.</p></div>
+  </div>
+  <p class="note">Also law: reduced-motion visitors get a designed still tableau (not a blank frame), the no-JS default state IS that tableau, animations pause off-screen, and every text label sits in a fixed box so font loading can't shift the scene.</p>
+</section>
+
+<section>
+  <p class="eyebrow">01 · Product Development</p>
+  <div class="anim web">
+    <span class="tag"><i></i>Accent: purple · 12s loop · 5 chapters</span>
+    <h2>"Born Shipping"</h2>
+    <p class="logline">A product is born in one held breath — abstract code types itself on a dark screen, flips inside-out into a living website a visible hand actually drives, then re-flows across a floating phone from service landing to storefront — proving Weakends ships whole products, both ways, on a loop.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Time</th><th>Chapter</th><th>The decisive move</th><th>Camera &amp; color</th></tr>
+      <tr><td class="t">0.0–2.2s</td><td><b>WRITE</b></td><td>Eight syntax bars type themselves line-by-line on the dark editor, purple caret blinking; a faint ghost of the finished site fades up beneath the code — the destination visible inside the work.</td><td>Slow orbit begins (−4° trough). Dark surface, grey code bars, purple caret = accent point #1.</td></tr>
+      <tr><td class="t">2.2–4.2s</td><td><b>COMPILE</b></td><td>The screen performs one 180° 3D flip — code face rotates away, the live site rotates in <em>fully composed</em> (it was built, it doesn't assemble). A purple flash blooms at the edge-on midpoint like a compile spark.</td><td>Camera cedes all drama to the flip; ground shadow thins as the card goes edge-on. LIVE chip fades in at the settle.</td></tr>
+      <tr><td class="t">4.2–8.0s</td><td><b>ALIVE</b></td><td>A cursor arrives <em>first</em>, rests, then the page scrolls under it (reads as real wheel-scroll), glides to the CTA, clicks — dip, purple ripple. Every motion has a visible author.</td><td>Slow push-in starts. All neutrals; ripple = accent #3.</td></tr>
+      <tr><td class="t">8.0–11.2s</td><td><b>REFLOW</b></td><td>The galaxy-4D beat, sequenced with causality: a phone rises from lower-left already populated → held beat → the desktop crossfades from service landing to a 2×2 storefront grid. One team, both products.</td><td>Push-in peaks (1.05) exactly at the morph. Phone parallaxes 1.15× over the desktop; purple status dot pulses once = accent #4.</td></tr>
+      <tr><td class="t">11.2–12.0s</td><td><b>RETURN</b></td><td>The seam played as story: the card whip-flips 360° — shipping is a cycle. Face-split resets hide backstage behind the rotation, verified against the easing's angle table (code face resets at 94%, site face at 99%).</td><td>Camera closes its cosine at zero velocity. Neutrals only — no accent at the seam.</td></tr>
+    </table></div>
+    <h3>Craft calls that survived the critics</h3>
+    <ul>
+      <li><b>The flip card is a sibling of the bezel, never inside overflow</b> — the one DOM structure that keeps 3D alive; all clipping lives inside 2D faces.</li>
+      <li><b>"Galaxy" rendered as premium dimensionality</b> — four drifting depth-dust motes on divisor clocks, parallax layers, orbital camera — no literal starfield on the warm off-white card.</li>
+      <li>Flash and sheen are <b>non-rotating overlays</b> at the card silhouette — a glow riding the card would be edge-on exactly when needed.</li>
+      <li>~55 DOM nodes of 70 budget; transform/opacity only; mobile clamps the orbit to ±2° and thickens bars so the story reads at 340px.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">02 · Media Management</p>
+  <div class="anim media">
+    <span class="tag"><i></i>Accent: ember · 12s loop · 5 chapters</span>
+    <h2>"One Take, Seven Days"</h2>
+    <p class="logline">One take at the mic becomes a week of published content: the camera pulls back from a live recording to reveal the edit already underway — a playhead slices the session into clips that fly to the platforms, and the loop holds on the week's attention climbing.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Time</th><th>Chapter</th><th>The decisive move</th><th>Camera &amp; color</th></tr>
+      <tr><td class="t">0.0–2.5s</td><td><b>The Session</b></td><td>Open tight on a dark screen: the ember REC dot wakes with two pulses, seven waveform bars rise and ripple as someone speaks. The creator is <em>implied</em> — a big ink mic silhouette crops into frame; no cheap CSS human anywhere.</td><td>Camera holds a 6.6× magnified pose. Dark surface, grey waveform, ember REC = accent point #1.</td></tr>
+      <tr><td class="t">2.5–5.0s</td><td><b>The Reveal</b></td><td>The zoom-out you asked for, as one compound dolly: the recording shrinks into <em>lane one of an editing timeline</em> while the camera pulls wide — the take was always inside the machine. Timeline chrome, platform tiles, MANAGED / PUBLISHED labels fade in.</td><td>One 2.6→4.4s move on the house curve; rotateX rises on pullback to sell camera height.</td></tr>
+      <tr><td class="t">5.0–7.6s</td><td><b>The Cut</b></td><td>REC dims, the ember playhead ignites (accent handoff — never two at once) and sweeps the session; as it crosses each cut point the clips visibly separate. One session becomes four pieces of content.</td><td>Camera dead still — the playhead is the only fast object and inherits all attention.</td></tr>
+      <tr><td class="t">7.6–9.3s</td><td><b>The Cascade</b></td><td>Three clip chips arc off the timeline and fly to the platform tiles; each arrival blinks one ember tick and its engagement bars take their first growth step — asymmetric per platform, like real life.</td><td>Wide pose held. White tiles, stroked glyphs, grey engagement fills.</td></tr>
+      <tr><td class="t">9.3–12.0s</td><td><b>The Held Week</b></td><td>The payoff tableau stands for 1.8 full seconds — the longest stable image in the loop — with one quiet move: every tile's bars climb a second step. Then the furniture fades and the camera dives back to the mic for the next take.</td><td>Reset dolly runs while elements fade, so the final 0.36s is pure camera. Only the dim REC dot at the seam.</td></tr>
+    </table></div>
+    <h3>Craft calls that survived the critics</h3>
+    <ul>
+      <li><b>The human problem, solved</b>: over-the-shoulder desk diorama — foreground mic silhouette, screen glow, the creator implied. Premium at any size; never a stick figure.</li>
+      <li>The magnified opening uses a <b>counter-scale authoring trick</b> so mono text rasterizes native-crisp at 6.6× zoom.</li>
+      <li>Platform tiles are <b>generic stroked glyphs</b>, not cloned logos; engagement is abstract bars, not fake counters.</li>
+      <li>Mobile gets its own explicit layout (not a naive shrink): flat push camera, larger chips, the desk back-plane dropped.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">03 · Lead Generation</p>
+  <div class="anim lead">
+    <span class="tag"><i></i>Accent: green · 12s loop · 4 chapters</span>
+    <h2>"The Engine Room"</h2>
+    <p class="logline">A live ad's reach funnels into leads, the leads flow left-to-right through a CRM pipeline, and the pipeline extrudes upward into its own stepped, climbing value curve — one continuous 12-second breath of a machine that is never off.</p>
+    <div class="tablewrap"><table>
+      <tr><th>Time</th><th>Chapter</th><th>The decisive move</th><th>Camera &amp; color</th></tr>
+      <tr><td class="t">0.0–2.4s</td><td><b>SIGNAL</b></td><td>The machine is already running at frame one — generic ad card (SPONSORED chip, dark creative thumbnail), green LIVE dot pulsing. Then the surge: the dot flares and the delivery bar pushes forward. The ad is spending.</td><td>Isometric-leaning stage begins its 12s breath. Warm neutrals; green LIVE = accent point #1.</td></tr>
+      <tr><td class="t">2.4–4.8s</td><td><b>CONDENSE</b></td><td>Six ink dots emit from the ad and arc down through a capture waypoint — entering scattered, exiting aligned: <em>the funnel made visible</em>. Three signals condense into one lead card materializing in NEW. Reach becomes pipeline.</td><td>No camera move — the dots' z-descent creates true parallax. Dots stay ink, not accent: attention isn't money yet.</td></tr>
+      <tr><td class="t">4.8–7.45s</td><td><b>ADVANCE</b></td><td>The cascade: lead cards physically slide NEW → QUALIFIED → WON in overlapping 0.42s steps. The single earned accent: as card A lands in WON, the green status dot ignites and its bar grows. Deals move because the system moves them.</td><td>The stage's one "look closer" lean peaks exactly as the pipeline completes. Monochrome until the WON moment.</td></tr>
+      <tr><td class="t">7.45–12.0s</td><td><b>ASCEND</b></td><td>Your payoff morph, given a third of the loop: the WON column <em>extrudes upward</em> into a dark chart panel whose stepped curve rises directly above NEW / QUALIFIED / WON — the pipeline's own silhouette climbing, endpoint glowing green. Then the shift change: the chart recedes, the board clears, the LIVE dot keeps pulsing. The engine never stopped.</td><td>Gentle pull-back reads as "step back and see what it built." Dark surface at hero scale — its only appearance; green curve + endpoint = the one allowed accent crescendo.</td></tr>
+    </table></div>
+    <h3>Craft calls that survived the critics</h3>
+    <ul>
+      <li><b>Causality in one unbroken chain</b>: ad → reach → funnel → pipeline → curve. No beat is decoration; every chapter is something the buyer pays for.</li>
+      <li>The chart is a <b>stepped line rising off the pipeline's real columns</b> — not a random stock squiggle; the geometry itself argues the case.</li>
+      <li>Leanest of the trio (~9 elements) — it reads instantly at 340px with the camera clamped near-planar.</li>
+      <li>Zero bespoke easing curves permitted — this panel is pure house physics.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <p class="eyebrow">04 · Build readiness</p>
+  <h2>What the build session ships first</h2>
+  <ul class="check">
+    <li>Shared CSS token partial — neutral ladder, three accents, the two easing curves, the 12s clock, duration steps</li>
+    <li>Shared ~30-line runtime helper — IntersectionObserver pause, font-ready gating, the no-JS tableau contract</li>
+    <li>Page-level font preload for JetBrains Mono (decided once, not per panel)</li>
+    <li>Build-time verification — flip-angle reset assertions, keyframe 0%=100% parity check on every 12s timeline</li>
+    <li>Loop-seam QA — frame-diff t=11.96s vs t=0.04s per panel; accent-census sampling; shadow-clip check at 340px</li>
+    <li>4:3 work-card crop spec — each animation's designated still frame doubles as its card export</li>
+    <li>Playback policy — each panel starts at 0% on first view, pauses off-screen, no cross-panel sync</li>
+    <li>Accessibility — aria-hidden dioramas + a one-sentence hidden text pitch per panel</li>
+  </ul>
+</section>
+
+<footer class="colo">
+  Produced by a 16-agent pipeline: 3 storyboard authors → 9 adversarial critics (credibility · performance · clarity) → 3 design-director revisions → 1 motion-systems unification. Full machine-readable specs: website/motion/motion-specs.json in the repo. Zero invented metrics anywhere in the plan.
+</footer>
+
+</div>
