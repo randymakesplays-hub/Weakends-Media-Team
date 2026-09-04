@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.8">
+  <resources>
+    <format id="r1" name="FFVideoFormat1080p60" frameDuration="100/6000s" width="1920" height="1080" colorSpace="1-1-1 (Rec. 709)"/>
+    <asset id="r2" name="Video-Aug-31-2026-11-44-00-PM.mov" start="0s" duration="12060400/6000s" hasVideo="1" hasAudio="1" audioSources="1" audioChannels="2" format="r1">
+      <media-rep kind="original-media" src="file:///home/user/vsl/raw.mov"/>
+    </asset>
+  </resources>
+  <library>
+    <event name="VSL Cleanup">
+      <project name="VSL Rough Cut - flubs removed">
+        <sequence format="r1" duration="4357400/6000s" tcStart="0s" tcFormat="NDF" audioLayout="stereo" audioRate="48k">
+          <spine>
+        <asset-clip ref="r2" offset="0/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 1" start="218600/6000s" duration="39600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="39600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 2" start="314900/6000s" duration="68600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="108200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 3" start="506400/6000s" duration="68800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="177000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 4" start="653200/6000s" duration="135300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="312200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 5" start="861100/6000s" duration="50000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="362200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 6" start="938200/6000s" duration="31800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="394000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 7" start="1209500/6000s" duration="53600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="447600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 8" start="1317100/6000s" duration="32700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="480300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 9" start="1409100/6000s" duration="107300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="587500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 10" start="1594100/6000s" duration="40300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="627800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 11" start="1698200/6000s" duration="47800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="675600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 12" start="1993600/6000s" duration="54700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="730400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 13" start="2109900/6000s" duration="51400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="781800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 14" start="2221200/6000s" duration="48700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="830500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 15" start="2434100/6000s" duration="104200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="934700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 16" start="2912700/6000s" duration="66300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1001000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 17" start="3020300/6000s" duration="53500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1054500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 18" start="3082700/6000s" duration="91000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1145500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 19" start="3184000/6000s" duration="42300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1187800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 20" start="3434900/6000s" duration="96200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1284100/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 21" start="3535000/6000s" duration="55100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1339200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 22" start="3619800/6000s" duration="41500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1380700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 23" start="3786700/6000s" duration="38200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1418900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 24" start="3849900/6000s" duration="72000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1490900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 25" start="3948100/6000s" duration="42500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1533400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 26" start="4159900/6000s" duration="39300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1572800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 27" start="4271200/6000s" duration="26400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1599200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 28" start="4350000/6000s" duration="48800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1647900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 29" start="4442900/6000s" duration="58300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1706300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 30" start="4567400/6000s" duration="43000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1749300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 31" start="4646700/6000s" duration="18700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1768000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 32" start="4903200/6000s" duration="64100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1832100/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 33" start="5021500/6000s" duration="37400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1869500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 34" start="5117200/6000s" duration="34000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1903500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 35" start="5158200/6000s" duration="45200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1948700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 36" start="5303300/6000s" duration="32000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="1980700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 37" start="5447800/6000s" duration="67800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2048400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 38" start="5547800/6000s" duration="49000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2097400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 39" start="5619400/6000s" duration="38500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2136000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 40" start="5684100/6000s" duration="39300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2175300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 41" start="5830700/6000s" duration="45600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2220900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 42" start="5949600/6000s" duration="20600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2241500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 43" start="6035800/6000s" duration="37500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2279000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 44" start="6137600/6000s" duration="59300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2338300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 45" start="6241900/6000s" duration="77200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2415600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 46" start="6365600/6000s" duration="43900/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2459500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 47" start="6418300/6000s" duration="92800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2552200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 48" start="6730800/6000s" duration="102700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2655000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 49" start="6858600/6000s" duration="71000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2726000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 50" start="7022100/6000s" duration="42000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2768000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 51" start="7334600/6000s" duration="61300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2829300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 52" start="7418800/6000s" duration="31600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2860900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 53" start="7525200/6000s" duration="62900/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="2923800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 54" start="7638500/6000s" duration="88000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3011700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 55" start="7854100/6000s" duration="17500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3029200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 56" start="7983500/6000s" duration="27700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3057000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 57" start="8225900/6000s" duration="76000/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3132900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 58" start="8334400/6000s" duration="49500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3182400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 59" start="8399500/6000s" duration="37700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3220100/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 60" start="8471600/6000s" duration="54400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3274500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 61" start="8756500/6000s" duration="57900/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3332400/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 62" start="8861500/6000s" duration="45500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3377900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 63" start="9012000/6000s" duration="31300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3409200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 64" start="9169400/6000s" duration="48400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3457700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 65" start="9321200/6000s" duration="21100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3478700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 66" start="9396100/6000s" duration="44800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3523500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 67" start="9480100/6000s" duration="23100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3546600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 68" start="9643100/6000s" duration="34200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3580700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 69" start="9827100/6000s" duration="36100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3616800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 70" start="9936100/6000s" duration="66600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3683500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 71" start="10108100/6000s" duration="30800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3714300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 72" start="10171100/6000s" duration="80500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3794800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 73" start="10334000/6000s" duration="31800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3826500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 74" start="10400600/6000s" duration="38200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3864800/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 75" start="10550400/6000s" duration="27600/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3892300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 76" start="10638100/6000s" duration="54900/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3947200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 77" start="10865100/6000s" duration="42400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="3989600/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 78" start="10931300/6000s" duration="60100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4049700/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 79" start="11006600/6000s" duration="28800/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4078500/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 80" start="11143300/6000s" duration="46500/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4125000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 81" start="11231200/6000s" duration="25300/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4150300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 82" start="11363200/6000s" duration="50700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4201000/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 83" start="11555800/6000s" duration="34200/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4235200/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 84" start="11676400/6000s" duration="41700/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4276900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 85" start="11806200/6000s" duration="16900/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4293900/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 86" start="11869300/6000s" duration="40400/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+        <asset-clip ref="r2" offset="4334300/6000s" name="Video-Aug-31-2026-11-44-00-PM.mov take 87" start="12027500/6000s" duration="23100/6000s" format="r1" tcFormat="NDF" audioRole="dialogue"/>
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>
