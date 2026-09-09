@@ -88,3 +88,35 @@ the full one, and Deluxe now states that it contains Gloss.
 Dropped from the site lists to fit five rows per frame, all under-promises,
 never over: Standard's "cloth seats, light pass"; Standard's leather and vinyl
 rows merged into one; Deluxe's shampoo and interior-condition rows merged.
+
+## Story highlight covers
+
+`covers.py` renders the set to `out/covers/`, plus `00-row-preview.png` showing
+how the six read side by side on the profile.
+
+Six covers, one system: Standard / Gloss / Deluxe live under **Packages**, and
+the rest are the row a detailer needs.
+
+| File | Highlight title to type in Instagram | Icon |
+|---|---|---|
+| `packages.png` | Packages | three stacked bars, widest at the base |
+| `location.png` | Location | map pin |
+| `reviews.png` | Reviews | star |
+| `before-after.png` | Before / After | circle, half filled |
+| `book.png` | Book | phone |
+| `faq.png` | FAQ | speech bubble with a question mark |
+
+**How they are built.** Each is a full 1080×1920 of Carolina blue with a white
+icon centred. Instagram crops a circle out of the middle for the profile row, so
+filling the whole canvas means the crop always lands inside the blue and nothing
+clips, whatever Instagram decides the crop is that week. The icon sits at 360px
+in the centre, far inside any crop.
+
+**Why the icons are heavy.** The row renders about 60px wide on a phone. Thin
+line icons mush at that size, so strokes are 9 units on a 120 grid and shapes are
+solid.
+
+**Adding a seventh.** Add a tuple to `COVERS` in `covers.py` with a slug, a label
+and the icon markup on the same 120×120 grid, then re-run. Nothing else changes.
+Keep the set at six or seven — past that the row scrolls and the last ones are
+never seen.
