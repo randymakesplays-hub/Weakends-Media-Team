@@ -94,12 +94,12 @@ rows merged into one; Deluxe's shampoo and interior-condition rows merged.
 `covers.py` renders the set to `out/covers/`, plus `00-row-preview.png` showing
 how the six read side by side on the profile.
 
-Six covers, one system: Standard / Gloss / Deluxe live under **Packages**, and
+Six covers, one system: Standard / Gloss / Deluxe live under **Services**, and
 the rest are the row a detailer needs.
 
 | File | Highlight title to type in Instagram | Icon |
 |---|---|---|
-| `packages.png` | Packages | stacked layers |
+| `services.png` | Services | stacked layers |
 | `location.png` | Location | map pin |
 | `reviews.png` | Reviews | star |
 | `before-after.png` | Before / After | split tile |

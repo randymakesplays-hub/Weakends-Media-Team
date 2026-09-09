@@ -32,7 +32,7 @@ def icons(c):
     s = ('fill="none" stroke="%s" stroke-width="6.5" stroke-linecap="round" '
          'stroke-linejoin="round"' % c)
     return [
-        ("packages", "Packages",
+        ("services", "Services",
          '<path d="M60 20 L100 42 L60 64 L20 42 Z" %s/>'
          '<path d="M20 60 L60 82 L100 60" %s/>'
          '<path d="M20 78 L60 100 L100 78" %s/>' % (s, s, s)),
