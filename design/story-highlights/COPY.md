@@ -10,8 +10,7 @@ Rendered files live in `out/`. Rebuild with `python3 build.py`
 
 - Header: crest logo on white, `CHARLOTTE · GREENSBORO · SHELBY`, Carolina blue bar
 - Best-for card, price-lock line
-- CTA: `CALL OR TEXT · 980·690·5259 · MON–SAT · 8AM–6PM`
-- Footer: carolinaglossdetailing.com
+- CTA: `CALL OR TEXT` + `980·690·5259`. No hours and no website, so nothing on the image goes stale
 - Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
 
 ## PACKAGE 01 — STANDARD

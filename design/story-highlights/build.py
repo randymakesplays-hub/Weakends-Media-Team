@@ -23,7 +23,7 @@ TINT = "#EDF3FD"         # BLUE washed into white, for cards
 RULE = "#D7E5F8"         # BLUE washed into white, for dividers
 MUTED = "rgba(23,24,26,0.62)"   # the same black, stepped back
 
-PHONE, HOURS = "980\u00b7690\u00b75259", "MON\u2013SAT \u00b7 8AM\u20136PM"
+PHONE = "980\u00b7690\u00b75259"
 CITIES = "CHARLOTTE \u00b7 GREENSBORO \u00b7 SHELBY"
 PRICE_LINE = ("Priced on your vehicle size and condition. "
               "We lock that number in before we touch the car.")
@@ -129,10 +129,6 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
  color:#FFFFFF;opacity:0.88;}}
 .cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;
  line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;}}
-.cta .hrs{{margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;
- letter-spacing:0.08em;color:#FFFFFF;opacity:0.88;}}
-.site{{margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;
- letter-spacing:0.04em;color:{muted};}}
 </style></head><body><div class="frame">
 <div class="head"><img src="{logo}" alt="Carolina Gloss Detailing">
 <div class="cities">{cities}</div></div>
@@ -144,14 +140,12 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
 <div class="rows">{rows}</div>
 <div class="best"><div class="lbl">BEST FOR</div><div class="txt">{best}</div></div>
 <p class="price">{price}</p>
-<div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div>
-<div class="hrs">{hours}</div></div>
-<div class="site">carolinaglossdetailing.com</div>
+<div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div></div>
 </div></div></body></html>""".format(
         faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
         logo=logo_uri, cities=CITIES, eyebrow=pkg["eyebrow"], pill=pill,
         title=pkg["title"], sub=pkg["sub"], rows=rows, best=pkg["best"],
-        price=PRICE_LINE, phone=PHONE, hours=HOURS)
+        price=PRICE_LINE, phone=PHONE)
 
 
 def main():
@@ -173,7 +167,7 @@ def main():
             with open(probe, "w") as fh:
                 fh.write(open(html_path).read().replace("</body>", """
 <script>window.addEventListener('load',function(){
- var f=document.querySelector('.frame'),c=document.querySelector('.site');
+ var f=document.querySelector('.frame'),c=document.querySelector('.cta');
  var gap=f.getBoundingClientRect().bottom-c.getBoundingClientRect().bottom;
  var p=document.createElement('pre');p.id='M';
  p.textContent='bottomGap='+Math.round(gap)+' bodyScroll='+document.body.scrollHeight;
@@ -238,16 +232,14 @@ def canvas_section(pkg, idx):
         <div style="margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
           <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#FFFFFF;opacity:0.88;">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">{phone}</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#FFFFFF;opacity:0.88;">{hours}</div>
         </div>
-        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:{muted};">carolinaglossdetailing.com</div>
       </div>
     </section>
   </div>
 """.format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
            tint=TINT, muted=MUTED, cities=CITIES, eyebrow=pkg["eyebrow"],
            pill=pill, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
-           best=pkg["best"], price=PRICE_LINE, phone=PHONE, hours=HOURS)
+           best=pkg["best"], price=PRICE_LINE, phone=PHONE)
 
 
 CANVAS_PROPS = ('{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,'
