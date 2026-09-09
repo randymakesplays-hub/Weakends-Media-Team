@@ -89,7 +89,7 @@ def font_faces():
 def row_html(title, desc, last):
     edge = "border-bottom:2px solid %s;" % RULE if last else ""
     return (
-        '<div style="padding:24px 0;border-top:2px solid {rule};{edge}">'
+        '<div style="padding:27px 0;border-top:2px solid {rule};{edge}">'
         '<div style="font:600 29px/1.2 Archivo,sans-serif;color:{ink};">{t}</div>'
         '<div style="margin-top:6px;font:400 25px/1.34 Archivo,sans-serif;color:{muted};">{d}</div>'
         '</div>'
@@ -110,11 +110,9 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
 .frame{{width:1080px;height:1920px;display:flex;flex-direction:column;background:#fff;
  position:relative;overflow:hidden;}}
 .rosette{{position:absolute;top:26px;right:56px;width:236px;height:auto;display:block;}}
-.head{{flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;
+.head{{flex:0 0 auto;padding:74px 84px 52px;display:flex;flex-direction:column;
  align-items:center;}}
-.head img{{width:252px;height:auto;display:block;}}
-.head .cities{{margin-top:24px;font:700 23px Archivo,sans-serif;
- letter-spacing:0.3em;color:{ink};}}
+.head img{{width:264px;height:auto;display:block;}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
 .body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
 h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
@@ -131,8 +129,7 @@ h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
 .cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;
  line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;}}
 </style></head><body><div class="frame">{ribbon}
-<div class="head"><img src="{logo}" alt="Carolina Gloss Detailing">
-<div class="cities">{cities}</div></div>
+<div class="head"><img src="{logo}" alt="Carolina Gloss Detailing"></div>
 <div class="bar"></div>
 <div class="body">
 <h1>{title}</h1>
@@ -143,7 +140,7 @@ h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
 <div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div></div>
 </div></div></body></html>""".format(
         faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
-        logo=logo_uri, cities=CITIES, ribbon=ribbon,
+        logo=logo_uri, ribbon=ribbon,
         title=pkg["title"], sub=pkg["sub"], plus=pkg["plus"], rows=rows,
         price=PRICE_LINE, phone=PHONE)
 
@@ -206,7 +203,7 @@ def canvas_section(pkg, idx):
     for i, (t, d) in enumerate(pkg["rows"]):
         edge = "border-bottom:2px solid %s;" % RULE if i == len(pkg["rows"]) - 1 else ""
         rows.append(
-            '<div style="padding:24px 0;border-top:2px solid %s;%s">'
+            '<div style="padding:27px 0;border-top:2px solid %s;%s">'
             '<div style="font:600 29px/1.2 \'Archivo\',sans-serif;color:%s;">%s</div>'
             '<div style="margin-top:6px;font:400 25px/1.34 \'Archivo\',sans-serif;color:%s;">%s</div>'
             '</div>' % (RULE, edge, INK, t, MUTED, d))
@@ -216,9 +213,8 @@ def canvas_section(pkg, idx):
       <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">{label}</div>
     </sc-if>
     <section data-screen-label="{label}" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">{ribbon}
-      <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
-        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
-        <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:{ink};">{cities}</div>
+      <div style="flex:0 0 auto;padding:74px 84px 52px;display:flex;flex-direction:column;align-items:center;">
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:264px;height:auto;display:block;">
       </div>
       <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
       <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
@@ -235,7 +231,7 @@ def canvas_section(pkg, idx):
     </section>
   </div>
 """.format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
-           tint=TINT, muted=MUTED, cities=CITIES,
+           tint=TINT, muted=MUTED,
            ribbon=ribbon, title=pkg["title"], sub=pkg["sub"], plus=pkg["plus"],
            rows="".join(rows), price=PRICE_LINE, phone=PHONE)
 
