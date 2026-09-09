@@ -5,6 +5,10 @@ Eight slides. An opener, six steps, a close. Each slide takes one thing that
 actually happens to the car and says why it matters, rather than asking and
 answering a question.
 
+The crest sits on the opener and the close only. On the six step slides it is
+just the blue stripe: the highlight cover already carries the brand, and eight
+logos in a row is a watermark, not an identity.
+
 Text only, set as large as the frame will carry. The block is anchored to the
 bottom rather than centred, so every slide shares a baseline and the headline
 grows upward on the longer ones. Anchoring beats centring here because the copy
@@ -58,7 +62,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 .head{{flex:0 0 auto;padding:74px 84px 52px;display:flex;justify-content:center;}}
 .head img{{width:264px;height:auto;display:block;}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
-.body{{flex:1 1 auto;padding:70px 84px 250px;display:flex;flex-direction:column;
+.body{{flex:1 1 auto;padding:96px 84px 250px;display:flex;flex-direction:column;
  justify-content:flex-end;}}
 .count{{font:500 27px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
  color:{ink};opacity:0.42;}}
@@ -97,16 +101,16 @@ def img_uri(name):
     return "data:image/png;base64," + b64(os.path.join(HERE, "assets", "macros", name))
 
 
-def frame(logo, inner):
-    return ('<div class="frame"><div class="head">'
-            '<img src="%s" alt="Carolina Gloss Detailing"></div>'
-            '<div class="bar"></div>%s</div>' % (logo, inner))
+def frame(logo, inner, crest=True):
+    head = ('<div class="head"><img src="%s" alt="Carolina Gloss Detailing"></div>'
+            % logo) if crest else ""
+    return '<div class="frame">%s<div class="bar"></div>%s</div>' % (head, inner)
 
 
-def page(inner, logo, faces):
+def page(inner, logo, faces, crest=True):
     style = CSS.format(faces=faces, ink=INK, blue=BLUE, muted=MUTED)
     return ('<!doctype html><html><head><meta charset="utf-8"><style>%s</style>'
-            '</head><body>%s</body></html>' % (style, frame(logo, inner)))
+            '</head><body>%s</body></html>' % (style, frame(logo, inner, crest)))
 
 
 def step_slide(i, total, layout, image, head, body):
@@ -129,15 +133,15 @@ def step_slide(i, total, layout, image, head, body):
 
 
 def slides():
-    out = [("00-open",
+    out = [("00-open", True,
             '<div class="body"><div class="lead">The<br>standard</div>'
             '<div class="sub">What actually happens to your car, step by step, '
             'and why each one matters.</div>'
             '<div class="hint">TAP THROUGH &#8250;</div></div>')]
     for i, (slug, layout, image, head, body) in enumerate(STEPS, 1):
-        out.append(("%02d-%s" % (i, slug),
+        out.append(("%02d-%s" % (i, slug), False,
                     step_slide(i, len(STEPS), layout, image, head, body)))
-    out.append(("07-close",
+    out.append(("07-close", True,
                 '<div class="body"><div class="lead">Built around<br>your car</div>'
                 '<div class="sub">Every vehicle is different, so your detail is built '
                 'around yours. Tell us what you drive.</div>'
@@ -163,12 +167,12 @@ def main():
     faces = font_faces()
     built = slides()
     only = [a for a in sys.argv[1:] if not a.startswith("--")]
-    for slug, inner in built:
+    for slug, crest, inner in built:
         if only and slug not in only:
             continue
-        shoot(page(inner, logo, faces), os.path.join(OUT, slug + ".png"))
+        shoot(page(inner, logo, faces, crest), os.path.join(OUT, slug + ".png"))
 
-    tiles = "".join('<img src="%s.png">' % slug for slug, _ in built)
+    tiles = "".join('<img src="%s.png">' % slug for slug, _, _ in built)
     sheet = """<!doctype html><html><head><meta charset="utf-8"><style>
 *{{box-sizing:border-box;}} html,body{{margin:0;padding:0;}}
 body{{width:1640px;background:#EFF1F4;display:flex;flex-wrap:wrap;gap:26px;

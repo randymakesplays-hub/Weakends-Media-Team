@@ -142,6 +142,10 @@ close. Each takes one thing that happens to the car and says why it matters.
 | `06-seal` | Strip, then seal |
 | `07-close` | Built around your car + call or text |
 
+The crest sits on the opener and the close only. The six step slides carry just
+the blue stripe: the highlight cover already carries the brand, and eight logos
+in a row is a watermark, not an identity.
+
 Text only, set as large as the frame carries: headline at 132px, body at 46px.
 The block anchors to the bottom rather than centring, so every slide shares a
 baseline and headlines grow upward on the longer ones. Copy lengths differ, and
