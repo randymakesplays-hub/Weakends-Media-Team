@@ -5,14 +5,13 @@ Eight slides. An opener, six steps, a close. Each slide takes one thing that
 actually happens to the car and says why it matters, rather than asking and
 answering a question.
 
-The photo treatment varies across the set — band, window, full bleed — so
-tapping through has rhythm. The header, type and palette hold it together.
-Adjacent slides never share a treatment.
+Text only, set as large as the frame will carry. The block is anchored to the
+bottom rather than centred, so every slide shares a baseline and the headline
+grows upward on the longer ones. Anchoring beats centring here because the copy
+lengths differ: a centred block drifts, a bottom-aligned one does not.
 
-Photographs are generated macros in assets/macros. They work because there is
-no vehicle identity in any frame: no badge to melt, no wheel spokes to
-miscount, no full-panel reflection to get wrong. Anything wider than these
-crops has to be shot for real.
+Give a step a layout of "band", "window" or "bleed" plus a filename from
+assets/macros to put a photograph back on it.
 
 Every line is lifted from the package pages on carolinaglossdetailing.com and
 tightened. Nothing here claims a duration, a deposit policy or a ceramic
@@ -29,22 +28,22 @@ TMP = ("/tmp/claude-0/-home-user-Weakends-Media-Team/"
 PHONE = "980·690·5259"
 
 STEPS = [
-    ("hand", "band", "foam.png", "Hand washed, hand finished",
+    ("hand", "text", "", "Hand washed, hand finished",
      "No machines. No brushes. Two mitts and clean water, the way paint is "
      "supposed to be washed."),
-    ("two-bucket", "window", "buckets.png", "Two buckets, two mitts",
+    ("two-bucket", "text", "", "Two buckets, two mitts",
      "Dirt goes in a separate bucket, never back onto your paint. It is the "
      "difference between clean and scratched."),
-    ("wheels", "bleed", "wheel.png", "Wheels, tires and trim",
+    ("wheels", "text", "", "Wheels, tires and trim",
      "The part every drive-thru wash skips. Brake dust out of the barrels, "
      "trim back to black."),
-    ("clay", "band", "clay.png", "Clay bar",
+    ("clay", "text", "", "Clay bar",
      "Pulls the embedded grit that washing physically cannot. Run your hand "
      "over the hood after and it feels like glass."),
-    ("extraction", "window", "extraction.png", "Hot water extraction",
+    ("extraction", "text", "", "Hot water extraction",
      "Water goes in and comes back out with the stain. Coffee, dog, kids, "
      "gym bag. Gone, not covered up."),
-    ("seal", "bleed", "beading.png", "Strip, then seal",
+    ("seal", "text", "", "Strip, then seal",
      "Old wax and road film come off first, so the new protection bonds to "
      "the paint instead of sitting on top of it."),
 ]
@@ -60,13 +59,13 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 .head img{{width:264px;height:auto;display:block;}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
 .body{{flex:1 1 auto;padding:70px 84px 250px;display:flex;flex-direction:column;
- justify-content:center;}}
-.count{{font:500 24px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
+ justify-content:flex-end;}}
+.count{{font:500 27px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
  color:{ink};opacity:0.42;}}
-.q{{margin:28px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:88px;
- line-height:0.94;letter-spacing:-0.035em;color:{blue};text-transform:uppercase;}}
-.a{{margin:44px 0 0;font:400 37px/1.38 Archivo,sans-serif;color:{ink};}}
-.mark{{margin-top:52px;width:108px;height:10px;background:{blue};}}
+.q{{margin:30px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:132px;
+ line-height:0.9;letter-spacing:-0.04em;color:{blue};text-transform:uppercase;}}
+.a{{margin:48px 0 0;font:400 46px/1.34 Archivo,sans-serif;color:{ink};}}
+.mark{{margin-top:56px;width:132px;height:12px;background:{blue};}}
 .band{{flex:0 0 auto;height:600px;background-size:cover;background-position:center;}}
 .band + .body{{justify-content:center;padding-top:60px;}}
 .window{{height:500px;border-radius:30px;overflow:hidden;background-size:cover;
@@ -79,10 +78,10 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 .over .count{{color:#FFFFFF;opacity:0.6;}}
 .over .q{{color:#FFFFFF;}}
 .over .a{{color:rgba(255,255,255,0.9);}}
-.lead{{font-family:'Archivo Black',Helvetica,sans-serif;font-size:104px;
- line-height:0.92;letter-spacing:-0.035em;color:{blue};text-transform:uppercase;}}
-.sub{{margin:40px 0 0;font:400 38px/1.36 Archivo,sans-serif;color:{ink};}}
-.hint{{margin:56px 0 0;font:500 25px 'IBM Plex Mono',monospace;
+.lead{{font-family:'Archivo Black',Helvetica,sans-serif;font-size:148px;
+ line-height:0.88;letter-spacing:-0.04em;color:{blue};text-transform:uppercase;}}
+.sub{{margin:46px 0 0;font:400 46px/1.34 Archivo,sans-serif;color:{ink};}}
+.hint{{margin:60px 0 0;font:500 27px 'IBM Plex Mono',monospace;
  letter-spacing:0.1em;color:{muted};}}
 .cta{{margin-top:56px;background:{blue};border-radius:28px;padding:36px 28px;
  display:flex;flex-direction:column;align-items:center;text-align:center;}}
@@ -115,6 +114,8 @@ def step_slide(i, total, layout, image, head, body):
     text = ('<div class="count">%02d / %02d</div><div class="q">%s</div>'
             '<div class="a">%s</div><div class="mark"></div>'
             % (i, total, head, body))
+    if layout == "text" or not image:
+        return '<div class="body">%s</div>' % text
     uri = img_uri(image)
     if layout == "bleed":
         return ('<div class="stage" style="background-image:url(%s)">'

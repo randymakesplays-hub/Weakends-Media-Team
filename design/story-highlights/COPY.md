@@ -131,25 +131,26 @@ eight. `faq_concepts.py` holds the four concepts the style came from, and
 Eight slides pulled straight from the package pages: an opener, six steps, a
 close. Each takes one thing that happens to the car and says why it matters.
 
-| Slide | Line | Treatment | Photo |
-|---|---|---|---|
-| `00-open` | The standard | text | — |
-| `01-hand` | Hand washed, hand finished | band | foam |
-| `02-two-bucket` | Two buckets, two mitts | window | buckets |
-| `03-wheels` | Wheels, tires and trim | full bleed | wheel |
-| `04-clay` | Clay bar | band | clay |
-| `05-extraction` | Hot water extraction | window | extraction |
-| `06-seal` | Strip, then seal | full bleed | beading |
-| `07-close` | Built around your car + call or text | text | — |
+| Slide | Line |
+|---|---|
+| `00-open` | The standard |
+| `01-hand` | Hand washed, hand finished |
+| `02-two-bucket` | Two buckets, two mitts |
+| `03-wheels` | Wheels, tires and trim |
+| `04-clay` | Clay bar |
+| `05-extraction` | Hot water extraction |
+| `06-seal` | Strip, then seal |
+| `07-close` | Built around your car + call or text |
 
-The treatment varies so tapping through has rhythm; adjacent slides never share
-one. Full bleed goes to the two most persuasive frames. The header, type and
-palette hold the set together.
+Text only, set as large as the frame carries: headline at 132px, body at 46px.
+The block anchors to the bottom rather than centring, so every slide shares a
+baseline and headlines grow upward on the longer ones. Copy lengths differ, and
+a centred block drifts where a bottom-aligned one does not.
 
-Photographs are generated macros in `assets/macros`. They hold up because no
-frame carries vehicle identity: no badge to melt, no wheel spokes to miscount,
-no full-panel reflection to get wrong. Anything wider than these crops has to
-be shot for real.
+`assets/macros` holds generated macro photographs from an earlier pass. Give a
+step a layout of `band`, `window` or `bleed` plus a filename to put one back.
+They hold up only because no frame carries vehicle identity — no badge, no wheel
+spokes, no full-panel reflection. Anything wider has to be shot for real.
 
 The block is vertically centred rather than top-aligned. Top-aligned left a
 third of the frame empty under a short line and read as unfinished.
