@@ -62,8 +62,8 @@ Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
 
 | Role | Hex | Where it appears |
 |---|---|---|
-| White | `#FFFFFF` | the ground, everywhere |
-| Black | `#17181A` | body type, and the type sitting on the blue CTA. Neutral, no blue cast |
+| White | `#FFFFFF` | the ground everywhere, and the type inside the blue CTA |
+| Black | `#17181A` | body type. Neutral, no blue cast |
 | Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar, pills |
 
 `#EDF3FD` and `#D7E5F8` are that same blue washed into white for the card and the

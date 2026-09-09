@@ -126,11 +126,11 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
 .cta{{margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;
  display:flex;flex-direction:column;align-items:center;text-align:center;}}
 .cta .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
- color:{ink};opacity:0.72;}}
+ color:#FFFFFF;opacity:0.88;}}
 .cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;
- line-height:1;letter-spacing:-0.02em;color:{ink};white-space:nowrap;}}
+ line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;}}
 .cta .hrs{{margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;
- letter-spacing:0.08em;color:{ink};opacity:0.72;}}
+ letter-spacing:0.08em;color:#FFFFFF;opacity:0.88;}}
 .site{{margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;
  letter-spacing:0.04em;color:{muted};}}
 </style></head><body><div class="frame">
@@ -236,9 +236,9 @@ def canvas_section(pkg, idx):
         </div>
         <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{price}</p>
         <div style="margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:{ink};opacity:0.72;">CALL OR TEXT</div>
-          <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:{ink};white-space:nowrap;">{phone}</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:{ink};opacity:0.72;">{hours}</div>
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#FFFFFF;opacity:0.88;">CALL OR TEXT</div>
+          <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">{phone}</div>
+          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#FFFFFF;opacity:0.88;">{hours}</div>
         </div>
         <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:{muted};">carolinaglossdetailing.com</div>
       </div>
