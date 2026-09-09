@@ -1,62 +1,62 @@
-# Carolina Gloss — Story Copy (Packages)
+# Carolina Gloss — Package Statics
 
-Source: carolinaglossdetailing.com package pages. Compressed from 8 frames to 3.
+Three 1080×1920 images, one layout, only the package content changes.
+Source copy: carolinaglossdetailing.com package pages, shortened for story reading.
 
-## Frame 1 — Basic
+Rendered files live in `out/`. Rebuild with `python3 build.py`
+(`--measure` to check fit, `--canvas` to regenerate the .dc.html).
 
-**01 · BASIC**
-### The reset
+## Shared on all three
+
+- Header block: near-black, crest logo, `CHARLOTTE · GREENSBORO · SHELBY`, blue rule
+- Best-for card, price-lock line
+- CTA: `CALL OR TEXT · 980·690·5259 · MON–SAT · 8AM–6PM`
+- Footer: carolinaglossdetailing.com
+- Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
+
+## 01 · BASIC — The reset
+
 A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.
 
-- Hand wash, top to bottom
-- Wheels, tires and trim
-- Full vacuum. Seats, rails, trunk
-- Glass streak free, both sides
-- Vinyl sanitized, leather refreshed
+| Item | Payoff |
+|---|---|
+| Hand wash, top to bottom | Two mitts and clean water. No brushes, no swirl marks. |
+| Wheels, tires and trim | Brake dust out of the barrels, trim back to black. |
+| Full interior vacuum | Seats, rails, under the mats, and the trunk. |
+| Glass, inside and out | Streak free on both sides. You notice it driving at night. |
+| Vinyl sanitized, leather refreshed | Dash, doors, console and every vent wiped down. |
 
-**Best for** a car that gets cleaned regularly and just needs bringing back.
+**Best for** A car that gets cleaned regularly and just needs bringing back.
 
-*Priced on your vehicle size and condition. We lock that number in before we touch the car.*
+## 02 · PRO CLEAN — The deep clean  `MOST POPULAR`
 
-## Frame 2 — Pro Clean (Most popular)
+Everything in Basic, then two steps that change how the car actually feels.
 
-**02 · PRO CLEAN**
-### Everything in Basic, plus two steps you feel
+| Item | Payoff |
+|---|---|
+| Clay bar | Pulls the grit washing cannot reach. Run your hand over the hood after. |
+| Hot water extraction | Coffee, dog, kids, gym bag. Gone, not covered up. |
+| Two bucket wash | Dirt goes in its own bucket, never back onto your paint. |
+| Leather and vinyl conditioned | So it stops drying out and cracking in the Carolina sun. |
+| Wheels and tires, second pass | Faces, barrels and lug seats done properly, then dressed. |
 
-- **Clay bar** — Pulls the grit washing cannot reach. Run your hand over the hood after.
-- **Hot water extraction** — Coffee, dog, kids, gym bag. Gone, not covered up.
-- **Two bucket wash** — Dirt goes in its own bucket, never back onto your paint.
-- **Leather and vinyl conditioned** — So it stops drying out and cracking in the Carolina sun.
-- **Wheels and tires, second pass** — Faces, barrels and lug seats done properly, then dressed.
+**Best for** Most people, and anyone whose car has not been detailed in a while.
 
-**Best for** most people, and anyone whose car has not been detailed in a while.
+## 03 · DELUXE — The full send
 
-*Priced on your vehicle size and condition. We lock that number in before we touch the car.*
+We strip it back first so the new protection actually bonds, then seal and wax it.
 
-## Frame 3 — Deluxe + book
+| Item | Payoff |
+|---|---|
+| Full clay bar | The whole body decontaminated panel by panel, not a spot treatment. |
+| Chemical strip wash | Old wax and road film off so the new protection bonds. |
+| Ceramic soap | Lays down a slick layer. Water sheets straight off your paint. |
+| Hand wax and spray sealant | Months of protection against pollen, sun and road salt. |
+| Interior shampooed and conditioned | Comes back looking like a lease return. |
 
-**03 · DELUXE**
-### The full send
+**Best for** Selling it, gifting it, or you just love the thing.
 
-- Full clay bar, panel by panel
-- Strip wash so the new protection bonds
-- Ceramic soap. Water sheets straight off
-- Hand wax and spray sealant
-- Seat and carpet shampoo
-- Every soft surface conditioned
+## Adding real photos later
 
-**Best for** selling it, gifting it, or you just love the thing.
-
-**CALL OR TEXT · 980·690·5259**
-Send a photo of your car and where you are parked. You get your exact price back.
-MON–SAT · 8AM–6PM
-
-*Swipe back for Basic and Pro Clean*
-
-## Photo slots (one per frame)
-
-| Frame | Slot | Shot |
-|---|---|---|
-| 1 | `cgd-basic-photo` | Clean daily driver, 3/4 angle in a driveway |
-| 2 | `cgd-pro-photo` | Hands on. Clay bar on the hood or extractor on a seat |
-| 3 | `cgd-deluxe-photo` | Gloss shot. Water beading on fresh sealed paint |
+The canvas carries a `headerMode` prop. Switch it to "Photo behind logo" and a photo
+slot appears in the header block behind a dark scrim, so the crest stays legible.
