@@ -1,47 +1,43 @@
 #!/usr/bin/env python3
-"""Render the FAQ highlight: concept B, objection killers.
+"""Render the service-detail highlight, in the style chosen from faq_concepts.
 
-Eight slides. An opener, six objections, a close. Every slide names the thing
-that actually stops someone booking rather than the polite version of the
-question, and answers it in one breath.
+Eight slides. An opener, six steps, a close. Each slide takes one thing that
+actually happens to the car and says why it matters, rather than asking and
+answering a question.
 
-The block is vertically centred rather than top-aligned. Top-aligned left a
-third of the frame empty under a short answer, which read as unfinished.
-
-Every answer traces to carolinaglossdetailing.com. Nothing here claims a
-duration, a deposit policy or a coating, because none of those are established.
+Every line is lifted from the package pages on carolinaglossdetailing.com and
+tightened. Nothing here claims a duration, a deposit policy or a ceramic
+coating: none are established, and Deluxe carries ceramic soap, not a coating.
 """
 import os, subprocess, sys
 
 from build import BLUE, INK, MUTED, CHROME, b64, font_faces
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "out", "faq")
+OUT = os.path.join(HERE, "out", "details")
 TMP = ("/tmp/claude-0/-home-user-Weakends-Media-Team/"
        "e694c530-fc11-54a2-af59-d2f4859a017f/scratchpad")
 PHONE = "980·690·5259"
 
-OBJECTIONS = [
-    ("embarrassing", "My car is embarrassing.",
-     "We have seen worse this week. That is the job, not a judgment. You are not "
-     "the first person to apologize for their back seat."),
-    ("water-power", "I don’t have a hose or an outlet.",
-     "You do not need one. The van brings its own water and power. All we need is "
-     "the space around the car and the keys."),
-    ("time", "I don’t have time to sit around.",
-     "You do not have to. Hand over the keys and go back inside. We work in your "
-     "driveway while you get on with your day."),
-    ("stains", "Those stains are never coming out.",
-     "Usually they are. Hot water extraction pulls the stain back out of the "
-     "fabric instead of covering it. Send a photo first and we will be honest "
-     "about what is coming out."),
-    ("which-one", "I don’t know which one I need.",
-     "Text a photo of your car. We will tell you straight, even when the answer "
-     "is the cheapest one."),
-    ("cost", "What is this going to cost me?",
-     "Depends on the size of the vehicle and how rough it is. Tell us what you "
-     "drive and we come back with your exact price, locked in before we touch "
-     "the car."),
+STEPS = [
+    ("hand", "Hand washed, hand finished",
+     "No machines. No brushes. Two mitts and clean water, the way paint is "
+     "supposed to be washed."),
+    ("two-bucket", "Two buckets, two mitts",
+     "Dirt goes in a separate bucket, never back onto your paint. It is the "
+     "difference between clean and scratched."),
+    ("wheels", "Wheels, tires and trim",
+     "The part every drive-thru wash skips. Brake dust out of the barrels, "
+     "trim back to black."),
+    ("clay", "Clay bar",
+     "Pulls the embedded grit that washing physically cannot. Run your hand "
+     "over the hood after and it feels like glass."),
+    ("extraction", "Hot water extraction",
+     "Water goes in and comes back out with the stain. Coffee, dog, kids, "
+     "gym bag. Gone, not covered up."),
+    ("seal", "Strip, then seal",
+     "Old wax and road film come off first, so the new protection bonds to "
+     "the paint instead of sitting on top of it."),
 ]
 
 CSS = """
@@ -91,27 +87,27 @@ def page(inner, logo, faces):
 
 def slides():
     out = [("00-open",
-            '<div class="lead">Before you<br>book</div>'
-            '<div class="sub">Six things people say before they hand over the keys, '
-            'and the honest answer to each one.</div>'
+            '<div class="lead">The<br>standard</div>'
+            '<div class="sub">What actually happens to your car, step by step, '
+            'and why each one matters.</div>'
             '<div class="hint">TAP THROUGH &#8250;</div>')]
-    for i, (slug, q, a) in enumerate(OBJECTIONS, 1):
+    for i, (slug, head, body) in enumerate(STEPS, 1):
         out.append(("%02d-%s" % (i, slug),
                     '<div class="count">%02d / %02d</div>'
-                    '<div class="q">&ldquo;%s&rdquo;</div>'
+                    '<div class="q">%s</div>'
                     '<div class="a">%s</div><div class="mark"></div>'
-                    % (i, len(OBJECTIONS), q, a)))
+                    % (i, len(STEPS), head, body)))
     out.append(("07-close",
-                '<div class="lead">Still<br>wondering?</div>'
-                '<div class="sub">Send a photo of your car and where you are parked. '
-                'You get a straight answer and your exact price back.</div>'
+                '<div class="lead">Built around<br>your car</div>'
+                '<div class="sub">Every vehicle is different, so your detail is built '
+                'around yours. Tell us what you drive.</div>'
                 '<div class="cta"><div class="lbl">CALL OR TEXT</div>'
                 '<div class="num">%s</div></div>' % PHONE))
     return out
 
 
 def shoot(html, path, w=1080, h=1920, scale=1):
-    src = os.path.join(TMP, "faqb-" + os.path.basename(path).replace(".png", ".html"))
+    src = os.path.join(TMP, "det-" + os.path.basename(path).replace(".png", ".html"))
     with open(src, "w") as fh:
         fh.write(html)
     subprocess.run([CHROME, "--headless", "--disable-gpu", "--no-sandbox",

@@ -122,30 +122,29 @@ and the icon markup on the same 120×120 grid, then re-run. Nothing else changes
 Keep the set at six or seven — past that the row scrolls and the last ones are
 never seen.
 
-## FAQ highlight
+## Service-detail highlight
 
-`faq.py` renders the set to `out/faq/`, plus `00-set.png` showing all eight.
-`faq_concepts.py` holds the four concepts the style was chosen from.
+`details.py` renders the set to `out/details/`, plus `00-set.png` showing all
+eight. `faq_concepts.py` holds the four concepts the style came from, and
+`out/faq/` the earlier objection-killer pass.
 
-Concept B, objection killers: every slide names the thing that actually stops
-someone booking rather than the polite version of the question.
+Eight slides pulled straight from the package pages: an opener, six steps, a
+close. Each takes one thing that happens to the car and says why it matters.
 
 | Slide | Line |
 |---|---|
-| `00-open` | Before you book |
-| `01-embarrassing` | "My car is embarrassing." |
-| `02-water-power` | "I don't have a hose or an outlet." |
-| `03-time` | "I don't have time to sit around." |
-| `04-stains` | "Those stains are never coming out." |
-| `05-which-one` | "I don't know which one I need." |
-| `06-cost` | "What is this going to cost me?" |
-| `07-close` | Still wondering? + call or text |
+| `00-open` | The standard |
+| `01-hand` | Hand washed, hand finished |
+| `02-two-bucket` | Two buckets, two mitts |
+| `03-wheels` | Wheels, tires and trim |
+| `04-clay` | Clay bar |
+| `05-extraction` | Hot water extraction |
+| `06-seal` | Strip, then seal |
+| `07-close` | Built around your car + call or text |
 
 The block is vertically centred rather than top-aligned. Top-aligned left a
-third of the frame empty under a short answer and read as unfinished.
+third of the frame empty under a short line and read as unfinished.
 
-**Grounding.** Every answer traces to the site: the van carries its own water
-and power, keys handed over and back inside, extraction pulls stains rather
-than masking them, price locked before the car is touched. Nothing claims a
-duration, a deposit policy, or a ceramic coating — none of those are
+**Grounding.** Every line is lifted from the package pages and tightened.
+Nothing claims a duration, a deposit policy, or a ceramic coating — none are
 established, and Deluxe carries ceramic *soap*, which is not a coating.
