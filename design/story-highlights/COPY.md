@@ -9,15 +9,13 @@ Rendered files live in `out/`. Rebuild with `python3 build.py`
 ## Shared on all three
 
 - Header: crest logo on white, Carolina blue bar. Service area lives in its own highlight, not here
-- Price-lock line
-- CTA: `CALL OR TEXT` + `980·690·5259`. No hours and no website, so nothing on the image goes stale
+- Best-for card, then the CTA: `CALL OR TEXT` + `980·690·5259`. No hours, website or prices, so nothing on the image goes stale
 - Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
 
 ## STANDARD
 
-Your everyday fresh. Start the day in a clean car.
+**Best for** Your everyday fresh. Start the day in a clean car.
 
-`WHAT YOU GET`
 
 | Item | Payoff |
 |---|---|
@@ -30,9 +28,8 @@ Your everyday fresh. Start the day in a clean car.
 
 ## GLOSS  (carries the #1 rosette)
 
-The one everybody’s actually looking for. A full in and out makeover.
+**Best for** The one everybody’s actually looking for. A full in and out makeover.
 
-`EVERYTHING IN STANDARD, PLUS`
 
 | Item | Payoff |
 |---|---|
@@ -45,9 +42,8 @@ The one everybody’s actually looking for. A full in and out makeover.
 
 ## DELUXE
 
-The final boss. Fresh, sealed, basically a brand new car.
+**Best for** The final boss. Fresh, sealed, basically a brand new car.
 
-`EVERYTHING IN GLOSS, PLUS`
 
 | Item | Payoff |
 |---|---|
