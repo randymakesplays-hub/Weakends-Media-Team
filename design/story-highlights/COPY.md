@@ -148,3 +148,35 @@ third of the frame empty under a short line and read as unfinished.
 **Grounding.** Every line is lifted from the package pages and tightened.
 Nothing claims a duration, a deposit policy, or a ceramic coating — none are
 established, and Deluxe carries ceramic *soap*, which is not a coating.
+
+## Imagery
+
+`photo_layouts.py` renders four ways a photo can sit in a detail slide. It draws
+a labelled placeholder zone by default; point `CGD_PHOTO` at a file to test a
+real shot:
+
+    CGD_PHOTO=assets/macro-beading.png python3 photo_layouts.py
+
+**What AI imagery can and cannot do here.** The client's mandate was no work
+that screams AI, and the reference posts backed it: the AI-mascot poster took
+5 likes and the AI-logo collage 23, while the two real photos took 712 and 840.
+Roughly 63% of consumers say they are less likely to buy from a brand using AI
+ads and 73% distrust ads they suspect are AI — the penalty is for being
+*detectable*, not for using it.
+
+Cars are the worst case. Badges melt, wheel spokes come out the wrong count,
+and panels reflect scenes that do not exist. Reflections are this client's
+actual product, so a bad one fails at the thing being sold.
+
+Safe: tight macro with no vehicle identity in frame (beading, foam, microfibre
+weave, clay surface), atmosphere backplates behind type, and cleanup of real
+photographs. `assets/macro-beading.png` is a generated test of the first kind
+and holds up.
+
+Never: any recognisable full vehicle, interiors, or anything with a plate or
+badge in frame.
+
+Worth remembering that the macros are also the easiest shots in this business
+to take for real — beading, foam, an extraction wand pulling brown water out of
+a seat. That last one especially: no render will ever be as persuasive as the
+real thing.
