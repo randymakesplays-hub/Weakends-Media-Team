@@ -1,31 +1,42 @@
-# Handoff prompt — add Calendly to the package detail views
+# Handoff prompt — add a Calendly booking button to all three packages
 
 Paste the block below into the Claude Code session that has the live
 carolinaglossdetailing.com codebase. It is deliberately additive-only.
 
 ---
 
-Task: add Calendly booking to the three package detail views. **Additive only —
-nothing existing changes.**
+Task: add a booking button to each of the three package detail views. The button
+opens that package's Calendly popup. **Additive only — nothing existing changes,
+and nothing new is built beyond the button.**
 
-Context: `index.html` is a single page. The package detail views are already in
-the document and are revealed with `data-open` and `location.hash`. Each detail
-view already ends with a "Ready to book X?" block and a Get my quote button.
+Context: `index.html` is a single page. The three package detail views are
+already in the document and are revealed with `data-open` and `location.hash`.
+Each one already ends with a "Ready to book X?" block and a Get my quote button.
 
 **Do not:**
 - change, restyle, reorder or reword any existing markup, copy or CSS
-- build a custom calendar, date picker or time-slot UI — the Calendly iframe *is*
-  the calendar
-- rename the packages; Basic / Pro Clean / Deluxe stay exactly as they are in
-  this task
-- touch `server.js`, `package.json`, the quote form, or any file in `assets/`
+- build a calendar, date picker, time-slot list or any booking UI of your own —
+  Calendly's popup *is* the whole booking experience
+- add a vehicle selector, service dropdown, name/phone/email field or any other
+  form input. Calendly's own booking form already collects all of it. Anything
+  extra is a second form asking the same questions twice.
+- remove or replace the existing Get my quote button — the two sit side by side
+- rename the packages; Basic / Pro Clean / Deluxe stay exactly as they are here
+- touch `server.js`, `package.json`, the quote form, or anything in `assets/`
 - add a dependency, build step, framework or CSS library
-- add any third-party script other than Calendly's `widget.js`
+- add any third-party script other than Calendly's own
 
 **Do:**
 
-1. In each package detail view, directly after the existing "Ready to book X?"
-   block, append one booking container using that package's URL:
+1. Load Calendly once, at the end of `<body>`:
+
+       <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+   Once for the whole page, not once per package.
+
+2. In each package detail view, next to the existing Get my quote button, add one
+   button that opens that package's Calendly popup:
 
    | Detail view | Calendly URL |
    |---|---|
@@ -33,25 +44,28 @@ view already ends with a "Ready to book X?" block and a Get my quote button.
    | Pro Clean | `https://calendly.com/carolinaglossdetailing-support/gloss-package` |
    | Deluxe | `https://calendly.com/carolinaglossdetailing-support/deluxe-package` |
 
-2. Load `https://assets.calendly.com/assets/external/widget.js` **once**, at the
-   end of `<body>`, `async`. Not three times.
+   Wire it with `Calendly.initPopupWidget({ url })` on click, returning false so
+   the page does not jump. Attach the handler in JS with the URL on a data
+   attribute rather than an inline `onclick`, to match how the rest of the page
+   is wired.
 
-3. **Do not rely on Calendly's auto-init.** A `.calendly-inline-widget` that is
-   inside a `display:none` panel when the script runs initialises at zero height
-   and renders collapsed — this is the one thing that will actually break here.
-   Instead, give each container a `data-url` but withhold the
-   `calendly-inline-widget` class until its view is revealed, or call
-   `Calendly.initInlineWidget({ url, parentElement })` the first time that view
-   is shown. Guard it so each package initialises at most once.
+3. Style the button with the classes the page already uses for its primary
+   button. Do not invent new button styles.
 
-4. Container sizing: `min-width:320px; height:700px; width:100%`.
+**Why popup and not the inline embed:** the detail views are hidden panels. An
+inline `.calendly-inline-widget` inside a `display:none` panel initialises at
+zero height and renders as a collapsed sliver — it looks broken when it is not.
+The popup renders in its own overlay above the page, so the hidden panel never
+touches it. If an always-visible on-page calendar is wanted later, that needs
+deferred initialisation on reveal; do not attempt it in this change.
 
 **Verify before pushing:**
 - `npm start`, open `http://localhost:3000`
-- open each of the three package details and confirm the calendar renders at full
-  height, not collapsed
-- navigate between packages and back — confirm each still loads
-- reload with a package hash directly in the URL — confirm it loads
+- open each of the three package details, click the button, confirm the correct
+  package's calendar opens in the overlay and fills it
+- close and reopen, switch packages, and reload with a package hash in the URL
+- confirm on a phone width that the overlay is usable and the page behind it does
+  not scroll sideways
 - confirm nothing else on the page shifted, restyled or changed colour
 - `git diff` shows additions only, confined to `index.html`
 
