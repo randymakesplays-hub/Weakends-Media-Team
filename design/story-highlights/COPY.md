@@ -27,7 +27,7 @@ A full hand wash outside and a proper clean inside. No machines, no brushes, no 
 
 **Best for** A car that gets cleaned regularly and just needs bringing back.
 
-## GLOSS  (carries the corner ribbon)
+## GLOSS  (carries the #1 rosette)
 
 Everything in Standard, then two steps that change how the car actually feels.
 
@@ -63,7 +63,8 @@ Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
 |---|---|---|
 | White | `#FFFFFF` | the ground everywhere, and the type inside the blue CTA |
 | Black | `#17181A` | body type. Neutral, no blue cast |
-| Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar, the Gloss corner ribbon |
+| Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar, the Gloss rosette |
+| Deep blue | `#4F86D9` | a darker tone of the same blue, only to give the rosette depth |
 
 `#EDF3FD` and `#D7E5F8` are that same blue washed into white for the card and the
 dividers. The blue is too light for small text on white, so it only ever appears as a
