@@ -13,14 +13,23 @@ FONT_DIR = os.environ.get("CGD_FONTS", "/tmp/claude-0/-home-user-Weakends-Media-
                           "e694c530-fc11-54a2-af59-d2f4859a017f/scratchpad/fonts")
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 
-INK, BLUE, BLUE_LT, TINT, RULE, MUTED = "#0F1620", "#1B5FAF", "#2E7CD6", "#EDF4FD", "#DCE3EC", "#5A6774"
-PHONE, HOURS = "980·690·5259", "MON–SAT · 8AM–6PM"
-CITIES = "CHARLOTTE · GREENSBORO · SHELBY"
+# Palette sampled straight from assets/logo.png. Three colors, nothing else:
+# white ground, neutral black type, and the Carolina blue that is 35% of the crest.
+# The blue is too light for small text on white, so it only ever appears as a fill
+# (pills, blocks, rules) with black on top of it.
+INK = "#17181A"          # logo black, no blue cast
+BLUE = "#79A9EE"         # logo Carolina blue
+TINT = "#EDF3FD"         # BLUE washed into white, for cards
+RULE = "#D7E5F8"         # BLUE washed into white, for dividers
+MUTED = "rgba(23,24,26,0.62)"   # the same black, stepped back
+
+PHONE, HOURS = "980\u00b7690\u00b75259", "MON\u2013SAT \u00b7 8AM\u20136PM"
+CITIES = "CHARLOTTE \u00b7 GREENSBORO \u00b7 SHELBY"
 PRICE_LINE = ("Priced on your vehicle size and condition. "
               "We lock that number in before we touch the car.")
 
 PACKAGES = [
-    dict(slug="01-basic", eyebrow="01 · BASIC", title="The reset", popular=False,
+    dict(slug="01-standard", eyebrow="PACKAGE 01", title="Standard", popular=False,
          sub="A full hand wash outside and a proper clean inside. "
              "No machines, no brushes, no shortcuts.",
          rows=[("Hand wash, top to bottom", "Two mitts and clean water. No brushes, no swirl marks."),
@@ -29,15 +38,15 @@ PACKAGES = [
                ("Glass, inside and out", "Streak free on both sides. You notice it driving at night."),
                ("Vinyl sanitized, leather refreshed", "Dash, doors, console and every vent wiped down.")],
          best="A car that gets cleaned regularly and just needs bringing back."),
-    dict(slug="02-pro-clean", eyebrow="02 · PRO CLEAN", title="The deep clean", popular=True,
-         sub="Everything in Basic, then two steps that change how the car actually feels.",
+    dict(slug="02-gloss", eyebrow="PACKAGE 02", title="Gloss", popular=True,
+         sub="Everything in Standard, then two steps that change how the car actually feels.",
          rows=[("Clay bar", "Pulls the grit washing cannot reach. Run your hand over the hood after."),
                ("Hot water extraction", "Coffee, dog, kids, gym bag. Gone, not covered up."),
                ("Two bucket wash", "Dirt goes in its own bucket, never back onto your paint."),
                ("Leather and vinyl conditioned", "So it stops drying out and cracking in the Carolina sun."),
                ("Wheels and tires, second pass", "Faces, barrels and lug seats done properly, then dressed.")],
          best="Most people, and anyone whose car has not been detailed in a while."),
-    dict(slug="03-deluxe", eyebrow="03 · DELUXE", title="The full send", popular=False,
+    dict(slug="03-deluxe", eyebrow="PACKAGE 03", title="Deluxe", popular=False,
          sub="We strip it back first so the new protection actually bonds, then seal and wax it.",
          rows=[("Full clay bar", "The whole body decontaminated panel by panel, not a spot treatment."),
                ("Chemical strip wash", "Old wax and road film off so the new protection bonds."),
@@ -82,9 +91,9 @@ def row_html(title, desc, last):
 
 
 def page(pkg, logo_uri, faces):
-    pill = ('<div style="flex:0 0 auto;background:{blue};color:#fff;border-radius:999px;'
-            'padding:9px 20px;font:600 21px Archivo,sans-serif;letter-spacing:0.1em;">'
-            'MOST POPULAR</div>').format(blue=BLUE) if pkg["popular"] else ""
+    pill = ('<div style="flex:0 0 auto;background:{blue};color:{ink};border-radius:999px;'
+            'padding:9px 20px;font:700 21px Archivo,sans-serif;letter-spacing:0.08em;">'
+            'MOST POPULAR</div>').format(blue=BLUE, ink=INK) if pkg["popular"] else ""
     rows = "".join(row_html(t, d, i == len(pkg["rows"]) - 1)
                    for i, (t, d) in enumerate(pkg["rows"]))
     return """<!doctype html><html><head><meta charset="utf-8"><style>
@@ -93,39 +102,42 @@ def page(pkg, logo_uri, faces):
 html,body{{margin:0;padding:0;}}
 body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
  font-family:Archivo,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;
- text-rendering:geometricPrecision;}}
-.frame{{width:1080px;height:1920px;display:flex;flex-direction:column;}}
-.head{{flex:0 0 auto;height:370px;background:{ink};position:relative;
- display:flex;flex-direction:column;align-items:center;justify-content:center;}}
-.head img{{width:236px;height:auto;display:block;}}
-.head .cities{{margin-top:22px;font:600 23px Archivo,sans-serif;
- letter-spacing:0.3em;color:#8AB8E6;}}
-.head .rule{{position:absolute;left:0;right:0;bottom:0;height:8px;background:{bluelt};}}
-.body{{flex:1 1 auto;padding:50px 84px 0;display:flex;flex-direction:column;}}
+ text-rendering:geometricPrecision;color:{ink};}}
+.frame{{width:1080px;height:1920px;display:flex;flex-direction:column;background:#fff;}}
+.head{{flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;
+ align-items:center;}}
+.head img{{width:252px;height:auto;display:block;}}
+.head .cities{{margin-top:24px;font:700 23px Archivo,sans-serif;
+ letter-spacing:0.3em;color:{ink};}}
+.bar{{flex:0 0 auto;height:10px;background:{blue};}}
+.body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
 .eyebrow{{display:flex;align-items:center;justify-content:space-between;gap:20px;}}
-.eyebrow span{{font:600 25px Archivo,sans-serif;letter-spacing:0.32em;color:{blue};}}
-h1{{margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:94px;
- line-height:0.92;letter-spacing:-0.03em;color:{ink};text-transform:uppercase;}}
+.eyebrow .tag{{background:{blue};color:{ink};border-radius:999px;padding:9px 22px;
+ font:700 21px Archivo,sans-serif;letter-spacing:0.14em;}}
+h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
+ line-height:0.9;letter-spacing:-0.03em;color:{ink};text-transform:uppercase;}}
 .sub{{margin:18px 0 0;font:400 30px/1.38 Archivo,sans-serif;color:{muted};}}
 .rows{{margin-top:30px;}}
 .best{{margin-top:28px;background:{tint};border-radius:22px;padding:22px 28px;}}
-.best .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{blue};}}
+.best .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{ink};
+ opacity:0.55;}}
 .best .txt{{margin-top:8px;font:400 27px/1.34 Archivo,sans-serif;color:{ink};}}
 .price{{margin:22px 0 0;font:400 24px/1.4 Archivo,sans-serif;color:{muted};}}
-.cta{{margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;
+.cta{{margin-top:26px;background:{ink};border-radius:28px;padding:30px 28px;
  display:flex;flex-direction:column;align-items:center;text-align:center;}}
-.cta .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#BFD9F5;}}
+.cta .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:{blue};}}
 .cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;
  line-height:1;letter-spacing:-0.02em;color:#fff;white-space:nowrap;}}
 .cta .hrs{{margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;
- letter-spacing:0.08em;color:#E4EFFC;}}
+ letter-spacing:0.08em;color:{blue};}}
 .site{{margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;
- letter-spacing:0.04em;color:#8A95A2;}}
+ letter-spacing:0.04em;color:{muted};}}
 </style></head><body><div class="frame">
 <div class="head"><img src="{logo}" alt="Carolina Gloss Detailing">
-<div class="cities">{cities}</div><div class="rule"></div></div>
+<div class="cities">{cities}</div></div>
+<div class="bar"></div>
 <div class="body">
-<div class="eyebrow"><span>{eyebrow}</span>{pill}</div>
+<div class="eyebrow"><div class="tag">{eyebrow}</div>{pill}</div>
 <h1>{title}</h1>
 <p class="sub">{sub}</p>
 <div class="rows">{rows}</div>
@@ -135,7 +147,7 @@ h1{{margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:9
 <div class="hrs">{hours}</div></div>
 <div class="site">carolinaglossdetailing.com</div>
 </div></div></body></html>""".format(
-        faces=faces, ink=INK, blue=BLUE, bluelt=BLUE_LT, tint=TINT, muted=MUTED,
+        faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
         logo=logo_uri, cities=CITIES, eyebrow=pkg["eyebrow"], pill=pill,
         title=pkg["title"], sub=pkg["sub"], rows=rows, best=pkg["best"],
         price=PRICE_LINE, phone=PHONE, hours=HOURS)
@@ -188,9 +200,9 @@ def main():
 # additionally accepts a real photo behind a dark scrim once the client has one.
 
 def canvas_section(pkg, idx):
-    pill = ('<div style="flex:0 0 auto;background:%s;color:#FFFFFF;border-radius:999px;'
-            'padding:9px 20px;font:600 21px \'Archivo\',sans-serif;letter-spacing:0.1em;">'
-            'MOST POPULAR</div>' % BLUE) if pkg["popular"] else ""
+    pill = ('<div style="flex:0 0 auto;background:%s;color:%s;border-radius:999px;'
+            'padding:9px 20px;font:700 21px \'Archivo\',sans-serif;letter-spacing:0.08em;">'
+            'MOST POPULAR</div>' % (BLUE, INK)) if pkg["popular"] else ""
     rows = []
     for i, (t, d) in enumerate(pkg["rows"]):
         edge = "border-bottom:2px solid %s;" % RULE if i == len(pkg["rows"]) - 1 else ""
@@ -202,51 +214,43 @@ def canvas_section(pkg, idx):
     return """
   <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
     <sc-if value="{{{{ showLabels }}}}" hint-placeholder-val="{{{{ true }}}}">
-      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">{label}</div>
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">{label}</div>
     </sc-if>
     <section data-screen-label="{label}" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
-      <div style="flex:0 0 auto;height:370px;position:relative;overflow:hidden;background:{ink};display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <sc-if value="{{{{ usePhotos }}}}" hint-placeholder-val="{{{{ false }}}}">
-          <image-slot id="cgd-head-{idx}" shape="rect" fit="cover" placeholder="Optional. Drop a real driveway shot behind the logo"></image-slot>
-          <div style="position:absolute;inset:0;background:rgba(15,22,32,0.72);"></div>
-        </sc-if>
-        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="position:relative;width:236px;height:auto;display:block;">
-        <div style="position:relative;margin-top:22px;font:600 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#8AB8E6;">{cities}</div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:{bluelt};"></div>
+      <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
+        <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:{ink};">{cities}</div>
       </div>
-      <div style="flex:1 1 auto;padding:50px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
+      <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
-          <div style="font:600 25px 'Archivo',sans-serif;letter-spacing:0.32em;color:{blue};">{eyebrow}</div>{pill}
+          <div style="background:{blue};color:{ink};border-radius:999px;padding:9px 22px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.14em;">{eyebrow}</div>{pill}
         </div>
-        <h1 style="margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:94px;line-height:0.92;letter-spacing:-0.03em;color:{ink};text-transform:uppercase;">{title}</h1>
+        <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{ink};text-transform:uppercase;">{title}</h1>
         <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{sub}</p>
         <div style="margin-top:30px;">{rows}</div>
         <div style="margin-top:28px;background:{tint};border-radius:22px;padding:22px 28px;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{blue};">BEST FOR</div>
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{ink};opacity:0.55;">BEST FOR</div>
           <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:{ink};text-wrap:pretty;">{best}</div>
         </div>
         <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{price}</p>
-        <div style="margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#BFD9F5;">CALL OR TEXT</div>
+        <div style="margin-top:26px;background:{ink};border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:{blue};">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">{phone}</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#E4EFFC;">{hours}</div>
+          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:{blue};">{hours}</div>
         </div>
-        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:#8A95A2;">carolinaglossdetailing.com</div>
+        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:{muted};">carolinaglossdetailing.com</div>
       </div>
     </section>
   </div>
-""".format(label=pkg["slug"].replace("-", " ").title(), idx=idx, ink=INK, blue=BLUE,
-           bluelt=BLUE_LT, tint=TINT, muted=MUTED, cities=CITIES, eyebrow=pkg["eyebrow"],
+""".format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
+           tint=TINT, muted=MUTED, cities=CITIES, eyebrow=pkg["eyebrow"],
            pill=pill, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
            best=pkg["best"], price=PRICE_LINE, phone=PHONE, hours=HOURS)
 
 
 CANVAS_PROPS = ('{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,'
-                '&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Export&quot;},'
-                '&quot;headerMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:'
-                '[&quot;Logo only&quot;,&quot;Photo behind logo&quot;],&quot;default&quot;:'
-                '&quot;Logo only&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:'
-                '&quot;Export&quot;}}')
+                '&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Export&quot;}}')
 
 
 def write_canvas():
@@ -279,10 +283,7 @@ def write_canvas():
 <script type="text/x-dc" data-dc-script data-props="{props}">
 class Component extends DCLogic {{
   renderVals() {{
-    return {{
-      showLabels: this.props.showLabels ?? true,
-      usePhotos: (this.props.headerMode ?? "Logo only") === "Photo behind logo"
-    }};
+    return {{ showLabels: this.props.showLabels ?? true }};
   }}
 }}
 

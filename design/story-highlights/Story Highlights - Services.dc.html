@@ -22,108 +22,96 @@
 
   <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
     <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
-      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">01 Basic</div>
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">01 Standard</div>
     </sc-if>
-    <section data-screen-label="01 Basic" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
-      <div style="flex:0 0 auto;height:370px;position:relative;overflow:hidden;background:#0F1620;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ false }}">
-          <image-slot id="cgd-head-1" shape="rect" fit="cover" placeholder="Optional. Drop a real driveway shot behind the logo"></image-slot>
-          <div style="position:absolute;inset:0;background:rgba(15,22,32,0.72);"></div>
-        </sc-if>
-        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="position:relative;width:236px;height:auto;display:block;">
-        <div style="position:relative;margin-top:22px;font:600 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#8AB8E6;">CHARLOTTE · GREENSBORO · SHELBY</div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:#2E7CD6;"></div>
+    <section data-screen-label="01 Standard" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
+        <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#17181A;">CHARLOTTE · GREENSBORO · SHELBY</div>
       </div>
-      <div style="flex:1 1 auto;padding:50px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;height:10px;background:#79A9EE;"></div>
+      <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
-          <div style="font:600 25px 'Archivo',sans-serif;letter-spacing:0.32em;color:#1B5FAF;">01 · BASIC</div>
+          <div style="background:#79A9EE;color:#17181A;border-radius:999px;padding:9px 22px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.14em;">PACKAGE 01</div>
         </div>
-        <h1 style="margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:94px;line-height:0.92;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">The reset</h1>
-        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.</p>
-        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Hand wash, top to bottom</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Two mitts and clean water. No brushes, no swirl marks.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Wheels, tires and trim</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Brake dust out of the barrels, trim back to black.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Full interior vacuum</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Seats, rails, under the mats, and the trunk.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Glass, inside and out</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Streak free on both sides. You notice it driving at night.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;border-bottom:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Vinyl sanitized, leather refreshed</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Dash, doors, console and every vent wiped down.</div></div></div>
-        <div style="margin-top:28px;background:#EDF4FD;border-radius:22px;padding:22px 28px;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#1B5FAF;">BEST FOR</div>
-          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;">A car that gets cleaned regularly and just needs bringing back.</div>
+        <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:#17181A;text-transform:uppercase;">Standard</h1>
+        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.</p>
+        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Hand wash, top to bottom</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Two mitts and clean water. No brushes, no swirl marks.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Wheels, tires and trim</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Brake dust out of the barrels, trim back to black.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Full interior vacuum</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Seats, rails, under the mats, and the trunk.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Glass, inside and out</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Streak free on both sides. You notice it driving at night.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;border-bottom:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Vinyl sanitized, leather refreshed</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Dash, doors, console and every vent wiped down.</div></div></div>
+        <div style="margin-top:28px;background:#EDF3FD;border-radius:22px;padding:22px 28px;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#17181A;opacity:0.55;">BEST FOR</div>
+          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#17181A;text-wrap:pretty;">A car that gets cleaned regularly and just needs bringing back.</div>
         </div>
-        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
-        <div style="margin-top:26px;background:#1B5FAF;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#BFD9F5;">CALL OR TEXT</div>
+        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
+        <div style="margin-top:26px;background:#17181A;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#79A9EE;">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">980·690·5259</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#E4EFFC;">MON–SAT · 8AM–6PM</div>
+          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#79A9EE;">MON–SAT · 8AM–6PM</div>
         </div>
-        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:#8A95A2;">carolinaglossdetailing.com</div>
+        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:rgba(23,24,26,0.62);">carolinaglossdetailing.com</div>
       </div>
     </section>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
     <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
-      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">02 Pro Clean</div>
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">02 Gloss</div>
     </sc-if>
-    <section data-screen-label="02 Pro Clean" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
-      <div style="flex:0 0 auto;height:370px;position:relative;overflow:hidden;background:#0F1620;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ false }}">
-          <image-slot id="cgd-head-2" shape="rect" fit="cover" placeholder="Optional. Drop a real driveway shot behind the logo"></image-slot>
-          <div style="position:absolute;inset:0;background:rgba(15,22,32,0.72);"></div>
-        </sc-if>
-        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="position:relative;width:236px;height:auto;display:block;">
-        <div style="position:relative;margin-top:22px;font:600 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#8AB8E6;">CHARLOTTE · GREENSBORO · SHELBY</div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:#2E7CD6;"></div>
+    <section data-screen-label="02 Gloss" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
+        <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#17181A;">CHARLOTTE · GREENSBORO · SHELBY</div>
       </div>
-      <div style="flex:1 1 auto;padding:50px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;height:10px;background:#79A9EE;"></div>
+      <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
-          <div style="font:600 25px 'Archivo',sans-serif;letter-spacing:0.32em;color:#1B5FAF;">02 · PRO CLEAN</div><div style="flex:0 0 auto;background:#1B5FAF;color:#FFFFFF;border-radius:999px;padding:9px 20px;font:600 21px 'Archivo',sans-serif;letter-spacing:0.1em;">MOST POPULAR</div>
+          <div style="background:#79A9EE;color:#17181A;border-radius:999px;padding:9px 22px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.14em;">PACKAGE 02</div><div style="flex:0 0 auto;background:#79A9EE;color:#17181A;border-radius:999px;padding:9px 20px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.08em;">MOST POPULAR</div>
         </div>
-        <h1 style="margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:94px;line-height:0.92;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">The deep clean</h1>
-        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Everything in Basic, then two steps that change how the car actually feels.</p>
-        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Clay bar</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Pulls the grit washing cannot reach. Run your hand over the hood after.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Hot water extraction</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Coffee, dog, kids, gym bag. Gone, not covered up.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Two bucket wash</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Dirt goes in its own bucket, never back onto your paint.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Leather and vinyl conditioned</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">So it stops drying out and cracking in the Carolina sun.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;border-bottom:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Wheels and tires, second pass</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Faces, barrels and lug seats done properly, then dressed.</div></div></div>
-        <div style="margin-top:28px;background:#EDF4FD;border-radius:22px;padding:22px 28px;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#1B5FAF;">BEST FOR</div>
-          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;">Most people, and anyone whose car has not been detailed in a while.</div>
+        <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:#17181A;text-transform:uppercase;">Gloss</h1>
+        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">Everything in Standard, then two steps that change how the car actually feels.</p>
+        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Clay bar</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Pulls the grit washing cannot reach. Run your hand over the hood after.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Hot water extraction</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Coffee, dog, kids, gym bag. Gone, not covered up.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Two bucket wash</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Dirt goes in its own bucket, never back onto your paint.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Leather and vinyl conditioned</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">So it stops drying out and cracking in the Carolina sun.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;border-bottom:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Wheels and tires, second pass</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Faces, barrels and lug seats done properly, then dressed.</div></div></div>
+        <div style="margin-top:28px;background:#EDF3FD;border-radius:22px;padding:22px 28px;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#17181A;opacity:0.55;">BEST FOR</div>
+          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#17181A;text-wrap:pretty;">Most people, and anyone whose car has not been detailed in a while.</div>
         </div>
-        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
-        <div style="margin-top:26px;background:#1B5FAF;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#BFD9F5;">CALL OR TEXT</div>
+        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
+        <div style="margin-top:26px;background:#17181A;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#79A9EE;">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">980·690·5259</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#E4EFFC;">MON–SAT · 8AM–6PM</div>
+          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#79A9EE;">MON–SAT · 8AM–6PM</div>
         </div>
-        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:#8A95A2;">carolinaglossdetailing.com</div>
+        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:rgba(23,24,26,0.62);">carolinaglossdetailing.com</div>
       </div>
     </section>
   </div>
 
   <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
     <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
-      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">03 Deluxe</div>
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">03 Deluxe</div>
     </sc-if>
     <section data-screen-label="03 Deluxe" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
-      <div style="flex:0 0 auto;height:370px;position:relative;overflow:hidden;background:#0F1620;display:flex;flex-direction:column;align-items:center;justify-content:center;">
-        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ false }}">
-          <image-slot id="cgd-head-3" shape="rect" fit="cover" placeholder="Optional. Drop a real driveway shot behind the logo"></image-slot>
-          <div style="position:absolute;inset:0;background:rgba(15,22,32,0.72);"></div>
-        </sc-if>
-        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="position:relative;width:236px;height:auto;display:block;">
-        <div style="position:relative;margin-top:22px;font:600 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#8AB8E6;">CHARLOTTE · GREENSBORO · SHELBY</div>
-        <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:#2E7CD6;"></div>
+      <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
+        <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:#17181A;">CHARLOTTE · GREENSBORO · SHELBY</div>
       </div>
-      <div style="flex:1 1 auto;padding:50px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
+      <div style="flex:0 0 auto;height:10px;background:#79A9EE;"></div>
+      <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
         <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
-          <div style="font:600 25px 'Archivo',sans-serif;letter-spacing:0.32em;color:#1B5FAF;">03 · DELUXE</div>
+          <div style="background:#79A9EE;color:#17181A;border-radius:999px;padding:9px 22px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.14em;">PACKAGE 03</div>
         </div>
-        <h1 style="margin:16px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:94px;line-height:0.92;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">The full send</h1>
-        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">We strip it back first so the new protection actually bonds, then seal and wax it.</p>
-        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Full clay bar</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">The whole body decontaminated panel by panel, not a spot treatment.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Chemical strip wash</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Old wax and road film off so the new protection bonds.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Ceramic soap</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Lays down a slick layer. Water sheets straight off your paint.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Hand wax and spray sealant</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Months of protection against pollen, sun and road salt.</div></div><div style="padding:17px 0;border-top:2px solid #DCE3EC;border-bottom:2px solid #DCE3EC;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#0F1620;">Interior shampooed and conditioned</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:#5A6774;">Comes back looking like a lease return.</div></div></div>
-        <div style="margin-top:28px;background:#EDF4FD;border-radius:22px;padding:22px 28px;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#1B5FAF;">BEST FOR</div>
-          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;">Selling it, gifting it, or you just love the thing.</div>
+        <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:#17181A;text-transform:uppercase;">Deluxe</h1>
+        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">We strip it back first so the new protection actually bonds, then seal and wax it.</p>
+        <div style="margin-top:30px;"><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Full clay bar</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">The whole body decontaminated panel by panel, not a spot treatment.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Chemical strip wash</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Old wax and road film off so the new protection bonds.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Ceramic soap</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Lays down a slick layer. Water sheets straight off your paint.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Hand wax and spray sealant</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Months of protection against pollen, sun and road salt.</div></div><div style="padding:17px 0;border-top:2px solid #D7E5F8;border-bottom:2px solid #D7E5F8;"><div style="font:600 29px/1.2 'Archivo',sans-serif;color:#17181A;">Interior shampooed and conditioned</div><div style="margin-top:6px;font:400 25px/1.34 'Archivo',sans-serif;color:rgba(23,24,26,0.62);">Comes back looking like a lease return.</div></div></div>
+        <div style="margin-top:28px;background:#EDF3FD;border-radius:22px;padding:22px 28px;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#17181A;opacity:0.55;">BEST FOR</div>
+          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#17181A;text-wrap:pretty;">Selling it, gifting it, or you just love the thing.</div>
         </div>
-        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
-        <div style="margin-top:26px;background:#1B5FAF;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#BFD9F5;">CALL OR TEXT</div>
+        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:rgba(23,24,26,0.62);text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
+        <div style="margin-top:26px;background:#17181A;border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#79A9EE;">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">980·690·5259</div>
-          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#E4EFFC;">MON–SAT · 8AM–6PM</div>
+          <div style="margin-top:14px;font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#79A9EE;">MON–SAT · 8AM–6PM</div>
         </div>
-        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:#8A95A2;">carolinaglossdetailing.com</div>
+        <div style="margin-top:24px;text-align:center;font:400 22px 'IBM Plex Mono',monospace;letter-spacing:0.04em;color:rgba(23,24,26,0.62);">carolinaglossdetailing.com</div>
       </div>
     </section>
   </div>
@@ -131,13 +119,10 @@
 </div>
 
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Export&quot;},&quot;headerMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Logo only&quot;,&quot;Photo behind logo&quot;],&quot;default&quot;:&quot;Logo only&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Export&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Export&quot;}}">
 class Component extends DCLogic {
   renderVals() {
-    return {
-      showLabels: this.props.showLabels ?? true,
-      usePhotos: (this.props.headerMode ?? "Logo only") === "Photo behind logo"
-    };
+    return { showLabels: this.props.showLabels ?? true };
   }
 }
 

@@ -8,13 +8,13 @@ Rendered files live in `out/`. Rebuild with `python3 build.py`
 
 ## Shared on all three
 
-- Header block: near-black, crest logo, `CHARLOTTE · GREENSBORO · SHELBY`, blue rule
+- Header: crest logo on white, `CHARLOTTE · GREENSBORO · SHELBY`, Carolina blue bar
 - Best-for card, price-lock line
 - CTA: `CALL OR TEXT · 980·690·5259 · MON–SAT · 8AM–6PM`
 - Footer: carolinaglossdetailing.com
 - Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
 
-## 01 · BASIC — The reset
+## PACKAGE 01 — STANDARD
 
 A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.
 
@@ -28,9 +28,9 @@ A full hand wash outside and a proper clean inside. No machines, no brushes, no 
 
 **Best for** A car that gets cleaned regularly and just needs bringing back.
 
-## 02 · PRO CLEAN — The deep clean  `MOST POPULAR`
+## PACKAGE 02 — GLOSS  `MOST POPULAR`
 
-Everything in Basic, then two steps that change how the car actually feels.
+Everything in Standard, then two steps that change how the car actually feels.
 
 | Item | Payoff |
 |---|---|
@@ -42,7 +42,7 @@ Everything in Basic, then two steps that change how the car actually feels.
 
 **Best for** Most people, and anyone whose car has not been detailed in a while.
 
-## 03 · DELUXE — The full send
+## PACKAGE 03 — DELUXE
 
 We strip it back first so the new protection actually bonds, then seal and wax it.
 
@@ -56,7 +56,16 @@ We strip it back first so the new protection actually bonds, then seal and wax i
 
 **Best for** Selling it, gifting it, or you just love the thing.
 
-## Adding real photos later
+## Palette
 
-The canvas carries a `headerMode` prop. Switch it to "Photo behind logo" and a photo
-slot appears in the header block behind a dark scrim, so the crest stays legible.
+Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
+
+| Role | Hex | Where it appears |
+|---|---|---|
+| White | `#FFFFFF` | the ground, everywhere |
+| Black | `#17181A` | all type, the CTA block. Neutral, no blue cast |
+| Carolina blue | `#79A9EE` | 35% of the crest. Divider bar, pills, CTA label and hours |
+
+`#EDF3FD` and `#D7E5F8` are that same blue washed into white for the card and the
+dividers. The blue is too light for small text on white, so it only ever appears as a
+fill with black on top of it, never as type on the white ground.
