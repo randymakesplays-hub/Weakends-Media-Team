@@ -22,6 +22,7 @@ BLUE = "#79A9EE"         # logo Carolina blue
 TINT = "#EDF3FD"         # BLUE washed into white, for cards
 RULE = "#D7E5F8"         # BLUE washed into white, for dividers
 MUTED = "rgba(23,24,26,0.62)"   # the same black, stepped back
+GOLD, GOLD_EDGE = "#E8B33F", "#B2822A"   # Most Popular badge only
 
 PHONE = "980\u00b7690\u00b75259"
 CITIES = "CHARLOTTE \u00b7 GREENSBORO \u00b7 SHELBY"
@@ -91,9 +92,11 @@ def row_html(title, desc, last):
 
 
 def page(pkg, logo_uri, faces):
-    pill = ('<div style="flex:0 0 auto;background:{blue};color:{ink};border-radius:999px;'
-            'padding:9px 20px;font:700 21px Archivo,sans-serif;letter-spacing:0.08em;">'
-            'MOST POPULAR</div>').format(blue=BLUE, ink=INK) if pkg["popular"] else ""
+    pill = ('<div style="flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;'
+            'background:{gold};color:{ink};border:3px solid {edge};border-radius:999px;'
+            'padding:8px 22px 8px 18px;font:700 22px Archivo,sans-serif;letter-spacing:0.08em;">'
+            '<span style="font-size:24px;line-height:1;">\u2605</span>MOST POPULAR</div>'
+            ).format(gold=GOLD, edge=GOLD_EDGE, ink=INK) if pkg["popular"] else ""
     rows = "".join(row_html(t, d, i == len(pkg["rows"]) - 1)
                    for i, (t, d) in enumerate(pkg["rows"]))
     return """<!doctype html><html><head><meta charset="utf-8"><style>
@@ -111,7 +114,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
  letter-spacing:0.3em;color:{ink};}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
 .body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
-.eyebrow{{min-height:43px;display:flex;align-items:center;}}
+.eyebrow{{min-height:46px;display:flex;align-items:center;}}
 h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
  line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;}}
 .sub{{margin:18px 0 0;font:400 30px/1.38 Archivo,sans-serif;color:{muted};}}
@@ -193,9 +196,11 @@ def main():
 # additionally accepts a real photo behind a dark scrim once the client has one.
 
 def canvas_section(pkg, idx):
-    pill = ('<div style="flex:0 0 auto;background:%s;color:%s;border-radius:999px;'
-            'padding:9px 20px;font:700 21px \'Archivo\',sans-serif;letter-spacing:0.08em;">'
-            'MOST POPULAR</div>' % (BLUE, INK)) if pkg["popular"] else ""
+    pill = ('<div style="flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;'
+            'background:%s;color:%s;border:3px solid %s;border-radius:999px;'
+            'padding:8px 22px 8px 18px;font:700 22px \'Archivo\',sans-serif;letter-spacing:0.08em;">'
+            '<span style="font-size:24px;line-height:1;">\u2605</span>MOST POPULAR</div>'
+            % (GOLD, INK, GOLD_EDGE)) if pkg["popular"] else ""
     rows = []
     for i, (t, d) in enumerate(pkg["rows"]):
         edge = "border-bottom:2px solid %s;" % RULE if i == len(pkg["rows"]) - 1 else ""
@@ -216,7 +221,7 @@ def canvas_section(pkg, idx):
       </div>
       <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
       <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
-        <div style="min-height:43px;display:flex;align-items:center;">{pill}</div>
+        <div style="min-height:46px;display:flex;align-items:center;">{pill}</div>
         <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;">{title}</h1>
         <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{sub}</p>
         <div style="margin-top:30px;">{rows}</div>
