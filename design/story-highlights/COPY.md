@@ -33,7 +33,7 @@ Everything in Standard, then two steps that change how the car actually feels.
 
 | Item | Payoff |
 |---|---|
-| Clay bar | Pulls the grit washing cannot reach. Run your hand over the hood after. |
+| Light clay bar | Pulls the grit washing cannot reach. Run your hand over the hood after. |
 | Hot water extraction | Coffee, dog, kids, gym bag. Gone, not covered up. |
 | Two bucket wash | Dirt goes in its own bucket, never back onto your paint. |
 | Leather and vinyl conditioned | So it stops drying out and cracking in the Carolina sun. |
@@ -43,7 +43,7 @@ Everything in Standard, then two steps that change how the car actually feels.
 
 ## DELUXE
 
-We strip it back first so the new protection actually bonds, then seal and wax it.
+Everything in Gloss, then we strip the old wax and road film off so the new protection actually bonds.
 
 | Item | Payoff |
 |---|---|
@@ -70,3 +70,22 @@ Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
 dividers. The blue is too light for small text on white, so it only ever appears as a
 fill with black on top of it. The one exception is the package name, which is set in
 blue at 112px where the size carries it.
+
+## Source alignment
+
+Checked against carolinaglossdetailing.com and the @carolinaglossdetails grid.
+
+**Open item for the client:** the website still lists the packages as
+**Basic / Pro Clean / Deluxe**. Instagram and these statics use
+**Standard / Gloss / Deluxe**. Anyone who taps from a post to the quote form
+meets a different set of names, and the form dropdown offers the old ones.
+One side has to change before these go up.
+
+Everything else traces to the site: the sub lines, the row payoffs and the
+best-for lines are the site's own wording, tightened. Two claims were
+corrected against it: the Gloss clay bar is the site's "light" clay bar, not
+the full one, and Deluxe now states that it contains Gloss.
+
+Dropped from the site lists to fit five rows per frame, all under-promises,
+never over: Standard's "cloth seats, light pass"; Standard's leather and vinyl
+rows merged into one; Deluxe's shampoo and interior-condition rows merged.
