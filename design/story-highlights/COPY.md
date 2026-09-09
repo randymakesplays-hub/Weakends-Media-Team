@@ -121,3 +121,31 @@ sheet if the other two grounds ever need revisiting.
 and the icon markup on the same 120×120 grid, then re-run. Nothing else changes.
 Keep the set at six or seven — past that the row scrolls and the last ones are
 never seen.
+
+## FAQ highlight
+
+`faq.py` renders the set to `out/faq/`, plus `00-set.png` showing all eight.
+`faq_concepts.py` holds the four concepts the style was chosen from.
+
+Concept B, objection killers: every slide names the thing that actually stops
+someone booking rather than the polite version of the question.
+
+| Slide | Line |
+|---|---|
+| `00-open` | Before you book |
+| `01-embarrassing` | "My car is embarrassing." |
+| `02-water-power` | "I don't have a hose or an outlet." |
+| `03-time` | "I don't have time to sit around." |
+| `04-stains` | "Those stains are never coming out." |
+| `05-which-one` | "I don't know which one I need." |
+| `06-cost` | "What is this going to cost me?" |
+| `07-close` | Still wondering? + call or text |
+
+The block is vertically centred rather than top-aligned. Top-aligned left a
+third of the frame empty under a short answer and read as unfinished.
+
+**Grounding.** Every answer traces to the site: the van carries its own water
+and power, keys handed over and back inside, extraction pulls stains rather
+than masking them, price locked before the car is touched. Nothing claims a
+duration, a deposit policy, or a ceramic coating — none of those are
+established, and Deluxe carries ceramic *soap*, which is not a coating.
