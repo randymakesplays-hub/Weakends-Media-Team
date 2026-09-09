@@ -3,12 +3,12 @@
 
 Treatment C: white ground, black icon, Carolina blue ring.
 
-Uploaded at 1080x1920 like any story, and Instagram crops a circle out of the
-centre for the profile row. Exactly how wide that crop is has shifted over the
-years, so the ring is drawn well inside the likely crop rather than out at its
-edge. Because the ground and Instagram's profile are both white, a crop wider
-than the ring just shows more white and still reads correctly. A ring sized to
-the crop would clip the moment the crop tightened.
+Uploaded at 1080x1920 like any story. Instagram crops the centre 1080x1080 and
+circles it, so the visible disc is the full width of the image, confirmed
+against a live profile. An earlier pass sized the ring at 520px on the theory
+that the crop was tighter; on the phone that left the ring floating in a sea of
+white. The ring now fills most of the crop with a margin that reads as
+deliberate padding rather than a mistake.
 
 Proportions carry over from the approved comparison sheet: ring stroke about
 4% of the ring diameter, icon about 42% of it.
@@ -22,9 +22,9 @@ OUT = os.path.join(HERE, "out", "covers")
 TMP = ("/tmp/claude-0/-home-user-Weakends-Media-Team/"
        "e694c530-fc11-54a2-af59-d2f4859a017f/scratchpad")
 
-RING = 520      # ring diameter on the 1080 canvas
-STROKE = 22     # ring weight
-ICON = 218      # icon box inside the ring
+RING = 900      # ring diameter, against a crop that is the full 1080 wide
+STROKE = 36     # ring weight, ~4% of RING
+ICON = 380      # icon box inside the ring, ~42% of RING
 
 
 def icons(c):

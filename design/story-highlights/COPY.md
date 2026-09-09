@@ -107,11 +107,11 @@ the rest are the row a detailer needs.
 | `faq.png` | FAQ | question mark in a circle |
 
 **How they are built.** White ground, black icon, Carolina blue ring. Each is
-1080×1920 and Instagram crops a circle out of the centre for the profile row.
-How wide that crop is has shifted over the years, so the ring is drawn at 520px,
-well inside the likely crop, rather than out at its edge. Ground and profile are
-both white, so a crop wider than the ring just shows more white and still reads
-correctly; a ring sized to the crop would clip the moment the crop tightened.
+1080×1920. Instagram crops the centre 1080×1080 and circles it, so the visible
+disc is the full width of the image — checked against the live profile. The ring
+is 900px, which fills that crop with a margin that reads as padding. An earlier
+pass used 520px on the theory that the crop was tighter, and on the phone the
+ring floated in a sea of white.
 
 Ring stroke is about 4% of the ring diameter and the icon about 42% of it, the
 proportions signed off on the treatment sheet. `covers_compare.py` renders that
