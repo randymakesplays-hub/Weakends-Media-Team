@@ -99,22 +99,23 @@ the rest are the row a detailer needs.
 
 | File | Highlight title to type in Instagram | Icon |
 |---|---|---|
-| `packages.png` | Packages | three stacked bars, widest at the base |
+| `packages.png` | Packages | stacked layers |
 | `location.png` | Location | map pin |
 | `reviews.png` | Reviews | star |
-| `before-after.png` | Before / After | circle, half filled |
-| `book.png` | Book | phone |
-| `faq.png` | FAQ | speech bubble with a question mark |
+| `before-after.png` | Before / After | split tile |
+| `book.png` | Book | calendar with a check |
+| `faq.png` | FAQ | question mark in a circle |
 
-**How they are built.** Each is a full 1080×1920 of Carolina blue with a white
-icon centred. Instagram crops a circle out of the middle for the profile row, so
-filling the whole canvas means the crop always lands inside the blue and nothing
-clips, whatever Instagram decides the crop is that week. The icon sits at 360px
-in the centre, far inside any crop.
+**How they are built.** White ground, black icon, Carolina blue ring. Each is
+1080×1920 and Instagram crops a circle out of the centre for the profile row.
+How wide that crop is has shifted over the years, so the ring is drawn at 520px,
+well inside the likely crop, rather than out at its edge. Ground and profile are
+both white, so a crop wider than the ring just shows more white and still reads
+correctly; a ring sized to the crop would clip the moment the crop tightened.
 
-**Why the icons are heavy.** The row renders about 60px wide on a phone. Thin
-line icons mush at that size, so strokes are 9 units on a 120 grid and shapes are
-solid.
+Ring stroke is about 4% of the ring diameter and the icon about 42% of it, the
+proportions signed off on the treatment sheet. `covers_compare.py` renders that
+sheet if the other two grounds ever need revisiting.
 
 **Adding a seventh.** Add a tuple to `COVERS` in `covers.py` with a slug, a label
 and the icon markup on the same 120×120 grid, then re-run. Nothing else changes.
