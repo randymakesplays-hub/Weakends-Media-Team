@@ -22,7 +22,6 @@ BLUE = "#79A9EE"         # logo Carolina blue
 TINT = "#EDF3FD"         # BLUE washed into white, for cards
 RULE = "#D7E5F8"         # BLUE washed into white, for dividers
 MUTED = "rgba(23,24,26,0.62)"   # the same black, stepped back
-GOLD, GOLD_EDGE = "#E8B33F", "#B2822A"   # Most Popular badge only
 
 PHONE = "980\u00b7690\u00b75259"
 CITIES = "CHARLOTTE \u00b7 GREENSBORO \u00b7 SHELBY"
@@ -92,11 +91,8 @@ def row_html(title, desc, last):
 
 
 def page(pkg, logo_uri, faces):
-    pill = ('<div style="flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;'
-            'background:{gold};color:{ink};border:3px solid {edge};border-radius:999px;'
-            'padding:8px 22px 8px 18px;font:700 22px Archivo,sans-serif;letter-spacing:0.08em;">'
-            '<span style="font-size:24px;line-height:1;">\u2605</span>MOST POPULAR</div>'
-            ).format(gold=GOLD, edge=GOLD_EDGE, ink=INK) if pkg["popular"] else ""
+    ribbon = ('<div class="ribbon"><span>&#9733; #1 MOST POPULAR</span></div>'
+              if pkg["popular"] else "")
     rows = "".join(row_html(t, d, i == len(pkg["rows"]) - 1)
                    for i, (t, d) in enumerate(pkg["rows"]))
     return """<!doctype html><html><head><meta charset="utf-8"><style>
@@ -106,7 +102,13 @@ html,body{{margin:0;padding:0;}}
 body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
  font-family:Archivo,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;
  text-rendering:geometricPrecision;color:{ink};}}
-.frame{{width:1080px;height:1920px;display:flex;flex-direction:column;background:#fff;}}
+.frame{{width:1080px;height:1920px;display:flex;flex-direction:column;background:#fff;
+ position:relative;overflow:hidden;}}
+.ribbon{{position:absolute;top:0;right:0;width:340px;height:340px;overflow:hidden;
+ pointer-events:none;}}
+.ribbon span{{position:absolute;width:481px;left:-70px;top:138px;padding:16px 0;
+ background:{blue};color:#FFFFFF;text-align:center;transform:rotate(45deg);
+ font:700 27px Archivo,sans-serif;letter-spacing:0.1em;}}
 .head{{flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;
  align-items:center;}}
 .head img{{width:252px;height:auto;display:block;}}
@@ -114,8 +116,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
  letter-spacing:0.3em;color:{ink};}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
 .body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
-.eyebrow{{min-height:46px;display:flex;align-items:center;}}
-h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
+h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
  line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;}}
 .sub{{margin:18px 0 0;font:400 30px/1.38 Archivo,sans-serif;color:{muted};}}
 .rows{{margin-top:30px;}}
@@ -130,12 +131,11 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
  color:#FFFFFF;opacity:0.88;}}
 .cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;
  line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;}}
-</style></head><body><div class="frame">
+</style></head><body><div class="frame">{ribbon}
 <div class="head"><img src="{logo}" alt="Carolina Gloss Detailing">
 <div class="cities">{cities}</div></div>
 <div class="bar"></div>
 <div class="body">
-<div class="eyebrow">{pill}</div>
 <h1>{title}</h1>
 <p class="sub">{sub}</p>
 <div class="rows">{rows}</div>
@@ -144,7 +144,7 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
 <div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div></div>
 </div></div></body></html>""".format(
         faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
-        logo=logo_uri, cities=CITIES, pill=pill,
+        logo=logo_uri, cities=CITIES, ribbon=ribbon,
         title=pkg["title"], sub=pkg["sub"], rows=rows, best=pkg["best"],
         price=PRICE_LINE, phone=PHONE)
 
@@ -159,7 +159,10 @@ def main():
         write_canvas()
         return
     measure = "--measure" in sys.argv
+    only = [a for a in sys.argv[1:] if not a.startswith("--")]
     for pkg in PACKAGES:
+        if only and pkg["slug"] not in only:
+            continue
         html_path = os.path.join(tmp, "render-%s.html" % pkg["slug"])
         with open(html_path, "w") as fh:
             fh.write(page(pkg, logo_uri, faces))
@@ -196,11 +199,11 @@ def main():
 # additionally accepts a real photo behind a dark scrim once the client has one.
 
 def canvas_section(pkg, idx):
-    pill = ('<div style="flex:0 0 auto;display:inline-flex;align-items:center;gap:10px;'
-            'background:%s;color:%s;border:3px solid %s;border-radius:999px;'
-            'padding:8px 22px 8px 18px;font:700 22px \'Archivo\',sans-serif;letter-spacing:0.08em;">'
-            '<span style="font-size:24px;line-height:1;">\u2605</span>MOST POPULAR</div>'
-            % (GOLD, INK, GOLD_EDGE)) if pkg["popular"] else ""
+    ribbon = ('<div style="position:absolute;top:0;right:0;width:340px;height:340px;overflow:hidden;">'
+              '<span style="position:absolute;width:481px;left:-70px;top:138px;padding:16px 0;'
+              'background:%s;color:#FFFFFF;text-align:center;transform:rotate(45deg);'
+              'font:700 27px \'Archivo\',sans-serif;letter-spacing:0.1em;">'
+              '&#9733; #1 MOST POPULAR</span></div>' % BLUE) if pkg["popular"] else ""
     rows = []
     for i, (t, d) in enumerate(pkg["rows"]):
         edge = "border-bottom:2px solid %s;" % RULE if i == len(pkg["rows"]) - 1 else ""
@@ -214,15 +217,14 @@ def canvas_section(pkg, idx):
     <sc-if value="{{{{ showLabels }}}}" hint-placeholder-val="{{{{ true }}}}">
       <div style="font:500 30px 'IBM Plex Mono',monospace;color:#8A95A2;letter-spacing:0.04em;">{label}</div>
     </sc-if>
-    <section data-screen-label="{label}" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
+    <section data-screen-label="{label}" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">{ribbon}
       <div style="flex:0 0 auto;padding:64px 84px 30px;display:flex;flex-direction:column;align-items:center;">
         <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="width:252px;height:auto;display:block;">
         <div style="margin-top:24px;font:700 23px 'Archivo',sans-serif;letter-spacing:0.3em;color:{ink};">{cities}</div>
       </div>
       <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
       <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
-        <div style="min-height:46px;display:flex;align-items:center;">{pill}</div>
-        <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;">{title}</h1>
+        <h1 style="margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;">{title}</h1>
         <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{sub}</p>
         <div style="margin-top:30px;">{rows}</div>
         <div style="margin-top:28px;background:{tint};border-radius:22px;padding:22px 28px;">
@@ -239,7 +241,7 @@ def canvas_section(pkg, idx):
   </div>
 """.format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
            tint=TINT, muted=MUTED, cities=CITIES,
-           pill=pill, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
+           ribbon=ribbon, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
            best=pkg["best"], price=PRICE_LINE, phone=PHONE)
 
 

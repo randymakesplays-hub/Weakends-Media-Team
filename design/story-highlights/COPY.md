@@ -27,7 +27,7 @@ A full hand wash outside and a proper clean inside. No machines, no brushes, no 
 
 **Best for** A car that gets cleaned regularly and just needs bringing back.
 
-## GLOSS  `MOST POPULAR`
+## GLOSS  (carries the corner ribbon)
 
 Everything in Standard, then two steps that change how the car actually feels.
 
@@ -63,8 +63,7 @@ Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
 |---|---|---|
 | White | `#FFFFFF` | the ground everywhere, and the type inside the blue CTA |
 | Black | `#17181A` | body type. Neutral, no blue cast |
-| Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar |
-| Gold | `#E8B33F` / `#B2822A` edge | the Most Popular badge on Gloss, and nowhere else |
+| Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar, the Gloss corner ribbon |
 
 `#EDF3FD` and `#D7E5F8` are that same blue washed into white for the card and the
 dividers. The blue is too light for small text on white, so it only ever appears as a
