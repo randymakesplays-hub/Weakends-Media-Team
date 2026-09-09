@@ -31,8 +31,8 @@ PRICE_LINE = ("Priced on your vehicle size and condition. "
 
 PACKAGES = [
     dict(slug="01-standard", title="Standard", popular=False,
-         sub="A full hand wash outside and a proper clean inside. "
-             "No machines, no brushes, no shortcuts.",
+         sub="Your everyday fresh. Start the day in a clean car.",
+         plus="WHAT YOU GET",
          rows=[("Hand wash, top to bottom", "Two mitts and clean water. No brushes, no swirl marks."),
                ("Wheels, tires and trim", "Brake dust out of the barrels, trim back to black."),
                ("Full interior vacuum", "Seats, rails, under the mats, and the trunk."),
@@ -40,7 +40,8 @@ PACKAGES = [
                ("Vinyl sanitized, leather refreshed", "Dash, doors, console and every vent wiped down.")],
          best="A car that gets cleaned regularly and just needs bringing back."),
     dict(slug="02-gloss", title="Gloss", popular=True,
-         sub="Everything in Standard, then two steps that change how the car actually feels.",
+         sub="The one everybody\u2019s actually looking for. A full in and out makeover.",
+         plus="EVERYTHING IN STANDARD, PLUS",
          rows=[("Light clay bar", "Pulls the grit washing cannot reach. Run your hand over the hood after."),
                ("Hot water extraction", "Coffee, dog, kids, gym bag. Gone, not covered up."),
                ("Two bucket wash", "Dirt goes in its own bucket, never back onto your paint."),
@@ -48,7 +49,8 @@ PACKAGES = [
                ("Wheels and tires, second pass", "Faces, barrels and lug seats done properly, then dressed.")],
          best="Most people, and anyone whose car has not been detailed in a while."),
     dict(slug="03-deluxe", title="Deluxe", popular=False,
-         sub="Everything in Gloss, then we strip the old wax and road film off so the new protection actually bonds.",
+         sub="The final boss. Fresh, sealed, basically a brand new car.",
+         plus="EVERYTHING IN GLOSS, PLUS",
          rows=[("Full clay bar", "The whole body decontaminated panel by panel, not a spot treatment."),
                ("Chemical strip wash", "Old wax and road film off so the new protection bonds."),
                ("Ceramic soap", "Lays down a slick layer. Water sheets straight off your paint."),
@@ -87,7 +89,7 @@ def font_faces():
 def row_html(title, desc, last):
     edge = "border-bottom:2px solid %s;" % RULE if last else ""
     return (
-        '<div style="padding:17px 0;border-top:2px solid {rule};{edge}">'
+        '<div style="padding:24px 0;border-top:2px solid {rule};{edge}">'
         '<div style="font:600 29px/1.2 Archivo,sans-serif;color:{ink};">{t}</div>'
         '<div style="margin-top:6px;font:400 25px/1.34 Archivo,sans-serif;color:{muted};">{d}</div>'
         '</div>'
@@ -117,14 +119,12 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
 .body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
 h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
  line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;}}
-.sub{{margin:18px 0 0;font:400 30px/1.38 Archivo,sans-serif;color:{muted};}}
-.rows{{margin-top:30px;}}
-.best{{margin-top:28px;background:{tint};border-radius:22px;padding:22px 28px;}}
-.best .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{ink};
- opacity:0.55;}}
-.best .txt{{margin-top:8px;font:400 27px/1.34 Archivo,sans-serif;color:{ink};}}
-.price{{margin:22px 0 0;font:400 24px/1.4 Archivo,sans-serif;color:{muted};}}
-.cta{{margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;
+.sub{{margin:22px 0 0;font:400 34px/1.34 Archivo,sans-serif;color:{ink};min-height:92px;}}
+.plus{{margin-top:44px;font:500 22px 'IBM Plex Mono',monospace;letter-spacing:0.14em;
+ color:{ink};opacity:0.5;}}
+.rows{{margin-top:16px;}}
+.price{{margin:34px 0 0;font:400 24px/1.4 Archivo,sans-serif;color:{muted};}}
+.cta{{margin-top:34px;background:{blue};border-radius:28px;padding:36px 28px;
  display:flex;flex-direction:column;align-items:center;text-align:center;}}
 .cta .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
  color:#FFFFFF;opacity:0.88;}}
@@ -137,14 +137,14 @@ h1{{margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
 <div class="body">
 <h1>{title}</h1>
 <p class="sub">{sub}</p>
+<div class="plus">{plus}</div>
 <div class="rows">{rows}</div>
-<div class="best"><div class="lbl">BEST FOR</div><div class="txt">{best}</div></div>
 <p class="price">{price}</p>
 <div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div></div>
 </div></div></body></html>""".format(
         faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
         logo=logo_uri, cities=CITIES, ribbon=ribbon,
-        title=pkg["title"], sub=pkg["sub"], rows=rows, best=pkg["best"],
+        title=pkg["title"], sub=pkg["sub"], plus=pkg["plus"], rows=rows,
         price=PRICE_LINE, phone=PHONE)
 
 
@@ -206,7 +206,7 @@ def canvas_section(pkg, idx):
     for i, (t, d) in enumerate(pkg["rows"]):
         edge = "border-bottom:2px solid %s;" % RULE if i == len(pkg["rows"]) - 1 else ""
         rows.append(
-            '<div style="padding:17px 0;border-top:2px solid %s;%s">'
+            '<div style="padding:24px 0;border-top:2px solid %s;%s">'
             '<div style="font:600 29px/1.2 \'Archivo\',sans-serif;color:%s;">%s</div>'
             '<div style="margin-top:6px;font:400 25px/1.34 \'Archivo\',sans-serif;color:%s;">%s</div>'
             '</div>' % (RULE, edge, INK, t, MUTED, d))
@@ -223,14 +223,11 @@ def canvas_section(pkg, idx):
       <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
       <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
         <h1 style="margin:0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;">{title}</h1>
-        <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{sub}</p>
-        <div style="margin-top:30px;">{rows}</div>
-        <div style="margin-top:28px;background:{tint};border-radius:22px;padding:22px 28px;">
-          <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{ink};opacity:0.55;">BEST FOR</div>
-          <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:{ink};text-wrap:pretty;">{best}</div>
-        </div>
-        <p style="margin:22px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{price}</p>
-        <div style="margin-top:26px;background:{blue};border-radius:28px;padding:30px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+        <p style="margin:22px 0 0;font:400 34px/1.34 'Archivo',sans-serif;color:{ink};min-height:92px;text-wrap:pretty;">{sub}</p>
+        <div style="margin-top:44px;font:500 22px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:{ink};opacity:0.5;">{plus}</div>
+        <div style="margin-top:16px;">{rows}</div>
+        <p style="margin:34px 0 0;font:400 24px/1.4 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{price}</p>
+        <div style="margin-top:34px;background:{blue};border-radius:28px;padding:36px 28px;display:flex;flex-direction:column;align-items:center;text-align:center;">
           <div style="font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#FFFFFF;opacity:0.88;">CALL OR TEXT</div>
           <div style="margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:62px;line-height:1;letter-spacing:-0.02em;color:#FFFFFF;white-space:nowrap;">{phone}</div>
         </div>
@@ -239,8 +236,8 @@ def canvas_section(pkg, idx):
   </div>
 """.format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
            tint=TINT, muted=MUTED, cities=CITIES,
-           ribbon=ribbon, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
-           best=pkg["best"], price=PRICE_LINE, phone=PHONE)
+           ribbon=ribbon, title=pkg["title"], sub=pkg["sub"], plus=pkg["plus"],
+           rows="".join(rows), price=PRICE_LINE, phone=PHONE)
 
 
 CANVAS_PROPS = ('{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,'

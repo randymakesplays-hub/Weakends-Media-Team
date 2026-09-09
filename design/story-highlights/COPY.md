@@ -9,13 +9,15 @@ Rendered files live in `out/`. Rebuild with `python3 build.py`
 ## Shared on all three
 
 - Header: crest logo on white, `CHARLOTTE · GREENSBORO · SHELBY`, Carolina blue bar
-- Best-for card, price-lock line
+- Price-lock line
 - CTA: `CALL OR TEXT` + `980·690·5259`. No hours and no website, so nothing on the image goes stale
 - Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
 
 ## STANDARD
 
-A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.
+Your everyday fresh. Start the day in a clean car.
+
+`WHAT YOU GET`
 
 | Item | Payoff |
 |---|---|
@@ -25,11 +27,12 @@ A full hand wash outside and a proper clean inside. No machines, no brushes, no 
 | Glass, inside and out | Streak free on both sides. You notice it driving at night. |
 | Vinyl sanitized, leather refreshed | Dash, doors, console and every vent wiped down. |
 
-**Best for** A car that gets cleaned regularly and just needs bringing back.
 
 ## GLOSS  (carries the #1 rosette)
 
-Everything in Standard, then two steps that change how the car actually feels.
+The one everybody’s actually looking for. A full in and out makeover.
+
+`EVERYTHING IN STANDARD, PLUS`
 
 | Item | Payoff |
 |---|---|
@@ -39,11 +42,12 @@ Everything in Standard, then two steps that change how the car actually feels.
 | Leather and vinyl conditioned | So it stops drying out and cracking in the Carolina sun. |
 | Wheels and tires, second pass | Faces, barrels and lug seats done properly, then dressed. |
 
-**Best for** Most people, and anyone whose car has not been detailed in a while.
 
 ## DELUXE
 
-Everything in Gloss, then we strip the old wax and road film off so the new protection actually bonds.
+The final boss. Fresh, sealed, basically a brand new car.
+
+`EVERYTHING IN GLOSS, PLUS`
 
 | Item | Payoff |
 |---|---|
@@ -53,7 +57,6 @@ Everything in Gloss, then we strip the old wax and road film off so the new prot
 | Hand wax and spray sealant | Months of protection against pollen, sun and road salt. |
 | Interior shampooed and conditioned | Comes back looking like a lease return. |
 
-**Best for** Selling it, gifting it, or you just love the thing.
 
 ## Palette
 
