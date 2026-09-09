@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body { margin:0; background:#E7E9EC; -webkit-font-smoothing:antialiased; }
+  a { color:#1B5FAF; text-decoration:none; }
+  a:hover { color:#123F76; }
+</style>
+</helmet>
+
+<div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:80px;padding:80px;background:#E7E9EC;font-family:'Archivo',Helvetica,sans-serif;">
+
+  <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
+    <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">01 · basic</div>
+    </sc-if>
+    <section data-screen-label="01 Basic" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
+
+      <div style="flex:0 0 auto;height:520px;position:relative;overflow:hidden;background:#EDF4FD;">
+        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ true }}">
+          <image-slot id="cgd-basic-photo" shape="rect" fit="cover" placeholder="Drop a clean daily driver, 3/4 angle in a driveway"></image-slot>
+        </sc-if>
+        <sc-if value="{{ useFlat }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;background:#EDF4FD;"></div>
+        </sc-if>
+        <img src="assets/logo.png" alt="Carolina Gloss Detailing" style="position:absolute;left:88px;bottom:40px;width:150px;height:auto;display:block;">
+      </div>
+
+      <div style="flex:1 1 auto;padding:64px 88px 280px;box-sizing:border-box;display:flex;flex-direction:column;">
+        <div style="font:600 26px 'Archivo',sans-serif;letter-spacing:0.34em;color:#1B5FAF;">01 · BASIC</div>
+        <h2 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:104px;line-height:0.92;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">The reset</h2>
+        <p style="margin:24px 0 0;font:400 32px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.</p>
+
+        <div style="margin-top:38px;display:flex;flex-direction:column;">
+          <div style="padding:22px 0;border-top:2px solid #DCE3EC;font:500 32px/1.25 'Archivo',sans-serif;color:#0F1620;">Hand wash, top to bottom</div>
+          <div style="padding:22px 0;border-top:2px solid #DCE3EC;font:500 32px/1.25 'Archivo',sans-serif;color:#0F1620;">Wheels, tires and trim</div>
+          <div style="padding:22px 0;border-top:2px solid #DCE3EC;font:500 32px/1.25 'Archivo',sans-serif;color:#0F1620;">Full vacuum. Seats, rails, trunk</div>
+          <div style="padding:22px 0;border-top:2px solid #DCE3EC;font:500 32px/1.25 'Archivo',sans-serif;color:#0F1620;">Glass streak free, both sides</div>
+          <div style="padding:22px 0;border-top:2px solid #DCE3EC;border-bottom:2px solid #DCE3EC;font:500 32px/1.25 'Archivo',sans-serif;color:#0F1620;">Vinyl sanitized, leather refreshed</div>
+        </div>
+
+        <div style="margin-top:34px;background:#EDF4FD;border-radius:26px;padding:30px 34px;">
+          <div style="font:500 24px 'IBM Plex Mono',monospace;letter-spacing:0.14em;color:#1B5FAF;">BEST FOR</div>
+          <div style="margin-top:10px;font:400 30px/1.35 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;">A car that gets cleaned regularly and just needs bringing back.</div>
+        </div>
+
+        <p style="margin:28px 0 0;font:400 26px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
+      </div>
+    </section>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
+    <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">02 · pro clean</div>
+    </sc-if>
+    <section data-screen-label="02 Pro Clean" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#EDF4FD;display:flex;flex-direction:column;">
+
+      <div style="flex:0 0 auto;height:340px;position:relative;overflow:hidden;background:#FFFFFF;">
+        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ true }}">
+          <image-slot id="cgd-pro-photo" shape="rect" fit="cover" placeholder="Drop a hands-on shot, clay bar on the hood or extractor on a seat"></image-slot>
+        </sc-if>
+        <sc-if value="{{ useFlat }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;background:#FFFFFF;"></div>
+        </sc-if>
+        <div style="position:absolute;right:88px;bottom:36px;background:#1B5FAF;color:#FFFFFF;border-radius:999px;padding:14px 30px;font:600 25px 'Archivo',sans-serif;letter-spacing:0.1em;">MOST POPULAR</div>
+      </div>
+
+      <div style="flex:1 1 auto;padding:48px 88px 260px;box-sizing:border-box;display:flex;flex-direction:column;">
+        <div style="font:600 26px 'Archivo',sans-serif;letter-spacing:0.34em;color:#1B5FAF;">02 · PRO CLEAN</div>
+        <h2 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:72px;line-height:0.98;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">Everything in Basic,<br>plus two steps you feel</h2>
+
+        <div style="margin-top:30px;display:flex;flex-direction:column;gap:18px;">
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 30px;">
+            <div style="font:600 31px 'Archivo',sans-serif;color:#0F1620;">Clay bar</div>
+            <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Pulls the grit washing cannot reach. Run your hand over the hood after.</div>
+          </div>
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 30px;">
+            <div style="font:600 31px 'Archivo',sans-serif;color:#0F1620;">Hot water extraction</div>
+            <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Coffee, dog, kids, gym bag. Gone, not covered up.</div>
+          </div>
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 30px;">
+            <div style="font:600 31px 'Archivo',sans-serif;color:#0F1620;">Two bucket wash</div>
+            <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Dirt goes in its own bucket, never back onto your paint.</div>
+          </div>
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 30px;">
+            <div style="font:600 31px 'Archivo',sans-serif;color:#0F1620;">Leather and vinyl conditioned</div>
+            <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">So it stops drying out and cracking in the Carolina sun.</div>
+          </div>
+          <div style="background:#FFFFFF;border-radius:24px;padding:22px 30px;">
+            <div style="font:600 31px 'Archivo',sans-serif;color:#0F1620;">Wheels and tires, second pass</div>
+            <div style="margin-top:8px;font:400 27px/1.34 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Faces, barrels and lug seats done properly, then dressed.</div>
+          </div>
+        </div>
+
+        <p style="margin:32px 0 0;font:400 29px/1.38 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;"><span style="font-weight:600;">Best for</span> most people, and anyone whose car has not been detailed in a while.</p>
+        <p style="margin:18px 0 0;font:400 26px/1.4 'Archivo',sans-serif;color:#5A6774;text-wrap:pretty;">Priced on your vehicle size and condition. We lock that number in before we touch the car.</p>
+      </div>
+    </section>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:22px;flex:0 0 auto;">
+    <sc-if value="{{ showLabels }}" hint-placeholder-val="{{ true }}">
+      <div style="font:500 30px 'IBM Plex Mono',monospace;color:#6B7885;letter-spacing:0.04em;">03 · deluxe + book</div>
+    </sc-if>
+    <section data-screen-label="03 Deluxe" style="width:1080px;height:1920px;flex:0 0 auto;position:relative;overflow:hidden;background:#FFFFFF;display:flex;flex-direction:column;">
+
+      <div style="flex:0 0 auto;height:360px;position:relative;overflow:hidden;background:#EDF4FD;">
+        <sc-if value="{{ usePhotos }}" hint-placeholder-val="{{ true }}">
+          <image-slot id="cgd-deluxe-photo" shape="rect" fit="cover" placeholder="Drop the gloss shot. Water beading on fresh sealed paint"></image-slot>
+        </sc-if>
+        <sc-if value="{{ useFlat }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;inset:0;background:#EDF4FD;"></div>
+        </sc-if>
+      </div>
+
+      <div style="flex:1 1 auto;padding:56px 88px 260px;box-sizing:border-box;display:flex;flex-direction:column;">
+        <div style="font:600 26px 'Archivo',sans-serif;letter-spacing:0.34em;color:#1B5FAF;">03 · DELUXE</div>
+        <h2 style="margin:18px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:96px;line-height:0.92;letter-spacing:-0.03em;color:#0F1620;text-transform:uppercase;">The full send</h2>
+
+        <div style="margin-top:30px;display:flex;flex-direction:column;">
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Full clay bar, panel by panel</div>
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Strip wash so the new protection bonds</div>
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Ceramic soap. Water sheets straight off</div>
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Hand wax and spray sealant</div>
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Seat and carpet shampoo</div>
+          <div style="padding:18px 0;border-top:2px solid #DCE3EC;border-bottom:2px solid #DCE3EC;font:500 30px/1.25 'Archivo',sans-serif;color:#0F1620;">Every soft surface conditioned</div>
+        </div>
+
+        <p style="margin:26px 0 0;font:400 29px/1.38 'Archivo',sans-serif;color:#0F1620;text-wrap:pretty;"><span style="font-weight:600;">Best for</span> selling it, gifting it, or you just love the thing.</p>
+
+        <div style="margin-top:34px;background:#1B5FAF;border-radius:34px;padding:42px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <div style="font:500 24px 'IBM Plex Mono',monospace;letter-spacing:0.16em;color:#E4EFFC;">CALL OR TEXT</div>
+          <div style="margin-top:12px;font-family:'Archivo Black',Helvetica,sans-serif;font-size:72px;line-height:1;letter-spacing:-0.03em;color:#FFFFFF;white-space:nowrap;">980·690·5259</div>
+          <div style="margin-top:18px;max-width:760px;font:400 28px/1.38 'Archivo',sans-serif;color:#E4EFFC;text-wrap:pretty;">Send a photo of your car and where you are parked. You get your exact price back.</div>
+          <div style="margin-top:20px;font:500 24px 'IBM Plex Mono',monospace;letter-spacing:0.08em;color:#FFFFFF;">MON–SAT · 8AM–6PM</div>
+        </div>
+
+        <div style="margin-top:24px;text-align:center;font:500 25px 'IBM Plex Mono',monospace;letter-spacing:0.06em;color:#6B7885;">Swipe back for Basic and Pro Clean</div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showLabels&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Export&quot;},&quot;photoMode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Photo slots&quot;,&quot;No photos&quot;],&quot;default&quot;:&quot;Photo slots&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Export&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const photos = (this.props.photoMode ?? "Photo slots") === "Photo slots";
+    return {
+      showLabels: this.props.showLabels ?? true,
+      usePhotos: photos,
+      useFlat: !photos
+    };
+  }
+}
+
+</script>
+</body>
+</html>
