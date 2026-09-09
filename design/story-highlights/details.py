@@ -5,6 +5,15 @@ Eight slides. An opener, six steps, a close. Each slide takes one thing that
 actually happens to the car and says why it matters, rather than asking and
 answering a question.
 
+The photo treatment varies across the set — band, window, full bleed — so
+tapping through has rhythm. The header, type and palette hold it together.
+Adjacent slides never share a treatment.
+
+Photographs are generated macros in assets/macros. They work because there is
+no vehicle identity in any frame: no badge to melt, no wheel spokes to
+miscount, no full-panel reflection to get wrong. Anything wider than these
+crops has to be shot for real.
+
 Every line is lifted from the package pages on carolinaglossdetailing.com and
 tightened. Nothing here claims a duration, a deposit policy or a ceramic
 coating: none are established, and Deluxe carries ceramic soap, not a coating.
@@ -20,22 +29,22 @@ TMP = ("/tmp/claude-0/-home-user-Weakends-Media-Team/"
 PHONE = "980·690·5259"
 
 STEPS = [
-    ("hand", "Hand washed, hand finished",
+    ("hand", "band", "foam.png", "Hand washed, hand finished",
      "No machines. No brushes. Two mitts and clean water, the way paint is "
      "supposed to be washed."),
-    ("two-bucket", "Two buckets, two mitts",
+    ("two-bucket", "window", "buckets.png", "Two buckets, two mitts",
      "Dirt goes in a separate bucket, never back onto your paint. It is the "
      "difference between clean and scratched."),
-    ("wheels", "Wheels, tires and trim",
+    ("wheels", "bleed", "wheel.png", "Wheels, tires and trim",
      "The part every drive-thru wash skips. Brake dust out of the barrels, "
      "trim back to black."),
-    ("clay", "Clay bar",
+    ("clay", "band", "clay.png", "Clay bar",
      "Pulls the embedded grit that washing physically cannot. Run your hand "
      "over the hood after and it feels like glass."),
-    ("extraction", "Hot water extraction",
+    ("extraction", "window", "extraction.png", "Hot water extraction",
      "Water goes in and comes back out with the stain. Coffee, dog, kids, "
      "gym bag. Gone, not covered up."),
-    ("seal", "Strip, then seal",
+    ("seal", "bleed", "beading.png", "Strip, then seal",
      "Old wax and road film come off first, so the new protection bonds to "
      "the paint instead of sitting on top of it."),
 ]
@@ -58,6 +67,18 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
  line-height:0.94;letter-spacing:-0.035em;color:{blue};text-transform:uppercase;}}
 .a{{margin:44px 0 0;font:400 37px/1.38 Archivo,sans-serif;color:{ink};}}
 .mark{{margin-top:52px;width:108px;height:10px;background:{blue};}}
+.band{{flex:0 0 auto;height:600px;background-size:cover;background-position:center;}}
+.band + .body{{justify-content:center;padding-top:60px;}}
+.window{{height:500px;border-radius:30px;overflow:hidden;background-size:cover;
+ background-position:center;margin-bottom:54px;}}
+.stage{{flex:1 1 auto;position:relative;background-size:cover;
+ background-position:center;}}
+.scrim{{position:absolute;inset:0;background:linear-gradient(180deg,
+ rgba(23,24,26,0.12) 0%, rgba(23,24,26,0.80) 58%, rgba(23,24,26,0.94) 100%);}}
+.over{{position:absolute;left:0;right:0;bottom:0;padding:0 84px 250px;}}
+.over .count{{color:#FFFFFF;opacity:0.6;}}
+.over .q{{color:#FFFFFF;}}
+.over .a{{color:rgba(255,255,255,0.9);}}
 .lead{{font-family:'Archivo Black',Helvetica,sans-serif;font-size:104px;
  line-height:0.92;letter-spacing:-0.035em;color:{blue};text-transform:uppercase;}}
 .sub{{margin:40px 0 0;font:400 38px/1.36 Archivo,sans-serif;color:{ink};}}
@@ -73,10 +94,14 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 """
 
 
+def img_uri(name):
+    return "data:image/png;base64," + b64(os.path.join(HERE, "assets", "macros", name))
+
+
 def frame(logo, inner):
     return ('<div class="frame"><div class="head">'
             '<img src="%s" alt="Carolina Gloss Detailing"></div>'
-            '<div class="bar"></div><div class="body">%s</div></div>' % (logo, inner))
+            '<div class="bar"></div>%s</div>' % (logo, inner))
 
 
 def page(inner, logo, faces):
@@ -85,24 +110,38 @@ def page(inner, logo, faces):
             '</head><body>%s</body></html>' % (style, frame(logo, inner)))
 
 
+def step_slide(i, total, layout, image, head, body):
+    """One step, rendered in whichever of the three treatments it was given."""
+    text = ('<div class="count">%02d / %02d</div><div class="q">%s</div>'
+            '<div class="a">%s</div><div class="mark"></div>'
+            % (i, total, head, body))
+    uri = img_uri(image)
+    if layout == "bleed":
+        return ('<div class="stage" style="background-image:url(%s)">'
+                '<div class="scrim"></div><div class="over">%s</div></div>'
+                % (uri, text.replace('<div class="mark"></div>', "")))
+    if layout == "window":
+        return ('<div class="body"><div class="window" '
+                'style="background-image:url(%s)"></div>%s</div>' % (uri, text))
+    return ('<div class="band" style="background-image:url(%s)"></div>'
+            '<div class="body">%s</div>' % (uri, text))
+
+
 def slides():
     out = [("00-open",
-            '<div class="lead">The<br>standard</div>'
+            '<div class="body"><div class="lead">The<br>standard</div>'
             '<div class="sub">What actually happens to your car, step by step, '
             'and why each one matters.</div>'
-            '<div class="hint">TAP THROUGH &#8250;</div>')]
-    for i, (slug, head, body) in enumerate(STEPS, 1):
+            '<div class="hint">TAP THROUGH &#8250;</div></div>')]
+    for i, (slug, layout, image, head, body) in enumerate(STEPS, 1):
         out.append(("%02d-%s" % (i, slug),
-                    '<div class="count">%02d / %02d</div>'
-                    '<div class="q">%s</div>'
-                    '<div class="a">%s</div><div class="mark"></div>'
-                    % (i, len(STEPS), head, body)))
+                    step_slide(i, len(STEPS), layout, image, head, body)))
     out.append(("07-close",
-                '<div class="lead">Built around<br>your car</div>'
+                '<div class="body"><div class="lead">Built around<br>your car</div>'
                 '<div class="sub">Every vehicle is different, so your detail is built '
                 'around yours. Tell us what you drive.</div>'
                 '<div class="cta"><div class="lbl">CALL OR TEXT</div>'
-                '<div class="num">%s</div></div>' % PHONE))
+                '<div class="num">%s</div></div></div>' % PHONE))
     return out
 
 
