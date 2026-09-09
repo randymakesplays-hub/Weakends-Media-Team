@@ -13,7 +13,7 @@ Rendered files live in `out/`. Rebuild with `python3 build.py`
 - CTA: `CALL OR TEXT` + `980·690·5259`. No hours and no website, so nothing on the image goes stale
 - Price line: "Priced on your vehicle size and condition. We lock that number in before we touch the car."
 
-## PACKAGE 01 — STANDARD
+## STANDARD
 
 A full hand wash outside and a proper clean inside. No machines, no brushes, no shortcuts.
 
@@ -27,7 +27,7 @@ A full hand wash outside and a proper clean inside. No machines, no brushes, no 
 
 **Best for** A car that gets cleaned regularly and just needs bringing back.
 
-## PACKAGE 02 — GLOSS  `MOST POPULAR`
+## GLOSS  `MOST POPULAR`
 
 Everything in Standard, then two steps that change how the car actually feels.
 
@@ -41,7 +41,7 @@ Everything in Standard, then two steps that change how the car actually feels.
 
 **Best for** Most people, and anyone whose car has not been detailed in a while.
 
-## PACKAGE 03 — DELUXE
+## DELUXE
 
 We strip it back first so the new protection actually bonds, then seal and wax it.
 

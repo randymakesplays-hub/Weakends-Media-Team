@@ -29,7 +29,7 @@ PRICE_LINE = ("Priced on your vehicle size and condition. "
               "We lock that number in before we touch the car.")
 
 PACKAGES = [
-    dict(slug="01-standard", eyebrow="PACKAGE 01", title="Standard", popular=False,
+    dict(slug="01-standard", title="Standard", popular=False,
          sub="A full hand wash outside and a proper clean inside. "
              "No machines, no brushes, no shortcuts.",
          rows=[("Hand wash, top to bottom", "Two mitts and clean water. No brushes, no swirl marks."),
@@ -38,7 +38,7 @@ PACKAGES = [
                ("Glass, inside and out", "Streak free on both sides. You notice it driving at night."),
                ("Vinyl sanitized, leather refreshed", "Dash, doors, console and every vent wiped down.")],
          best="A car that gets cleaned regularly and just needs bringing back."),
-    dict(slug="02-gloss", eyebrow="PACKAGE 02", title="Gloss", popular=True,
+    dict(slug="02-gloss", title="Gloss", popular=True,
          sub="Everything in Standard, then two steps that change how the car actually feels.",
          rows=[("Clay bar", "Pulls the grit washing cannot reach. Run your hand over the hood after."),
                ("Hot water extraction", "Coffee, dog, kids, gym bag. Gone, not covered up."),
@@ -46,7 +46,7 @@ PACKAGES = [
                ("Leather and vinyl conditioned", "So it stops drying out and cracking in the Carolina sun."),
                ("Wheels and tires, second pass", "Faces, barrels and lug seats done properly, then dressed.")],
          best="Most people, and anyone whose car has not been detailed in a while."),
-    dict(slug="03-deluxe", eyebrow="PACKAGE 03", title="Deluxe", popular=False,
+    dict(slug="03-deluxe", title="Deluxe", popular=False,
          sub="We strip it back first so the new protection actually bonds, then seal and wax it.",
          rows=[("Full clay bar", "The whole body decontaminated panel by panel, not a spot treatment."),
                ("Chemical strip wash", "Old wax and road film off so the new protection bonds."),
@@ -111,9 +111,7 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#fff;
  letter-spacing:0.3em;color:{ink};}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
 .body{{flex:1 1 auto;padding:44px 84px 0;display:flex;flex-direction:column;}}
-.eyebrow{{display:flex;align-items:center;justify-content:space-between;gap:20px;}}
-.eyebrow .tag{{background:{blue};color:{ink};border-radius:999px;padding:9px 22px;
- font:700 21px Archivo,sans-serif;letter-spacing:0.14em;}}
+.eyebrow{{min-height:43px;display:flex;align-items:center;}}
 h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;
  line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;}}
 .sub{{margin:18px 0 0;font:400 30px/1.38 Archivo,sans-serif;color:{muted};}}
@@ -134,7 +132,7 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
 <div class="cities">{cities}</div></div>
 <div class="bar"></div>
 <div class="body">
-<div class="eyebrow"><div class="tag">{eyebrow}</div>{pill}</div>
+<div class="eyebrow">{pill}</div>
 <h1>{title}</h1>
 <p class="sub">{sub}</p>
 <div class="rows">{rows}</div>
@@ -143,7 +141,7 @@ h1{{margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:1
 <div class="cta"><div class="lbl">CALL OR TEXT</div><div class="num">{phone}</div></div>
 </div></div></body></html>""".format(
         faces=faces, ink=INK, blue=BLUE, tint=TINT, muted=MUTED,
-        logo=logo_uri, cities=CITIES, eyebrow=pkg["eyebrow"], pill=pill,
+        logo=logo_uri, cities=CITIES, pill=pill,
         title=pkg["title"], sub=pkg["sub"], rows=rows, best=pkg["best"],
         price=PRICE_LINE, phone=PHONE)
 
@@ -218,9 +216,7 @@ def canvas_section(pkg, idx):
       </div>
       <div style="flex:0 0 auto;height:10px;background:{blue};"></div>
       <div style="flex:1 1 auto;padding:44px 84px 0;box-sizing:border-box;display:flex;flex-direction:column;">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
-          <div style="background:{blue};color:{ink};border-radius:999px;padding:9px 22px;font:700 21px 'Archivo',sans-serif;letter-spacing:0.14em;">{eyebrow}</div>{pill}
-        </div>
+        <div style="min-height:43px;display:flex;align-items:center;">{pill}</div>
         <h1 style="margin:20px 0 0;font-family:'Archivo Black',Helvetica,sans-serif;font-size:112px;line-height:0.9;letter-spacing:-0.03em;color:{blue};text-transform:uppercase;">{title}</h1>
         <p style="margin:18px 0 0;font:400 30px/1.38 'Archivo',sans-serif;color:{muted};text-wrap:pretty;">{sub}</p>
         <div style="margin-top:30px;">{rows}</div>
@@ -237,7 +233,7 @@ def canvas_section(pkg, idx):
     </section>
   </div>
 """.format(label=pkg["slug"].replace("-", " ").title(), ink=INK, blue=BLUE,
-           tint=TINT, muted=MUTED, cities=CITIES, eyebrow=pkg["eyebrow"],
+           tint=TINT, muted=MUTED, cities=CITIES,
            pill=pill, title=pkg["title"], sub=pkg["sub"], rows="".join(rows),
            best=pkg["best"], price=PRICE_LINE, phone=PHONE)
 
