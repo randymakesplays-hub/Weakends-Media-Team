@@ -63,9 +63,10 @@ Sampled from the pixels of `assets/logo.png`. Three colors, nothing else.
 | Role | Hex | Where it appears |
 |---|---|---|
 | White | `#FFFFFF` | the ground, everywhere |
-| Black | `#17181A` | all type, the CTA block. Neutral, no blue cast |
-| Carolina blue | `#79A9EE` | 35% of the crest. Divider bar, pills, CTA label and hours |
+| Black | `#17181A` | body type, and the type sitting on the blue CTA. Neutral, no blue cast |
+| Carolina blue | `#79A9EE` | 35% of the crest. Package name, CTA block, divider bar, pills |
 
 `#EDF3FD` and `#D7E5F8` are that same blue washed into white for the card and the
 dividers. The blue is too light for small text on white, so it only ever appears as a
-fill with black on top of it, never as type on the white ground.
+fill with black on top of it. The one exception is the package name, which is set in
+blue at 112px where the size carries it.
