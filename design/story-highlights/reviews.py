@@ -35,7 +35,7 @@ REVIEWS = [
          text="This is top-of-the-line service. My husband gifted me with a detail "
               "for Mother's Day! He arrived on time at my home, and it was "
               "professional from beginning to end!",
-         pull="One of the best details I have had over the years."),
+         pull="This is top-of-the-line service."),
     dict(name="biana", meta="2 reviews", when="5 months ago",
          text="I just bought my car used off Craigslist and Dallas really brought "
               "it back to life!! Dealership quality and reasonably priced at that.",
@@ -142,13 +142,24 @@ def concept_a():
             ).format(stars=stars(30), s2=star(24, BLUE), **r)
 
 
-def concept_b():
-    r = REVIEWS[0]
+def pullquote(r):
     return ('<div class="mark">&ldquo;</div>'
             '<div class="pull">{pull}</div>'
             '<div class="attrib">{stars}'
             '<span class="id"><b>{name}</b><span>{meta} &middot; Google</span></span></div>'
             ).format(stars=stars(30), **r)
+
+
+def concept_b():
+    return pullquote(REVIEWS[0])
+
+
+def verify():
+    """Every pull has to appear in the reviewer's own text, case aside."""
+    bad = [r["name"] for r in REVIEWS
+           if r["pull"].rstrip(".!").lower() not in r["text"].lower()]
+    if bad:
+        sys.exit("pull quote not found in review text: " + ", ".join(bad))
 
 
 def concept_c():
@@ -181,11 +192,18 @@ def shoot(html, path, w=1080, h=1920, scale=1):
 
 
 def main():
+    verify()
     os.makedirs(OUT, exist_ok=True)
     logo = "data:image/png;base64," + b64(os.path.join(HERE, "assets", "logo.png"))
     faces = font_faces()
     for slug, _, build, crest in CONCEPTS:
         shoot(page(build(), logo, faces, crest), os.path.join(OUT, slug + ".png"))
+
+    # The chosen direction: one pull-quote slide per review.
+    for i, r in enumerate(REVIEWS, 1):
+        shoot(page(pullquote(r), logo, faces, False),
+              os.path.join(OUT, "set-%02d-%s.png"
+                           % (i, r["name"].split()[0].lower())))
 
     tiles = "".join(
         '<figure><img src="{s}.png"><figcaption>{n}</figcaption></figure>'.format(s=s, n=n)
