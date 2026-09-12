@@ -10,7 +10,23 @@ Headline number is 5.0 from 33 reviews, per the Google Business Profile.
 """
 import math, os, subprocess, sys
 
-from build import BLUE, INK, TINT, RULE, MUTED, CHROME, b64, font_faces
+from build import BLUE, INK, TINT, RULE, MUTED, PHONE, CHROME, b64, font_faces
+
+# Google's own four-colour G. The one mark on the slide that buys credibility.
+GOOGLE_G = (
+    '<svg class="gmark" viewBox="0 0 48 48" width="{s}" height="{s}" aria-hidden="true">'
+    '<path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8'
+    'c-6.627,0-12-5.373-12-12s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657'
+    'C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20s20-8.955,20-20'
+    'C44,22.659,43.862,21.35,43.611,20.083z"/>'
+    '<path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12'
+    'c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4'
+    'C16.318,4,9.656,8.337,6.306,14.691z"/>'
+    '<path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238'
+    'C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025'
+    'C9.505,39.556,16.227,44,24,44z"/>'
+    '<path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571'
+    'l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "out", "reviews")
@@ -35,7 +51,7 @@ REVIEWS = [
          text="This is top-of-the-line service. My husband gifted me with a detail "
               "for Mother's Day! He arrived on time at my home, and it was "
               "professional from beginning to end!",
-         pull="This is top-of-the-line service."),
+         pull="He arrived on time at my home."),
     dict(name="biana", meta="2 reviews", when="5 months ago",
          text="I just bought my car used off Craigslist and Dallas really brought "
               "it back to life!! Dealership quality and reasonably priced at that.",
@@ -72,8 +88,9 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 .head{{flex:0 0 auto;padding:74px 84px 52px;display:flex;justify-content:center;}}
 .head img{{width:264px;height:auto;display:block;}}
 .bar{{flex:0 0 auto;height:10px;background:{blue};}}
-.body{{flex:1 1 auto;padding:84px 84px 250px;display:flex;flex-direction:column;}}
-.body.low{{justify-content:center;padding-bottom:170px;}}
+/* Everything sits optically centred, biased up out of Instagram's bottom UI. */
+.body{{flex:1 1 auto;padding:84px 84px 210px;display:flex;flex-direction:column;
+ justify-content:center;}}
 .eyebrow{{font:500 25px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
  text-transform:uppercase;color:{ink};opacity:0.45;}}
 .stars{{display:inline-flex;gap:5px;align-items:center;}}
@@ -102,6 +119,21 @@ body{{width:1080px;height:1920px;overflow:hidden;background:#FFFFFF;
 .attrib .id b{{display:block;font:700 30px Archivo,sans-serif;}}
 .attrib .id span{{display:block;margin-top:3px;font:400 22px 'IBM Plex Mono',monospace;
  color:{muted};}}
+.gmark{{display:block;flex:0 0 auto;}}
+.proof{{margin-top:26px;display:flex;align-items:center;gap:16px;
+ font:500 25px 'IBM Plex Mono',monospace;color:{muted};}}
+
+/* close — the only slide that asks for the booking */
+.ask{{font-family:'Archivo Black',Helvetica,sans-serif;font-size:104px;line-height:0.94;
+ letter-spacing:-0.035em;}}
+.ask em{{font-style:normal;color:{blue};}}
+.sub{{margin-top:28px;font:400 36px/1.4 Archivo,sans-serif;color:{muted};}}
+.cta{{margin-top:52px;background:{blue};border-radius:28px;padding:38px 28px;
+ text-align:center;}}
+.cta .lbl{{font:500 21px 'IBM Plex Mono',monospace;letter-spacing:0.16em;
+ color:#FFFFFF;opacity:0.9;}}
+.cta .num{{margin-top:8px;font-family:'Archivo Black',Helvetica,sans-serif;
+ font-size:62px;letter-spacing:-0.02em;color:#FFFFFF;}}
 
 /* C — the number */
 .big{{font-family:'Archivo Black',Helvetica,sans-serif;font-size:250px;
@@ -121,7 +153,7 @@ def frame(inner, logo, crest=False):
             % logo) if crest else ""
     return ('<div class="frame">%s<div class="bar"></div>'
             '<div class="body%s">%s</div></div>'
-            % (head, "" if crest else " low", inner))
+            % (head, "", inner))
 
 
 def page(inner, logo, faces, crest=False):
@@ -142,12 +174,38 @@ def concept_a():
             ).format(stars=stars(30), s2=star(24, BLUE), **r)
 
 
+def pull_size(text):
+    """Short quotes get bigger type, so every slide fills the frame the same."""
+    n = len(text)
+    return 132 if n <= 35 else 112 if n <= 55 else 96 if n <= 75 else 84
+
+
 def pullquote(r):
     return ('<div class="mark">&ldquo;</div>'
-            '<div class="pull">{pull}</div>'
-            '<div class="attrib">{stars}'
-            '<span class="id"><b>{name}</b><span>{meta} &middot; Google</span></span></div>'
-            ).format(stars=stars(30), **r)
+            '<div class="pull" style="font-size:{size}px">{pull}</div>'
+            '<div class="attrib">{gmark}'
+            '<span class="id"><b>{name}</b><span>{meta}</span></span></div>'
+            '<div class="proof">{stars} {rating} from {count} reviews on Google</div>'
+            ).format(stars=stars(24), gmark=GOOGLE_G.format(s=54),
+                     size=pull_size(r["pull"]), rating=RATING, count=COUNT, **r)
+
+
+def open_slide():
+    return ('<div class="eyebrow">What people say</div>'
+            '<div class="big">{rating}</div>'
+            '<div class="rate" style="margin-top:22px">{stars}</div>'
+            '<p class="from">from <b>{count} reviews</b> on Google</p>'
+            '<div class="proof">{gmark} Every word on these slides is theirs</div>'
+            ).format(stars=stars(40), gmark=GOOGLE_G.format(s=40),
+                     rating=RATING, count=COUNT)
+
+
+def close_slide():
+    return ('<div class="ask">Your turn.<br><em>Book it.</em></div>'
+            '<p class="sub">Mobile detailing across Charlotte, Greensboro '
+            'and Shelby. We come to you.</p>'
+            '<div class="cta"><div class="lbl">CALL OR TEXT</div>'
+            '<div class="num">{phone}</div></div>').format(phone=PHONE)
 
 
 def concept_b():
@@ -191,6 +249,36 @@ def shoot(html, path, w=1080, h=1920, scale=1):
     print("wrote", path)
 
 
+def sheet_of(items, out, faces):
+    """Contact sheet of already-rendered PNGs. items is (slug, caption) pairs."""
+    tile = 390 if len(items) <= 3 else 210
+    tiles = "".join(
+        '<figure><img src="{s}.png"><figcaption>{n}</figcaption></figure>'.format(s=s, n=n)
+        for s, n in items)
+    width = len(items) * (tile + 34) + 34
+    sheet = """<!doctype html><html><head><meta charset="utf-8"><style>
+{faces}
+*{{box-sizing:border-box;}} html,body{{margin:0;padding:0;}}
+body{{width:{width}px;background:#EFF1F4;display:flex;justify-content:center;gap:34px;
+ padding:40px 34px;font-family:Archivo,Helvetica,sans-serif;}}
+figure{{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;}}
+img{{width:{tile}px;height:auto;display:block;border-radius:10px;
+ box-shadow:0 6px 26px rgba(15,22,32,0.16);}}
+figcaption{{font:700 18px Archivo,sans-serif;color:{ink};}}
+</style></head><body>{tiles}</body></html>""".format(
+        faces=faces, ink=INK, tiles=tiles, width=width, tile=tile)
+    src = os.path.join(OUT, "_sheet-" + out.replace(".png", ".html"))
+    with open(src, "w") as fh:
+        fh.write(sheet)
+    subprocess.run([CHROME, "--headless", "--disable-gpu", "--no-sandbox",
+                    "--hide-scrollbars", "--force-device-scale-factor=2",
+                    "--virtual-time-budget=9000",
+                    "--window-size=%d,%d" % (width, tile * 1920 // 1080 + 130),
+                    "--screenshot=" + os.path.join(OUT, out),
+                    "file://" + src], capture_output=True)
+    print("wrote", os.path.join(OUT, out))
+
+
 def main():
     verify()
     os.makedirs(OUT, exist_ok=True)
@@ -199,34 +287,17 @@ def main():
     for slug, _, build, crest in CONCEPTS:
         shoot(page(build(), logo, faces, crest), os.path.join(OUT, slug + ".png"))
 
-    # The chosen direction: one pull-quote slide per review.
-    for i, r in enumerate(REVIEWS, 1):
-        shoot(page(pullquote(r), logo, faces, False),
-              os.path.join(OUT, "set-%02d-%s.png"
-                           % (i, r["name"].split()[0].lower())))
+    # The shipping set: open on the number, five quotes, close on the booking.
+    slides = ([("00-open", open_slide(), True)]
+              + [("%02d-%s" % (i, r["name"].split()[0].lower()), pullquote(r), False)
+                 for i, r in enumerate(REVIEWS, 1)]
+              + [("06-close", close_slide(), True)])
+    for slug, inner, crest in slides:
+        shoot(page(inner, logo, faces, crest), os.path.join(OUT, "set-" + slug + ".png"))
+    sheet_of([("set-" + s, s.split("-", 1)[1].title()) for s, _, _ in slides],
+             "00-set.png", faces)
 
-    tiles = "".join(
-        '<figure><img src="{s}.png"><figcaption>{n}</figcaption></figure>'.format(s=s, n=n)
-        for s, n, _, _ in CONCEPTS)
-    sheet = """<!doctype html><html><head><meta charset="utf-8"><style>
-{faces}
-*{{box-sizing:border-box;}} html,body{{margin:0;padding:0;}}
-body{{width:1360px;background:#EFF1F4;display:flex;justify-content:center;gap:34px;
- padding:40px 34px;font-family:Archivo,Helvetica,sans-serif;}}
-figure{{margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;}}
-img{{width:390px;height:auto;display:block;border-radius:10px;
- box-shadow:0 6px 26px rgba(15,22,32,0.16);}}
-figcaption{{font:700 20px Archivo,sans-serif;color:{ink};}}
-</style></head><body>{tiles}</body></html>""".format(faces=faces, ink=INK, tiles=tiles)
-    src = os.path.join(OUT, "_sheet.html")
-    with open(src, "w") as fh:
-        fh.write(sheet)
-    subprocess.run([CHROME, "--headless", "--disable-gpu", "--no-sandbox",
-                    "--hide-scrollbars", "--force-device-scale-factor=2",
-                    "--virtual-time-budget=9000", "--window-size=1360,860",
-                    "--screenshot=" + os.path.join(OUT, "00-concepts.png"),
-                    "file://" + src], capture_output=True)
-    print("wrote", os.path.join(OUT, "00-concepts.png"))
+    sheet_of([(s, n) for s, n, _, _ in CONCEPTS], "00-concepts.png", faces)
 
 
 if __name__ == "__main__":
