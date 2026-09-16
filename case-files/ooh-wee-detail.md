@@ -142,7 +142,8 @@ saved as a contact, and closed. Total elapsed: 4:05.
 
 ## The name
 
-Randy asked twice. He got *"What? Yeah."* and then *"Ooh wee. That's my name."*
+Randy asked twice. He got *"What? Yeah."* and then *"Uh, uh, Ooh wee. That, that, that's my name.
+Ooh wee."*
 
 This is not a CRM data-entry error — **the CRM is an accurate record of a man who would not
 identify himself.** First name "Ooh Wee Detail" and last name "Oh wee" are what happens when the
@@ -150,7 +151,7 @@ form gets filled from a call where nobody said a name. Treat it as a qualificati
 hygiene problem: a buyer who is genuinely considering letting you into his business tells you his
 name the first time you ask. Compare `case-files/transcripts/2026-09-15-flawless-detailing-call1-raw.txt`,
 where Randy asks once — *"Tell me your name one more time"* — and gets *"My name is Alec"*
-immediately, from a prospect who then books.
+immediately, from a prospect who books on a second call later the same day.
 
 We do not currently know whether the man on this phone is the owner.
 
@@ -162,7 +163,7 @@ We do not currently know whether the man on this phone is the owner.
 
 1. *"I've been getting calls all day off my website"*
 2. *"people been going. They've been going. They can see all my calls. They can see everything"*
-3. *"I'm doing good, bro"* (×3, escalating to *"I'm actually doing outstanding"*)
+3. *"I'm doing good, bro"* (×3, escalating to *"I'm actually- … doing outstanding, man"*)
 4. *"Word of mouth is, is, is my best, my best advertisement ever"*
 5. *"Why y'all keep calling me, bro?"*
 
@@ -178,7 +179,7 @@ me, bro?"*
 | "Stage: call booked Thursday" | **Nothing is booked.** No time, no calendar invite, no Calendly, no confirmation beyond *"call me Thursday."* Thursday = **Sep 17**, hour unspecified |
 | "Current state: straight-to-the-point, needs help" | Straight-to-the-point: **yes**, and hostile at the open. "Needs help": **directly contradicted four times.** He never asked for anything |
 | "Need: lead management + brand management" | **That is Randy's pitch, recorded as the prospect's need.** The prospect never mentioned leads, brand, bookings or a website problem — he asserted the opposite |
-| "Play: get him on a performance trial" | The trial was pitched in full and **drew no response at all** — he changed the subject to Thursday |
+| "Play: get him on a performance trial" | The trial was pitched in full and **drew no engagement** — an *"All right"* and then a change of subject to Thursday |
 | "Next step: Thursday call, close trial" | The realistic next step is **qualify or disqualify**, not close |
 
 **Corrected read:** an unqualified cold lead who is word-of-mouth saturated by his own account,
@@ -195,10 +196,10 @@ there by offering to leave.
 **What Randy got wrong:** he pitched a solution to a man who had not described a problem. The only
 questions he asked that sought any information were administrative — *name* and *email*. Everything
 else was rhetorical (*"Can I be transparent with you?"*, *"How can we do better? How can we
-maximize?"*) or the closing take-away. Nothing
-about cars per week, turn-aways, who answers the phone, or what the "calls all day" actually are.
-A 4-minute call is not the constraint here; a 4-minute call is plenty of time for three qualifying
-questions if you ask them instead of describing a seven-day trial.
+maximize?"*) or the closing take-away. Nothing about cars per week, turn-aways, who answers the
+phone, or what the "calls all day" actually are. A 4-minute call is not the constraint here; a
+4-minute call is plenty of time for three qualifying questions if you ask them instead of describing
+a seven-day trial.
 
 ---
 
@@ -208,7 +209,7 @@ questions if you ask them instead of describing a seven-day trial.
 |---|---|---|---|
 | 1 | *"I've been getting calls all day off my website… You need to check your phone"* | Switched premise to *"Google doesn't have a website listed"* — then contradicted himself with *"I'm looking at your website right now"* | **Stands, and it damaged credibility.** See Risk #4 |
 | 2 | *"Why y'all keep calling me, bro?"* — agency fatigue | *"I know a whole bunch of other people call you… They be bullshitting"* — separated himself from the field | **Partially handled.** This is what bought the rest of the call |
-| 3 | *"I'm doing good, bro"* → *"I'm actually doing outstanding"* | *"I understand you're doing good. Hey, I want you to do great"* | **Stands. Untested** — no number was ever put against it |
+| 3 | *"I'm doing good, bro"* → *"I'm actually- … doing outstanding, man"* | *"…understand you're doing good. Hey, I want you to do great"* (the transcript picks him up mid-word) | **Stands. Untested** — no number was ever put against it |
 | 4 | *"Word of mouth is my best advertisement ever"* | *"God gave people a mouth for a reason, right? But hey, man… he also gave people-"* — cut off mid-sentence | **Stands.** The counter never landed |
 | 5 | *"Give me a call back Thursday"* (brush-off) | *"Do you really want me to call you Thursday or are we just wasting each other's time here?"* | **Converted** — to *"I'll hear you out on Thursday, man. I give you a chance, bro"* |
 | 6 | Name withheld (asked ×2) | Moved on both times | **Stands** |
@@ -219,16 +220,17 @@ questions if you ask them instead of describing a seven-day trial.
 
 See `case-files/pete-rushford-in-home-services/README.md`. The objection shape is nearly identical,
 and both men came off the **same cold list** (houston-outreach / wireless / houston-part1). Randy
-called them roughly half an hour apart on the same afternoon — Pete at 2:34 PM, Ooh Wee at ~3:29 PM.
+called them just under an hour apart on the same afternoon — Pete at 2:34 PM, Ooh Wee at ~3:29 PM
+(Pete's call ran 21:52, so roughly half an hour separates the end of one and the start of the other).
 
 | | Pete Rushford | Ooh Wee Detail |
 |---|---|---|
 | Rejects the website premise | Yes, five times | Yes, from the first sentence |
 | "Word of mouth" objection | *"Word of mouth in my area is tremendous"* | *"Word of mouth is my best advertisement ever"* |
-| "I'm fine" objection | *"I don't need any more customers, I'm giving them away"* | *"I'm actually doing outstanding"* |
+| "I'm fine" objection | *"I don't need any more customers, I'm giving them away"* | *"I'm actually- … doing outstanding, man"* |
 | Gave his name | Yes | **No — asked twice** |
 | Call length | 21:52 | **4:05** |
-| Evidence behind the claim | 10–15 calls/day, ~$1,000/day, 3 unanswered jobs, 20 years, named crews | **None** |
+| Evidence behind the claim | ~10–15 calls/day, ~$1,000/day, 3 unanswered jobs, 20+ years, paint + roofing crews on call | **None** |
 | Underlying constraint surfaced | **Yes — manpower.** *"If you had good reliable people, I'd be happy to send you work"* | **No. Nothing.** |
 | What the account became | A real (non-marketing) engagement | An unqualified callback |
 
@@ -238,8 +240,9 @@ Wee's "I don't need you" was asserted and never examined, because Randy spent hi
 pitching. **We do not know if Ooh Wee is saturated or just defensive**, and that is a research
 failure, not a prospect problem.
 
-The unresolved fact that decides it: *"people been calling me all day from Google."* **Are those
-customers or are those salespeople?** Randy assumed salespeople — *"So you're not just getting a
+The unresolved fact that decides it: *"people been calling me all day from Google"* (his SMS; on the
+call it came out as *"I've been getting calls all day off my website"*). **Are those customers or
+are those salespeople?** Randy assumed salespeople — *"So you're not just getting a
 whole bunch of calls, like me wasting your time"* — and the prospect never confirmed it. If they
 are customers, he is Pete: saturated, and possibly supply-constrained underneath. If they are
 agencies, his "I'm doing outstanding" has no evidence behind it and he may be an ordinary
@@ -267,12 +270,12 @@ settles the classification.**
    visit — committed to an anonymous, unqualified prospect for an undefined "couple cents."
    *Failure scenario:* he says "sure" on Thursday out of curiosity, Randy builds and manages for a
    business with no stated volume, no attribution and no agreement, and the "couple cents" never
-   becomes a number. **This is the fourth account with the same gap** — see Pete Risk #1 and
-   Chiquita Risk #1 in `case-files/chiquita-thomas-hair.md`. The rate card needs to exist before
-   this call, not after it.
+   becomes a number. **The same gap is open on every other live account** — Pete Risk #1, Flawless
+   Risk #1, and Chiquita Risk #1 in `case-files/chiquita-thomas-hair.md`. The rate card needs to
+   exist before this call, not after it.
 4. **Randy has made three mutually inconsistent claims about this man's web presence, and he has
    already been called on one.** SMS: *"your site wasn't loading."* Call: *"Google doesn't have a
-   website listed."* Ninety seconds later: *"I'm looking at your website right now… You have a
+   website listed."* Later in the same call: *"I'm looking at your website right now… You have a
    Facebook. It looks decent."* The prospect's own position: *"I've been getting calls all day off
    my website."*
    *Failure scenario:* Randy repeats the no-website line Thursday, the prospect sends him a live
@@ -286,9 +289,14 @@ settles the classification.**
 6. **No name means no personalization, no identity check, no gatekeeper test.** We cannot confirm
    we've been speaking to the owner. *Failure scenario:* Thursday's call opens with *"Hey… Ooh
    Wee?"* for the third time and the relationship stays exactly as thin as it is now.
-7. **The email is untested.** It was captured cleanly on the call and matches the CRM, but nothing
-   has been sent to it and the record is flagged unverified. A single send confirms it — and
-   creates a second channel to a lead who currently exists on one phone number.
+7. **The email is untested — and there is an open question about whether it already got hit.** The
+   address was captured cleanly on the call and matches the CRM, and the record is flagged
+   unverified with no send on file. But the prospect's opening line was *"I don't know what's your
+   problem with, with my email, with my, uh, website"* — which implies something reached his inbox,
+   or that he believes it did. **Check the outreach logs for an email send to this contact before
+   Thursday**; it changes what the hostility at the open was actually about. Once resolved, a single
+   send confirms the address and creates a second channel to a lead who currently exists on one
+   phone number.
 8. **One line in the pitch argues against itself.** *"I would even be able to call you and talk to
    you right now if you had a real website."* The transcript has almost certainly dropped a
    "wouldn't" — but as delivered, and even as intended, the argument is that a website would have
@@ -317,6 +325,8 @@ settles the classification.**
       constraint *does* surface (can't take the calls, no help, losing weekend jobs), that is the
       real product — and it may be the same manpower play as Pete
 - [ ] **Do not re-open with the website claim.** It has failed once with this man already
+- [ ] **Check whether anything was ever emailed to this contact** — he opened the call complaining
+      about "your problem with my email." Resolve it before Thursday (Risk #7)
 - [ ] CRM hygiene: assign owner to Randy · set Source = cold SMS, houston-part1 · verify the email
       with one send · leave the name field alone until a real name exists, and note *why* it's blank
 - [ ] **Correct the intake doc**: stage is not "call booked Thursday," it is "verbal callback
@@ -329,11 +339,12 @@ settles the classification.**
 - `case-files/pete-rushford-in-home-services/README.md` — same list, same objection shape, same
   afternoon. Pete is what this call looks like when you let the man talk long enough to hit the
   constraint
-- `case-files/flawless-detailing-alec.md` *(pending)* — **the control case.** Same industry, same
-  city, same "your website" opener, same free-website offer. Alec named a real problem in his first
-  forty seconds (*"the website I can no longer use"*, *"my biggest thing is, uh, ads"*), gave his
-  name on first ask, and booked. Ooh Wee did none of the three. Two detailers, opposite
-  classifications, and the tell was audible in under a minute
+- `case-files/flawless-detailing-alec.md` — **the control case.** Same industry, same
+  city, same "your website" opener, same free-website offer. Alec named a real problem unprompted in
+  his opening exchange (*"the website I can no longer use"*, later *"my biggest thing is, uh, ads"*),
+  gave his name the first time he was asked, and booked a meeting on a second call the same day. Ooh
+  Wee did none of the three. Two detailers, opposite classifications, and the tell was audible early
+  in both calls
 - `case-files/chiquita-thomas-hair.md` — Risk #1 there is Risk #3 here in a different costume:
   real work committed with no number attached
 - `case-files/README.md` — Ooh Wee is one of the two accounts that define the disqualifying edge of
