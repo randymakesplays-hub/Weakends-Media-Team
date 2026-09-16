@@ -18,10 +18,10 @@
 | Last name | **Unknown.** Never asked, never given |
 | Role | **Unknown.** He answered the business line and confirmed *"Yes, sir"* to *"Is this Spotless Cleaning Services?"* — that establishes the business, **not that he owns it** |
 | Business | Spotless Cleaning Services 336 LLC |
-| Phone (CRM) | (336) 682-6306 — **verified by use**, the Sep 15 call connected on it |
+| Phone (CRM) | (336) 682-6306 — **verified by use**, the Sep 15 call connected on it, and Nathan confirmed it on the call (*"And this is a good phone number?"* → *"Mm-hmm."*) |
 | Email | spotlesscleaningservices336@gmail.com — **given verbally on the call and read back.** Marked *not verified* in CRM; **no evidence anything has ever been sent to it** (see Risk #5) |
 | City | **Winston-Salem** — Randy guessed *"You're, you're in Greensboro or Winston-Salem?"* and was corrected: *"Winston-Salem."* |
-| Website | **None.** Previously existed; taken down over a lapsed payment (see below) |
+| Website | **None.** Previously existed; per Nathan, taken down after a payment he *thinks* was late (see below) |
 | Old site host / URL / domain | **Unknown — never asked.** This is the single most valuable unasked question in the file |
 | Prior spend | **$30–40/month**, self-reported, for the old website |
 | Tags | nc-outreach, wireless, triad-part1 — **all three check out.** Winston-Salem is in the Triad, and "336" in the LLC name is the Triad area code |
@@ -49,7 +49,9 @@
 | Sep 16, 7:46 AM | **Randy:** *"…in about 45 minutes"* |
 | Sep 16, 7:58 AM | **A call, 0:07.** Direction not recorded (see Risk #1) |
 
-⚠️ **The transcript has no speaker labels.** Every attribution below is inferred from content. On this call the inference is unusually safe: Randy carries roughly 85% of the words, and Nathan's turns are short, declarative and answer questions Randy has just asked. There is no genuinely ambiguous line.
+⚠️ **The transcript is text only — no timestamps, no durations, no speaker labels.** The 3:03 length, the ~1:31 PM start, the SMS thread above, the 7:58 AM / 0:07 call entry and every CRM field in the Contact table come from GHL/the intake doc, **not from the transcript, and none of them can be verified from this repo.** Everything quoted below is verified against the transcript.
+
+⚠️ **The transcript has no speaker labels.** Every attribution below is inferred from content. On this call the inference is unusually safe: Randy carries roughly 85% of the transcript's 671 words (Nathan speaks about 100), and Nathan's turns are short, declarative and answer questions Randy has just asked. The only ambiguous stretch is the four-word pick-up overlap (*"Hello? Yeah, hello? Hello. Yeah."*); no substantive line is in doubt.
 
 **Two things Randy said he would do that are not in the record:** *"I'll send you like a booking. You'll get a notification for tomorrow at twelve"* and *"I'll, I'll text you, you know, my credentials, everything as well too."* Between the call ending on Sep 15 and 7:11 AM on Sep 16 the SMS log shows **nothing**. No credentials text. No booking link. Whether the calendar invite went out by email is unknown and unverifiable from what's on file.
 
@@ -85,13 +87,13 @@ Randy then asked for a demo call — and justified it with *"'cause like right n
 
 > **Nathan:** *"I think I was late, I was late. I think I was paying like thirty, forty dollars a month, and they just took it down and I can't find it. I can't get it no more. It expired."*
 
-A prior website. A prior monthly spend. A specific cause — a late payment. And a stated outcome — he cannot get it back.
+A prior website. A prior monthly spend. A probable cause — he twice hedges it (*"I **think** I was late"*, *"I **think** I was paying like thirty, forty dollars a month"*). And a stated outcome — he cannot get it back.
 
 Randy's response, verbatim:
 
 > **Randy:** *"Man, that's tough. That's tough. See, like when you're dealing with someone like myself, **you don't pay any monthly fees**, uh, for a website at least. You know, it would be already existing and running and I'll manage the whole thing for you."*
 
-He then took the name (*"tell me your name one more time, sir"* → *"Nathan"*), guessed the city and was corrected to Winston-Salem, and built rapport off it:
+He then took the name (*"Uh, and tell me your name one more time, sir"* → *"Nathan"*), guessed the city and was corrected to Winston-Salem, and built rapport off it:
 
 > **Randy:** *"Yeah, my sister used to go to the university over there. I'm familiar with Winston-Salem a little bit. Really all of Forsyth County."*
 
@@ -104,13 +106,15 @@ Then the booking — and **this exchange is the whole reconciliation problem**, 
 > **Randy:** *"Noon?"*
 > **Nathan:** *"Uh-huh."*
 
-Randy asked for a morning. Nathan declined a morning, gave a reason, and named noon. Randy repeated it back, got confirmation, took the email, and closed:
+Randy asked for a morning. Nathan declined a morning, gave a reason, and named noon. Randy repeated it back, got confirmation, confirmed the phone number (*"And this is a good phone number?"* → *"Mm-hmm."*), took the email, and closed:
 
 > **Randy:** *"So I'll send you like a booking. You'll get a notification for **tomorrow at twelve**. And uh, yeah, let's just chop it up… It starts off with a, just like I said, a **done-for-you website**, so we can start there and see how it goes."*
 
 > **Nathan:** *"Okay."*
 
-Total elapsed: 3:03. Randy got a name, a city, a competitor price point, a failure story and a booked appointment in three minutes on a cold dial. That is the best conversion-per-minute in the portfolio.
+He signed off by telling Nathan to save the number (*"And you can save my number as Randy. Uh, I'll, I'll text you, you know, my credentials, everything as well too."*) and *"Thank you. Have a great rest of your day."*
+
+Total elapsed: 3:03. Randy got a name, a city, a competitor price point, a failure story and a booked appointment in three minutes on a cold dial. **That is the fastest booking on file in this portfolio** (against Ooh Wee's 4:05 with no booking and Pete's 21:52).
 
 ---
 
@@ -131,7 +135,7 @@ The two reminder texts agree with each other (~8:31–8:41) and disagree with th
 
 **Most likely explanation, in order:**
 
-1. **The appointment Randy "punched in" was not saved at noon.** He offered *"I could send you a link to my Calendly or… I can just punch it in for you"* and chose to enter it manually. A manual entry landing on an early-morning default slot — the slot he had originally proposed, before Nathan corrected him — fits every piece of evidence. Randy then worked off the calendar, not the conversation.
+1. **The appointment Randy "punched in" was not saved at noon.** He offered *"I could send you a link to my Calendly or… I can just punch it in for you"* and chose to enter it manually. A manual entry landing on an early-morning default slot — the morning he had originally proposed, before Nathan corrected him — fits every piece of evidence. Randy then worked off the calendar, not the conversation.
 2. **Randy's own calendar/working hours are mis-set**, so the booking tool placed the slot where it had availability rather than where Nathan asked.
 3. Randy deliberately called early to "catch him before work." This fits the 7:58 dial but not the two reminder texts, which describe a scheduled time.
 
@@ -149,18 +153,18 @@ The two reminder texts agree with each other (~8:31–8:41) and disagree with th
 
 This is the finding that makes Nathan worth more than his three minutes suggest.
 
-A prospect with no website is usually one of two things: someone who never saw the point, or someone who could never justify the cost. **Nathan is neither.** He bought one, kept it, paid $30–40 every month, lost it to a late payment, and then tried and failed to get it back — *"I can't find it. I can't get it no more. It expired."*
+A prospect with no website is usually one of two things: someone who never saw the point, or someone who could never justify the cost. **Nathan is neither.** He bought one, kept it, paid (by his own hedged account) $30–40 a month, lost it after what he thinks was a late payment, and has not got it back — *"I can't find it. I can't get it no more. It expired."*
 
 Four consequences, all of them commercial:
 
-1. **The "do you need a website" sale is already closed.** His prior self closed it. Nobody has to be persuaded that a cleaning company should have a web presence — he demonstrated that belief with 12 months of hypothetical card charges. Any pitch that spends time on *why* a website matters is re-selling something already bought.
+1. **The "do you need a website" sale is already closed.** His prior self closed it. Nobody has to be persuaded that a cleaning company should have a web presence — he demonstrated that belief by paying for one out of his own pocket, month after month. **How long he paid is unknown — he never said, and nobody asked.** Any pitch that spends time on *why* a website matters is re-selling something already bought.
 2. **The offer is restoration, not education.** He has lived the before and the after. He knows what he lost. "I'll get you back what you had, and better" is a stronger frame than anything on Randy's standard script — and it is a frame that does not exist for Chiquita (never had one) or Pete (doesn't want one).
 3. **He handed over a price anchor and Randy gave it back.** $30–40/month is a stated, proven, voluntary willingness to pay for exactly this category of thing. Randy's answer — *"you don't pay any monthly fees"* — undercut a number the prospect had just supplied, unprompted, in his favour. See Risk #2. This is not the usual "no price was set" problem in this portfolio; this is worse, because a price existed in the prospect's own mouth and was refused.
-4. **The lapse is a reliability signal, not just a sad story.** A man who lets a $30–40/month bill go late, loses an asset over it, and does not recover it is a man who will let a retainer go late. That is not disqualifying — it is a payment-mechanics problem with a known fix (card on file, autopay, or annual prepay) that should be designed in from day one rather than discovered in month three.
+4. **The lapse is a reliability signal, not just a sad story.** A man who (on his own telling) let a $30–40/month bill go late, lost an asset over it, and has not recovered it may well let a retainer go late too. That is not disqualifying — it is a payment-mechanics problem with a known fix (card on file, autopay, or annual prepay) that should be designed in from day one rather than discovered in month three.
 
 ### What we still do not know about this business
 
-Everything that matters commercially. In 3:03 Randy asked **two** questions about the business — *what's your name* and *what time works* — and neither is about the business.
+Everything that matters commercially. In 3:03 Randy asked six questions in total — *is this Spotless Cleaning Services*, *tell me your name*, *Greensboro or Winston-Salem*, *any availability this evening / what time tomorrow*, *is this a good phone number*, *what's a good email* — and **not one of them is about the business itself.** Every question was identity, contact detail or calendar.
 
 Unknown: residential or commercial cleaning; crew size or solo; jobs per week; ticket size; service radius beyond "Winston-Salem"; where work currently comes from; whether he is turning any away; whether he is the owner; what the old site's domain and host were; whether he still controls the domain.
 
@@ -171,7 +175,7 @@ Unknown: residential or commercial cleaning; crew size or solo; jobs per week; t
 | Intake doc says | The record establishes |
 |---|---|
 | "Stage: responded, **flaked on today's call**" | **Not supported.** Nathan booked noon; Randy texted and dialed at ~8 AM, inside the hours Nathan said he works. No noon attempt is on file |
-| "Current state: **minimal feedback so far**" | **Wrong.** He gave a first name on first ask, corrected the city, volunteered a prior website, a prior monthly price, the cause of the loss, and his daily availability window — all in a 3-minute call in which he spoke maybe 60 words |
+| "Current state: **minimal feedback so far**" | **Wrong.** He gave a first name on first ask, corrected the city, volunteered a prior website, a prior monthly price, the cause of the loss, and his daily availability window — all in a 3-minute call in which he spoke roughly 100 words of the transcript's 671 |
 | "Need: **TBD (discovery incomplete)**" | **Accurate, and it is a call-design outcome, not a prospect problem.** Randy asked zero business questions. Discovery is incomplete because it was never attempted |
 | "Play: re-book and qualify" | **Correct** — and the order matters. Re-book with an apology that owns the time error, then qualify |
 
@@ -186,8 +190,9 @@ Unknown: residential or commercial cleaning; crew size or solo; jobs per week; t
 
 - **He let the most valuable thread in the call drop.** Nathan said *"they took it down… I can't get it no more."* The correct next words are *"who was it with, and what was the domain?"* Randy said *"Man, that's tough"* and pivoted to his own offer. That one unasked question is the difference between a rebuild and a **recovery** — and recovery is a far better first deliverable, because it returns something the prospect already grieves losing.
 - **He talked the price down against himself** (Risk #2).
-- **He asked for a morning after being told twice it was the wrong time** — first implicitly (*"Not today"*), then explicitly (*"I work in the morning"*). Then he built his Sep 16 around the morning anyway.
-- **He promised a credentials text and a booking notification and the log shows neither.** Third account in the set where a stated follow-through isn't in the record.
+- **He proposed a morning, was told plainly it was the wrong time** — *"I work in the morning, so I'll probably be free at noon"* — read the noon back, got confirmation, and then built his Sep 16 around the morning anyway. (Nathan's earlier *"Not today"* was a refusal of *this evening*, not of mornings; the only explicit morning constraint came after Randy's ask.)
+- **He promised a credentials text and a booking notification and the log shows neither.** Not the first account in the set where a stated follow-through can't be found in the record — see Flawless (calendar invite) and Pete (recording send).
+- **He widened the pretext beyond what he had checked.** On the call the claim became *"your company doesn't have any website or doing any, like, media."* The website half is supported; **the "media" half was never verified and never discussed** — no social profile was named by either man. Same over-reach that cost him with Ooh Wee. Check the Facebook/Instagram/Google Business Profile before repeating it.
 - **"Big business owners, uh, like yourself"** — flattery aimed at a business whose size is completely unknown. Harmless here; it is a tell that no qualification was happening.
 - **"I come in and help you guys systemize it out"** implies a physical visit, to a man in Winston-Salem, with no travel commitment defined. Same loose phrasing appears in the Ooh Wee pitch. Decide whether "come in" is literal before saying it again.
 
@@ -210,8 +215,8 @@ The honest finding is that **Nathan raised no real objections.** That is itself 
 ## Risks — read before the recovery call
 
 1. **The CRM is about to record Randy's error as Nathan's flake.** The intake doc already says it.
-   *Failure scenario:* Nathan is tagged a no-show, drops down the priority list, and a recovery text goes out that implies he missed something — to a man who was at work at 7:58 AM exactly as he had said he would be. He reads it as being blamed for someone else's mistake, and the warmest NC lead in the set is gone over a calendar entry. **The next message must open by owning the time, not by asking why he didn't pick up.**
-2. **A proven $30–40/month buyer was told there are no monthly fees.** This is the portfolio's recurring gap in its sharpest form. With Chiquita a price existed and was withdrawn by Randy (`case-files/chiquita-thomas-hair.md`, Risk #1). Here a price existed **in the prospect's own mouth**, unprompted, and was refused before it was ever asked about.
+   *Failure scenario:* Nathan is tagged a no-show, drops down the priority list, and a recovery text goes out that implies he missed something — to a man who had told Randy the day before that he works mornings. He reads it as being blamed for someone else's mistake, and the warmest NC lead in the set is gone over a calendar entry. **The next message must open by owning the time, not by asking why he didn't pick up.**
+2. **A self-reported $30–40/month buyer was told there are no monthly fees.** This is the portfolio's recurring gap in its sharpest form. With Chiquita a price existed and was withdrawn by Randy (`case-files/chiquita-thomas-hair.md`, Risk #1). Here a price existed **in the prospect's own mouth**, unprompted, and was refused before it was ever asked about.
    *Failure scenario:* Randy builds and manages a site for seven to ten days, Nathan likes it, and the conversation arrives at "so what do I owe you" with the agency on record saying *nothing monthly*. The account converts to unpaid work, or to an awkward retroactive price conversation that reads as a bait-and-switch. **The recurring fee is the product here** — hosting plus management plus "it never disappears again" is precisely the thing his last provider failed to deliver, and it is worth more than $30–40, not less.
 3. **We do not know if Nathan is the owner.** He answered the business line and confirmed the business name. He never stated a role and was never asked.
    *Failure scenario:* seven to ten days of build lands in front of someone who cannot authorise spend. Ask in the first minute: *"I want to make sure I'm talking to the right person — is this your business?"*
@@ -221,9 +226,9 @@ The honest finding is that **Nathan raised no real objections.** That is itself 
    *Failure scenario:* the booking confirmation Randy promised (*"You'll get a notification for tomorrow at twelve"*) never arrived, or arrived showing a time Nathan never agreed to. Either way Nathan had no written record of an appointment. **One send settles it**, and it opens a second channel to a lead who currently exists on one phone number.
 6. **"Demand-constrained" is an assumption, not a finding.** He never said he needs more work.
    *Failure scenario:* the same error as Ooh Wee — the agency's pitch gets logged as the prospect's need, and Randy builds a lead-generation engine for a man who is already booked solid. One question settles it: *how many jobs are you doing a week right now, and are you turning any away?*
-7. **Payment reliability.** He lost a $30–40/month asset to a late payment and did not recover it.
+7. **Payment reliability.** On his own account he lost a $30–40/month asset after a payment he thinks was late, and has not recovered it.
    *Failure scenario:* a retainer lapses the same way in month three and the agency is in collections with a client it likes. **Design for it:** card on file and autopay from day one, framed honestly — *"this is the thing that cost you the last one."*
-8. **Free work committed before any need was established — again.** *"I'm literally automating your business, building you a website… seven to like ten days. And if you like it, cool, we can make something happen."* No price, no rate, no scope boundary, no definition of "make something happen." This is the **fifth** account with the identical gap: see Pete Risk #1, Ooh Wee Risk #3, Chiquita Risk #1.
+8. **Free work committed before any need was established — again.** *"I'm literally automating your business, building you a website… seven to like ten days. And if you like it, cool, we can make something happen."* No price, no rate, no scope boundary, no definition of "make something happen." This is the **portfolio's most-repeated failure** — `case-files/README.md` already logs it across Pete, Flawless, Jose, Aaron and Chiquita; see Pete Risk #1, Ooh Wee Risk #3, Chiquita Risk #1. Nathan makes it the seventh.
 9. **Randy owes two deliverables from Sep 15 that are not in the log** — the credentials text and the booking notification. Small, but this is a prospect who has already been let down once by a vendor's administration.
 10. **Nothing about the business was asked, so the next call has to do double duty** — repair the scheduling error *and* run a full discovery. Budget for it; three minutes will not do it twice.
 
@@ -247,8 +252,8 @@ The honest finding is that **Nathan raised no real objections.** That is itself 
 
 ## Cross-reference
 
-- `case-files/flawless-detailing-alec.md` — **the closest analogue in the portfolio, and the reason Nathan should be ranked high.** Alec: *"I went through godaddy.com, built a website… the website I can no longer use."* Nathan: *"I had a website, but they took it down… I can't get it no more."* Two prospects, two states, same shape — **a paying customer of a web presence who lost it and has not replaced it.** Both gave their name on first ask. Both booked. If this pattern holds, "lost their website" is a better list filter than "has no website," because it selects for people who have already proven they will pay
+- `case-files/flawless-detailing-alec.md` — **the closest analogue in the portfolio, and the reason Nathan should be ranked high.** Alec: *"I went through godaddy.com, built a website… the website I can no longer use."* Nathan: *"I had a website, but they took it down… I can't get it no more."* Two prospects, two states, same shape — **someone who paid for a web presence, lost the use of it, and has not replaced it.** (The mechanics differ: Alec is locked out of a GoDaddy account and is not currently being charged; Nathan's site is gone entirely and he says it expired.) Both gave a first name on the call. Both booked. If this pattern holds, "lost their website" is a better list filter than "has no website," because it selects for people who have already proven they will pay
 - `case-files/ooh-wee-detail.md` — the mirror image. Same *"your site wasn't loading"* opener, same performance-trial pitch, opposite result: hostility, no name, no constraint, a verbal callback. The difference was that Randy's claim was true for Nathan and false for Ooh Wee. Also the same failure mode in the intake doc — **the agency's pitch written down as the prospect's need**. Do not let that happen here while "Need: TBD" is still honest
-- `case-files/pete-rushford-in-home-services/README.md` — the disqualifying edge. Pete and Ooh Wee are word-of-mouth saturated and said so in the first two minutes. **Nathan said nothing of the kind** — no *"I'm doing good,"* no *"word of mouth is my best advertisement,"* no *"I don't need more customers."* Their absence is meaningful, but it is not yet a positive demand signal (Risk #6)
+- `case-files/pete-rushford-in-home-services/README.md` — the disqualifying edge. Pete and Ooh Wee are word-of-mouth saturated and said so in the first two minutes. **Nathan said nothing of the kind** — no *"I'm doing good,"* no *"Word of mouth is… my best advertisement ever"* (Ooh Wee), no *"I don't need any more customers"* (Pete). Their absence is meaningful, but it is not yet a positive demand signal (Risk #6)
 - `case-files/chiquita-thomas-hair.md` — Risk #1 there is Risk #2 here, one degree worse. Chiquita's $500 was Randy's number to withdraw. Nathan's $30–40/month was **Nathan's own number**, volunteered, and Randy talked past it. Also the transferable lesson that applies directly: **the spec-build works.** Recovering Nathan's lost site and handing it back unasked is the Chiquita play with a better emotional hook behind it
 - `case-files/README.md` — the ICP line holds: *"a business that already has customers and a service worth selling, but no working front end."* Nathan fits it exactly, on the front-end half. The customer half is still unverified

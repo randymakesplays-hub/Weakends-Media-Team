@@ -17,7 +17,7 @@ Raw transcripts live in [`transcripts/`](transcripts/).
 |---|---|---|---|---|
 | **Pete Rushford** — Pete's In Home Services | Home repair, Houston N | **Supply** (manpower) | Active — recruiting engagement, Friday deadline | [→](pete-rushford-in-home-services/README.md) |
 | **Chiquita Thomas** — Chiquita Hair | Hair / wig e-com | Demand (no online presence at all) | Active — **pricing decision open, unanswered** | [→](chiquita-thomas-hair.md) |
-| **Flawless Detailing** | Auto detailing, Houston | Demand | Booked Fri Sep 18, 11:00 CT | [→](flawless-detailing-alec.md) |
+| **Flawless Detailing** | Auto detailing, Houston | Demand | Booked Fri Sep 18, **11:00 — timezone unconfirmed** | [→](flawless-detailing-alec.md) |
 | **Ooh Wee Detail** | Auto detailing, Humble TX | Word-of-mouth saturated | Verbal Thursday callback | [→](ooh-wee-detail.md) |
 | **Spotless Cleaning Services 336** | Cleaning, NC (Triad) | Demand | Missed Sep 16 call — re-book | [→](spotless-cleaning-nathan.md) |
 
