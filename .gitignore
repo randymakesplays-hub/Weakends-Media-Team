@@ -1,0 +1,4 @@
+# Audio and derived delivery bundles — too large for git history.
+# Regenerate the zip from pete-candidate-package/ when needed.
+*.wav
+*.zip
