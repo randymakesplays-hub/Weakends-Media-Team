@@ -106,8 +106,16 @@ contractors**, deliver a portfolio with experience, scope of work, age, ethnicit
 bilingual status — then a joint call to pick and interview.
 
 Per SMS (Sep 15–16): Randy will reach out once **5 solid screenings** are complete.
-Already screened **Jose** (Latino, good English, 10 yrs NJ/FL, now full-time Houston) —
-recording + transcript promised to Pete.
+
+### Candidate bench — 1 of 5 screened
+
+| # | Candidate | Screened | Verdict | File |
+|---|---|---|---|---|
+| 1 | Jose — Ebenezer Home Repairs / "DC Homes" | Sep 16 | Advance, 4 questions open | [01-jose-ebenezer-home-repairs.md](candidates/01-jose-ebenezer-home-repairs.md) |
+
+Jose's full screening (3 calls, transcribed) is the first entry. Four gaps apply to every
+future screen and are now a scorecard at the bottom of his file: **liability insurance,
+tools, vehicle, references** were never asked.
 
 **Play:** staff him first. Once he has a crew, the delegation creates the capacity he
 currently lacks, and *then* the website/CRM/marketing layer becomes a real upsell —
