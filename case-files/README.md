@@ -17,6 +17,7 @@ Raw transcripts live in [`transcripts/`](transcripts/).
 |---|---|---|---|---|
 | **Pete Rushford** — Pete's In Home Services | Home repair, Houston N | **Supply** (manpower) | Active — recruiting engagement, Friday deadline | [→](pete-rushford-in-home-services/README.md) |
 | **Chiquita Thomas** — Chiquita Hair | Hair / wig e-com | Demand (no online presence at all) | Active — **pricing decision open, unanswered** | [→](chiquita-thomas-hair.md) |
+| **Johntes Brown Jr** | Barber, going independent | Demand (starting from zero) | Onboarded — pitch not delivered | [→](johntes-brown-jr-barber.md) |
 | **Flawless Detailing** | Auto detailing, Houston | Demand | Booked Fri Sep 18, **11:00 — timezone unconfirmed** | [→](flawless-detailing-alec.md) |
 | **Ooh Wee Detail** | Auto detailing, Humble TX | Word-of-mouth saturated | Verbal Thursday callback | [→](ooh-wee-detail.md) |
 | **Spotless Cleaning Services 336** | Cleaning, NC (Triad) | Demand | Missed Sep 16 call — re-book | [→](spotless-cleaning-nathan.md) |
@@ -32,13 +33,15 @@ Supply-side, not leads. They do not belong in the sales pipeline.
 
 Bench target: 5 screenings before the next Pete conversation, ~10 in the eventual portfolio.
 
-## No records on file yet
+## Out of scope
 
-| Account | What's needed |
+| Account | Why |
 |---|---|
-| **Johntes Brown Jr** — barber going independent | Onboarding call Tue Sep 15, 1:00 — no recording provided |
-| **Dallas B Marzett** | Discovery Sep 15, 10:30 — **SIGNED**, no records provided. The only closed deal in the set and the only one with no file |
-| **Blackstone Private Homes** | Separate business (real estate), not a Weakends lead. Contractor thread on +1 (435) 260-1291 — invoice/terms dispute |
+| **Dallas B Marzett** | Signed, not in pipeline. No file needed |
+| **Blackstone Private Homes** | Separate business (real estate), not a Weakends account |
+
+**No call recordings exist for Chiquita Thomas or Johntes Brown Jr.** Both files are built
+from texts, the intake doc, and direct knowledge rather than transcripts, and say so.
 
 ---
 
