@@ -17,7 +17,7 @@
 | Business | Ooh Wee Detail / "Ooh Wee Detailing" (he says "Detailing" when spelling his email) |
 | CRM record name | First: "Ooh Wee Detail" · Last: "Oh wee" — **not a person's name, and the two spellings disagree** |
 | Phone (CRM) | (281) 435-7637 — **verified**, he confirmed receipt of Randy's text live on the call |
-| Email | oohweedetailing@gmail.com — given verbally, repeated back, confirmed "Yeah." Marked *not verified* in CRM; **nothing has been sent to it** |
+| Email | oohweedetailing@gmail.com — given verbally, repeated back, confirmed "Yeah." Marked *not verified* in CRM; **no record of anything being sent to it** — though his opening line complains about *"your problem with, with my email"* (see Risk #7) |
 | Website | **Disputed — status unknown.** See Risk #4 |
 | Facebook | Randy claims one exists: *"You have a Facebook. It looks decent."* Not independently confirmed |
 | Service area | Humble, TX (Randy states it on the call; prospect does not contradict it) |
@@ -25,7 +25,8 @@
 | Source | **Blank in CRM — fix: cold SMS, houston-part1 list** (the same list that produced Pete Rushford) |
 | Owner | **Unassigned — fix: assign to Randy** |
 
-Randy gave his name and number by SMS during the call and had the prospect confirm receipt.
+Randy gave his name twice on the call (*"It's Randy"* at the open, *"my name is Randy"* after the
+second name request) and sent his name and number by SMS mid-call, with live confirmation of receipt.
 
 ---
 
@@ -35,10 +36,18 @@ Randy gave his name and number by SMS during the call and had the prospect confi
 - Transcript: `case-files/transcripts/2026-09-15-ooh-wee-detail-raw.txt`
 - SMS thread (GHL): Randy *"Hey, I was on Google earlier and your site wasn't loading. Everything good?"* → prospect voicemail → prospect *"Well check your phone people been calling me all day from Google"* → **the call** → Randy *"Hi this is Weakends Agency, I saw that we just missed your call how can I help?"* → Randy sends name/number
 
-⚠️ **The transcript has no speaker labels.** Every attribution below is inferred from content.
-One line is genuinely ambiguous — *"give me a call, man, on not tomorrow, but, uh, Thursday"* — read
-here as the prospect brushing Randy off to a later day. It resolves either way: Randy closes the
-call with *"I'll go ahead and give you a call Thursday, boss,"* so **Randy is the one who dials.**
+⚠️ **The transcript has no speaker labels, and no timestamps.** Every attribution below is inferred
+from content; no claim about *when* inside the call something was said can be made from this record.
+Two lines are genuinely ambiguous:
+
+1. *"give me a call, man, on not tomorrow, but, uh, Thursday"* — read here as the prospect brushing
+   Randy off to a later day. It resolves either way: Randy closes the call with *"I'll go ahead and
+   give you a call Thursday, boss,"* so **Randy is the one who dials.**
+2. *"Okay. We'll work something out, bro."* — sits between the prospect's Thursday brush-off and
+   Randy's *"Tell me your name, brother."* "Bro" is the prospect's word throughout and appears
+   nowhere else in Randy's lines; "Okay" reads as Randy acknowledging the brush-off. **Unresolved,
+   and it matters** — if the prospect said it, it is the only forward-looking thing he volunteered
+   before the take-away close.
 
 ---
 
@@ -51,8 +60,9 @@ hit immediately:
 > but I've been getting calls all day off my website, man. I don't know what y'all... You need to
 > check your phone."*
 
-That is the SMS pretext coming back at Randy in the first ten seconds. He texted that the site
-wasn't loading; the prospect's position is that the site works fine and is producing calls.
+That is the SMS pretext coming straight back at Randy — it is the prospect's first utterance on the
+call. He texted that the site wasn't loading; the prospect's position is that the site works fine
+and is producing calls. Note that he complains about *"my email"* as well as the website.
 
 Randy asked for his name — *"Can I be transparent with you? What was your name again, boss? I
 don't think I got your name."* — and got *"What? Yeah."* No name. He moved on without it and
@@ -65,7 +75,8 @@ switched premises:
 > people been going. They've been going. They can see all my calls. They can see everything, bro.
 > I'm doing good. Why y'all keep calling me, bro?"*
 
-Two objections in one breath: **the premise is wrong**, and **you are the fifth agency today.**
+Two objections in one breath: **the premise is wrong**, and **you are one more agency calling me.**
+(He never says how many have called, only *"Why y'all keep calling me, bro?"*)
 Randy asked *"Can I be honest with you?"* and got *"Man, look, I'm, I'm doing good, bro"* — the
 second of four times the prospect volunteers that his business is fine.
 
@@ -90,11 +101,14 @@ Then the pitch block — the longest uninterrupted turn in the call by a wide ma
 > works, you make a little bit more money. Cool, maybe I'll get a couple cents. If not, you don't
 > gotta hear from me again. It's that simple. Just let me know that works for you."*
 
-**The prospect never responds to the trial offer.** Not yes, not no, not a question. His next words
-are the brush-off:
+**The prospect never engages the trial offer.** No yes, no no, no question about it. His next words
+are an *"All right"* and the brush-off:
 
 > **Prospect:** *"All right. Um, give me a call, man, on not tomorrow, but, uh, Thursday, man. Give
 > me a call back Thursday."*
+
+> **Unattributed:** *"Okay. We'll work something out, bro."* — could be either man (see the speaker
+> warning above). If it is the prospect, it is the closest thing to a positive response in the call.
 
 Randy asked for the name a **second** time — *"Tell me your name, brother"* — and got:
 
@@ -153,7 +167,9 @@ We do not currently know whether the man on this phone is the owner.
 5. *"Why y'all keep calling me, bro?"*
 
 That is the complete list. **No volume, no ticket size, no capacity, no crew, no calendar, no
-season, no complaint.** In 4:05 the prospect stated zero problems and asked zero questions.
+season, no complaint.** In 4:05 the prospect stated zero problems and asked nothing about the offer,
+the trial, the price or the agency. The only question he asked at all was *"Why y'all keep calling
+me, bro?"*
 
 **The classification in the Sep 16 intake doc does not hold.** Point by point:
 
@@ -176,8 +192,10 @@ into *"I'll hear you out on Thursday, man. I give you a chance."* That is a real
 commitment language and it cost one sentence. Randy did not get there by pitching harder — he got
 there by offering to leave.
 
-**What Randy got wrong:** he pitched a solution to a man who had not described a problem. Two
-questions were asked in the entire call and both were administrative — *name* and *email*. Nothing
+**What Randy got wrong:** he pitched a solution to a man who had not described a problem. The only
+questions he asked that sought any information were administrative — *name* and *email*. Everything
+else was rhetorical (*"Can I be transparent with you?"*, *"How can we do better? How can we
+maximize?"*) or the closing take-away. Nothing
 about cars per week, turn-aways, who answers the phone, or what the "calls all day" actually are.
 A 4-minute call is not the constraint here; a 4-minute call is plenty of time for three qualifying
 questions if you ask them instead of describing a seven-day trial.
