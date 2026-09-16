@@ -107,15 +107,21 @@ bilingual status — then a joint call to pick and interview.
 
 Per SMS (Sep 15–16): Randy will reach out once **5 solid screenings** are complete.
 
-### Candidate bench — 1 of 5 screened
+### Candidate bench — 1 screened, 1 booked, of 5
 
-| # | Candidate | Screened | Verdict | File |
+| # | Candidate | Territory | Status | File |
 |---|---|---|---|---|
-| 1 | Jose — Ebenezer Home Repairs / "DC Homes" | Sep 16 | Advance, 4 questions open | [01-jose-ebenezer-home-repairs.md](candidates/01-jose-ebenezer-home-repairs.md) |
+| 1 | Jose — Ebenezer Home Repairs / "DC Homes" | Katy→Woodlands, Mon–Fri only | Screened Sep 16 · advance, 4 questions open | [01-jose-ebenezer-home-repairs.md](candidates/01-jose-ebenezer-home-repairs.md) |
+| 2 | Aaron — Top Handyman | **Conroe→Galveston→Katy** (widest) | **Screening call Wed Sep 16, 3:00 PM CT** | [02-aaron-top-handyman.md](candidates/02-aaron-top-handyman.md) |
 
-Jose's full screening (3 calls, transcribed) is the first entry. Four gaps apply to every
-future screen and are now a scorecard at the bottom of his file: **liability insurance,
-tools, vehicle, references** were never asked.
+Four questions were missed on Jose's screen and apply to every future one — **liability
+insurance, tools, vehicle, references**. They are now a 10-point scorecard at the bottom of
+his file; run it on Aaron's 3:00 call.
+
+**Market signal:** Aaron, unprompted, described Pete's exact problem — *"It's hard to even
+keep people on to that actually wanna work or even learn."* Two independent Houston
+operators, same complaint. The reliable-sub shortage is structural here, not Pete's bad
+luck, which makes the bench itself a more defensible product than the websites.
 
 **Play:** staff him first. Once he has a crew, the delegation creates the capacity he
 currently lacks, and *then* the website/CRM/marketing layer becomes a real upsell —
